@@ -10,3 +10,5 @@
   * Репозиторий НЕ инициализировать.
 * Удалить .git и .gitattributes
 * Решать задачи и не забывать делать pull request-ы.
+  * Задачи нужно смотреть [здесь](https://github.com/gsvgit/edu/wiki/%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B8).
+  * Успехи можно контролировать [здесь](https://docs.google.com/spreadsheets/d/1xzOQoKSlWMsbVKMZVCZFu5ZqhzAoZ4Fn9i6psiyrLL8/edit?usp=sharing).

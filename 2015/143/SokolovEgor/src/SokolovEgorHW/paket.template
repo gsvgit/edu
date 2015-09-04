@@ -1,0 +1,23 @@
+type project
+owners
+    SokolovEgor
+authors 
+    SokolovEgor
+projectUrl
+    http://github.com/SokolovEgor/SokolovEgorHW
+iconUrl
+    https://raw.githubusercontent.com/SokolovEgor/SokolovEgorHW/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/SokolovEgor/SokolovEgorHW/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    hw
+summary
+    Home work
+description
+    Home work
+
+

@@ -1,0 +1,23 @@
+type project
+owners
+    ArtyomovEgor
+authors 
+    ArtyomovEgor
+projectUrl
+    http://github.com/ArtyomovEgor/ArtyomovEgorHW
+iconUrl
+    https://raw.githubusercontent.com/ArtyomovEgor/ArtyomovEgorHW/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/ArtyomovEgor/ArtyomovEgorHW/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    hw
+summary
+    Home work
+description
+    Home work
+
+

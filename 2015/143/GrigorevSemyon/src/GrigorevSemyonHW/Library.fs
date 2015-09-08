@@ -1,16 +1,29 @@
-namespace GrigorevSemyonHW
+module GrigorevSemyonHW
 
-/// Documentation for my library
-///
-/// ## Example
-///
-///     let h = Library.hello 1
-///     printfn "%d" h
-///
-module Library = 
-  
-  /// Returns 42
-  ///
-  /// ## Parameters
-  ///  - `num` - whatever
-  let hello num = 42
+let intV = 1
+let strV = "s"
+let boolV = true
+let chV = 'c'
+
+let x = 1 + (int "2")
+
+let ifTest x =
+    if x = 3
+    then 4
+    else 5
+
+let forTest =
+    for i in 1..3 do
+        printfn "%A" (i + 1)
+
+let f (a:array<_>) =
+    a.[1] <- 3 
+    Array.length a
+
+let funArr =  [|f|]
+
+let main x = 
+    let v = System.Console.ReadLine()
+    let v1 = int v + 1    
+    let r = f [|v1 + x|]
+    printfn "%A" r

@@ -16,14 +16,18 @@ let forTest =
     for i in 1..3 do
         printfn "%A" (i + 1)
 
-let f (a:array<_>) =
+let g (a:array<_>) =
     a.[1] <- 3 
     Array.length a
 
+let f x =
+    x + 3
+
+
 let funArr =  [|f|]
 
-let main x = 
+let main () = 
     let v = System.Console.ReadLine()
     let v1 = int v + 1    
-    let r = f [|v1 + x|]
+    let r = f v1
     printfn "%A" r

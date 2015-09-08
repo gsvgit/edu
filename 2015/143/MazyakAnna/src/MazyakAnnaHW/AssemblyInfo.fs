@@ -1,9 +1,9 @@
-namespace System
+﻿namespace System
 open System.Reflection
 
 [<assembly: AssemblyTitleAttribute("MazyakAnnaHW")>]
 [<assembly: AssemblyProductAttribute("MazyakAnnaHW")>]
-[<assembly: AssemblyDescriptionAttribute("A short summary of your project.")>]
+[<assembly: AssemblyDescriptionAttribute("Home Work")>]
 [<assembly: AssemblyVersionAttribute("1.0")>]
 [<assembly: AssemblyFileVersionAttribute("1.0")>]
 do ()

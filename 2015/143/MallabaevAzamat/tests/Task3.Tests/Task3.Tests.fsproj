@@ -83,7 +83,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Task2\Task2.fsproj">
+    <ProjectReference Include="..\..\src\Task3\Task3.fsproj">
       <Name>Task3</Name>
       <Project>{bf72cd30-570c-4224-9c5c-6f6a0f5e77af}</Project>
       <Private>True</Private>

@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{787bc4e1-c153-4a1a-96ea-bcb87bbf6b75}</ProjectGuid>
+    <ProjectGuid>{3e1d71b2-9598-4258-99ba-3c7e69e44366}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Task3.Tests</RootNamespace>
     <AssemblyName>Task3.Tests</AssemblyName>
@@ -71,7 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="paket.references" />
-    <Compile Include="Task3.Tests.fs" />
+    <Compile Include="Task4.Tests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -83,9 +83,9 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Task3\Task3.fsproj">
-      <Name>Task3</Name>
-      <Project>{ca012d7b-e15d-4f65-b34f-5aa36af27f51}</Project>
+    <ProjectReference Include="..\..\src\Task4\Task4.fsproj">
+      <Name>Task4</Name>
+      <Project>{98713a2e-0d45-435c-8e86-8f6b91a55e7b}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

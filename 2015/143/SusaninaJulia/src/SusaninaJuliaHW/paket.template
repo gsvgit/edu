@@ -1,0 +1,23 @@
+type project
+owners
+    SusaninaJulia
+authors 
+    SusaninaJulia
+projectUrl
+    http://github.com/SusaninaJulia/SusaninaJuliaHW
+iconUrl
+    https://raw.githubusercontent.com/SusaninaJulia/SusaninaJuliaHW/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/SusaninaJulia/SusaninaJuliaHW/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    hw
+summary
+    Home work
+description
+    Home work
+
+

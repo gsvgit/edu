@@ -1,5 +1,7 @@
 ﻿namespace Task2
 
+open System
+
 /// Documentation for my library
 ///
 /// ## Example
@@ -22,3 +24,17 @@ module Library =
   ///  - `x` - whatever
   let main x = (x ^ 4) + (x ^ 3) + (x ^ 2) + x
 
+  
+  [<EntryPoint>]
+  let entry args =
+    Console.ReadLine()
+    |> System.Int32.Parse
+    |> main
+    |> Console.WriteLine
+
+    #if DEBUG
+    Console.WriteLine("Please input key...")
+    ignore <| Console.ReadKey(true)
+    #endif
+
+    0

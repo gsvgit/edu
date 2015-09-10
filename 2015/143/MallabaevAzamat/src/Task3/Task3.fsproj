@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{ca012d7b-e15d-4f65-b34f-5aa36af27f51}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Task2</RootNamespace>
     <AssemblyName>Task2</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>

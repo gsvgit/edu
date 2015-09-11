@@ -16,8 +16,6 @@ NUGET
       Microsoft.Bcl.Build (>= 1.0.14)
     NUnit (2.6.4)
     NUnit.Runners (2.6.4)
-    Octokit (0.14.0)
-      Microsoft.Net.Http
     SourceLink.Fake (1.1.0)
 GITHUB
   remote: fsharp/FAKE

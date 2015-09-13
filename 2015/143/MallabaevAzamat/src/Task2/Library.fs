@@ -16,7 +16,8 @@ module Library =
   /// ## Parameters
   /// - `a` - base
   /// - `n` - exponent
-  let rec (^) (a:int) (n:int) = if n < 0 then 1 else if n = 0 then 1 else a * (a ^ (n - 1))
+  //let rec (^) (a:int) (n:int) = if n < 0 then 1 else if n = 0 then 1 else a * (a ^ (n - 1))
+  let rec (^) a b = pown a b
 
   /// Returns x^4 + x^3 + x^2 + x
   ///
@@ -24,16 +25,16 @@ module Library =
   ///  - `x` - whatever
   let main x = (x ^ 4) + (x ^ 3) + (x ^ 2) + x
 
-  
   [<EntryPoint>]
   let entry args =
     Console.ReadLine()
-    |> System.Int32.Parse
+    |> int
     |> main
-    |> Console.WriteLine
+    |> printfn "%d"//Console.WriteLine
 
     #if DEBUG
-    Console.WriteLine("Please input key...")
+    (*Console.WriteLine*)
+    printfn "Please input key..."
     ignore <| Console.ReadKey(true)
     #endif
 

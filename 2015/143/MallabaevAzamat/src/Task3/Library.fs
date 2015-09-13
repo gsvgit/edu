@@ -22,12 +22,13 @@ module Library =
   [<EntryPoint>]
   let entry args =
     Console.ReadLine()
-    |> System.Int32.Parse
+    |> int //System.Int32.Parse
     |> main
-    |> Console.WriteLine
+    |> printfn "%i"//Console.WriteLine
 
     #if DEBUG
-    Console.WriteLine("Please input key...")
+    (*Console.WriteLine*)
+    printfn "Please input key..."
     ignore <| Console.ReadKey(true)
     #endif
 

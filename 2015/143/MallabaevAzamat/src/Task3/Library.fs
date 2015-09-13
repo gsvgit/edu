@@ -11,17 +11,19 @@ open System
 ///
 module Library = 
   
+  let readln() = Console.ReadLine()
+
   /// Returns x^4 + x^3 + x^2 + x
   ///
   /// ## Parameters
   ///  - `x` - whatever
-  let main x = 
+  let main x =
     let square_x = x * x
-    (square_x + x) * (square_x + 1)
+    (square_x + x) * (square_x + 1) + 1
 
   [<EntryPoint>]
   let entry args =
-    Console.ReadLine()
+    readln()
     |> int //System.Int32.Parse
     |> main
     |> printfn "%i"//Console.WriteLine

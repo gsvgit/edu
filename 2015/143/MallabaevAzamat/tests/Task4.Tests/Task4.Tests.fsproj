@@ -8,7 +8,7 @@
     <ProjectGuid>{3e1d71b2-9598-4258-99ba-3c7e69e44366}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Task3.Tests</RootNamespace>
-    <AssemblyName>Task3.Tests</AssemblyName>
+    <AssemblyName>Task4.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
     <Name>Task2.Tests</Name>

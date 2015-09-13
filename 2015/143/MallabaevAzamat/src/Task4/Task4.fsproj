@@ -8,7 +8,7 @@
     <ProjectGuid>{98713a2e-0d45-435c-8e86-8f6b91a55e7b}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Task2</RootNamespace>
-    <AssemblyName>Task2</AssemblyName>
+    <AssemblyName>Task4</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,7 +47,6 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Library.fs" />
     <None Include="Script.fsx" />
-    <Compile Include="Test5.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

@@ -22,6 +22,4 @@ let main (inArray:array<int>) i j =
     inArray.[i] <- inArray.[i] + inArray.[j] 
     inArray.[j] <- inArray.[i] - inArray.[j]
     inArray.[i] <- inArray.[i] - inArray.[j]
-
-    printfn "%A" inArray
     inArray

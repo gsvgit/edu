@@ -23,6 +23,4 @@ let num = int x
             L <- i :: L
     let indL = L
     let outArray = [|for i in List.rev(indL) -> i|] 
-
-    printfn "%A" outArray
     outArray

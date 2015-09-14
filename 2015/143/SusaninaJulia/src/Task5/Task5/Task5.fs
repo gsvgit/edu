@@ -29,6 +29,4 @@ let main (inArray:array<int>) (lowBound:int) (highBound:int) =
             L <- i :: L
     let indL = L
     let outArray = [|for i in List.rev(indL) -> i|] 
-    
-    printfn "%A" outArray
     outArray

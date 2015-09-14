@@ -50,7 +50,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <Compile Include="Task6.fs" />
     <None Include="App.config" />
   </ItemGroup>
   <PropertyGroup>

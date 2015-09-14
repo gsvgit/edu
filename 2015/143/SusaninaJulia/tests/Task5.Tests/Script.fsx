@@ -2,7 +2,7 @@
 // for more guidance on F# programming.
 
 #load "Library1.fs"
-open Task7.Test
+open Task5.Tests
 
 // Define your library scripting code here
 

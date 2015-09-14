@@ -13,8 +13,7 @@ module Library =
   ///
   /// ## Parameters
   ///  - `x` - whatever
-  let main (inArray:array<int>) (num:int) = 
-    let isNotBetter (t:int) = (t <= num)
+  let main (inArray:int array) (num:int) = 
 
     //let mutable ind_list = []
     //let mutable len = 0
@@ -24,4 +23,6 @@ module Library =
     //        len <- len + 1
     //let outArray = [|for item in ind_list -> item|]
 
-    Array.filter isNotBetter inArray
+    Array.mapi (fun i x -> (i, x)) inArray
+    |> Array.filter (fun (i, j) -> j <= num)
+    |> Array.map (fun (i, x) -> i)

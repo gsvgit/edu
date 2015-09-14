@@ -2,7 +2,7 @@
 open System.Reflection
 
 [<assembly: AssemblyTitleAttribute("Task3")>]
-[<assembly: AssemblyProductAttribute("SokolovEgorHW")>]
+[<assembly: AssemblyProductAttribute("GastaAdnreyHW")>]
 [<assembly: AssemblyDescriptionAttribute("Home work")>]
 [<assembly: AssemblyVersionAttribute("1.0")>]
 [<assembly: AssemblyFileVersionAttribute("1.0")>]

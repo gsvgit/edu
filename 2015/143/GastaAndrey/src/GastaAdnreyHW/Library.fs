@@ -1,5 +1,5 @@
 namespace GastaAdnreyHW
-
+ 
 /// Documentation for my library
 ///
 /// ## Example
@@ -13,4 +13,4 @@ module Library =
   ///
   /// ## Parameters
   ///  - `num` - whatever
-  let hello num = 42
+  let hello = 42

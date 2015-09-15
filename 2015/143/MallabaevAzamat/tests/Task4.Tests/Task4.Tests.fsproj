@@ -8,7 +8,7 @@
     <ProjectGuid>{3e1d71b2-9598-4258-99ba-3c7e69e44366}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Task3.Tests</RootNamespace>
-    <AssemblyName>Task3.Tests</AssemblyName>
+    <AssemblyName>Task4.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
     <Name>Task2.Tests</Name>
@@ -63,13 +63,6 @@
   -->
   <Import Project="..\..\.paket\paket.targets" />
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\packages\NUnit\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-      <Paket>True</Paket>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="paket.references" />
     <Compile Include="Task4.Tests.fs" />
   </ItemGroup>
@@ -77,6 +70,9 @@
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

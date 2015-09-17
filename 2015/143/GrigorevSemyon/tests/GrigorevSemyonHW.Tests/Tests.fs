@@ -6,6 +6,7 @@ open NUnit.Framework
 [<Test>]
 let ``hello returns 5`` () =  
   let res = f 3
+  let args = System.Environment.GetCommandLineArgs()
   Assert.AreEqual(6, res)
 
 [<Test>]

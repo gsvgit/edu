@@ -7,7 +7,7 @@ open NUnit.Framework
 let ``Task3:main 0 returns 1`` () =
   let res = Task3.main 0
   printfn "%i" res
-  Assert.AreEqual(0,res)
+  Assert.AreEqual(1,res)
 
 [<Test>]
 let ``Task3:main 1 returns 5`` () =

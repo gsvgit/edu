@@ -5,13 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>2ac3fa94-4f6f-4a27-b0b2-c85cf660393b</ProjectGuid>
+    <ProjectGuid>7d81820c-5093-4ae8-873a-f34091446968</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Task2.Tests</RootNamespace>
-    <AssemblyName>Task2.Tests</AssemblyName>
+    <RootNamespace>Task4.Tests</RootNamespace>
+    <AssemblyName>Task4.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task2.Tests</Name>
+    <Name>Task4.Tests</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Task2.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Task4.Tests.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Task2.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Task4.Tests.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -45,13 +45,13 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task2.Tests.fs" />
+    <Compile Include="Task4.Tests.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Task2\Task2.fsproj">
-      <Name>Task2</Name>
-      <Project>{a58d65cd-076f-48d7-8833-93629cbb0b89}</Project>
+    <ProjectReference Include="..\..\src\Task4\Task4.fsproj">
+      <Name>Task4</Name>
+      <Project>{2507ba72-6547-4612-80bc-6e97200de68b}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

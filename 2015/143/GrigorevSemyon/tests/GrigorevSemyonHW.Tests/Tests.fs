@@ -4,7 +4,12 @@ open GrigorevSemyonHW
 open NUnit.Framework
 
 [<Test>]
-let ``hello returns 42`` () =
-  let result = Library.hello 42
-  printfn "%i" result
-  Assert.AreEqual(42,result)
+let ``hello returns 5`` () =  
+  let res = f 3
+  let args = System.Environment.GetCommandLineArgs()
+  Assert.AreEqual(6, res)
+
+[<Test>]
+let ``hello returns 0`` () =  
+  let res = f -3
+  Assert.AreEqual(0, res)

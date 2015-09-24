@@ -1,13 +1,15 @@
-﻿//module Task13
+﻿module Task13
+
+  let main n = 
+    let Fib = Array.create n 1
+    for i in 2..(n - 1) do
+      Fib.[i] <- Fib.[i - 1] + Fib.[i - 2]
+    Fib
+
+//  let s = System.Console.ReadLine() |> int
 //
-//let main n = 
-//  let mutable a = ref
-//  let mutable b = ref
-//  let Fib = [|for i in 1..n do
-//                if i = 1 || i = 2 then
-//                  yield 1 
-//                else 
-//                  a <- a + b
-//                  b <- a - b 
-//                  yield a|]
-//  Fib
+//  [<EntryPoint>]
+//  let inter argv = 
+//    printfn "%A" <| main s
+//    let rk = System.Console.ReadKey(true)
+//    0

@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>89323ff9-81d3-48f2-8d0e-390ad495c082</ProjectGuid>
+    <ProjectGuid>16425fa5-0eff-4387-95d0-995deed0971e</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task2.Tests</RootNamespace>
-    <AssemblyName>Task2.Tests</AssemblyName>
+    <RootNamespace>Task4</RootNamespace>
+    <AssemblyName>Task4</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task2.Tests</Name>
+    <Name>Task4</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\Task2.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Task4.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\Task2.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Task4.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -42,23 +42,13 @@
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\packages\NUnit\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task2.Tests.fs" />
+    <Compile Include="Task4.fs" />
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Task2\Task2.fsproj">
-      <Name>Task2</Name>
-      <Project>{923fba8f-1fdf-4225-accf-7f0cb3482948}</Project>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

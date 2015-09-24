@@ -42,6 +42,9 @@
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -49,6 +52,13 @@
   <ItemGroup>
     <Compile Include="Task3.Tests.fs" />
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Task3\Task3.fsproj">
+      <Name>Task3</Name>
+      <Project>{d968e1c2-2a41-4da6-9397-bde3f1681f34}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

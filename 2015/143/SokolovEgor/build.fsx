@@ -245,7 +245,6 @@ let createIndexFsx lang =
 // This block of code is omitted in the generated HTML documentation. Use 
 // it to define helpers that you do not want to show in the documentation.
 #I "../../../bin"
-
 (**
 F# Project Scaffold ({0})
 =========================
@@ -339,10 +338,10 @@ Target "All" DoNothing
   ==> "Build"
   ==> "CopyBinaries"
   ==> "RunTests"
-  ==> "GenerateReferenceDocs"
-  ==> "GenerateDocs"
+//  ==> "GenerateReferenceDocs"
+//  ==> "GenerateDocs"
   ==> "All"
-  =?> ("ReleaseDocs",isLocalBuild)
+//  =?> ("ReleaseDocs",isLocalBuild)
 
 "All" 
 #if MONO

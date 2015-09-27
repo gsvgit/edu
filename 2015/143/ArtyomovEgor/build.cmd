@@ -2,13 +2,13 @@
 cls
 
 .paket\paket.bootstrapper.exe
-if %errorlevel% neq 0 (
-  exit  %errorlevel%
+if errorlevel 1 (
+  exit /b %errorlevel%
 )
 
 .paket\paket.exe restore
-if %errorlevel% neq 0 (
-  exit  %errorlevel%
+if errorlevel 1 (
+  exit /b %errorlevel%
 )
 
 IF NOT EXIST build.fsx (
@@ -16,6 +16,3 @@ IF NOT EXIST build.fsx (
   packages\FAKE\tools\FAKE.exe init.fsx
 )
 packages\FAKE\tools\FAKE.exe build.fsx %*
-if %errorlevel% neq 0 (
-  exit  %errorlevel%
-)

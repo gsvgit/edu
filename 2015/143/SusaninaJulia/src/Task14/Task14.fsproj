@@ -5,13 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>8602fcf9-f305-42ab-a8b3-a5fb40139e2c</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Task2.Tests</RootNamespace>
-    <AssemblyName>Task2.Tests</AssemblyName>
+    <ProjectGuid>1e79b481-493a-450c-b7ec-b65b864324aa</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Task14</RootNamespace>
+    <AssemblyName>Task14</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task2.Tests</Name>
+    <Name>Task14</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,9 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Task2.Tests.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\Task14.XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,28 +33,58 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Task2.Tests.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Release\Task14.XML</DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Charting">
+      <HintPath>..\..\packages\FSharp.Charting.0.90.12\lib\net40\FSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\..\..\..\..\Downloads\edu\2015\143\SusaninaJulia\packages\NUnit\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task2.Tests.fs" />
-    <None Include="Script.fsx" />
+    <Compile Include="Task14.fs" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Task2\Task2.fsproj">
-      <Name>Task2</Name>
-      <Project>{5db84fa0-862f-4964-96af-06a058f14fbb}</Project>
+    <ProjectReference Include="..\Task10\Task10.fsproj">
+      <Name>Task10</Name>
+      <Project>{7d68cae9-b04e-444d-8bf9-7b787a7b9d18}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Task11\Task11.fsproj">
+      <Name>Task11</Name>
+      <Project>{7a91dad2-0bed-4630-9f13-93e293bbee73}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Task12\Task12.fsproj">
+      <Name>Task12</Name>
+      <Project>{3f9d8b64-8ff2-4906-b64c-1669ac05d861}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Task13\Task13.fsproj">
+      <Name>Task13</Name>
+      <Project>{09ff8d3a-ed5f-44e5-b054-9215d52b47d7}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Task8\Task8.fsproj">
+      <Name>Task8</Name>
+      <Project>{11a99517-89ba-4521-b9b2-90a0eed66fc4}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Task9\Task9.fsproj">
+      <Name>Task9</Name>
+      <Project>{b06d23db-f0ad-4cf5-a48c-1345645fe09b}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

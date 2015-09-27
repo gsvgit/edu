@@ -1,8 +1,8 @@
 ﻿namespace System
 open System.Reflection
 
-[<assembly: AssemblyTitleAttribute("SokolovEgorHW")>]
-[<assembly: AssemblyProductAttribute("SokolovEgorHW")>]
+[<assembly: AssemblyTitleAttribute("Task9")>]
+[<assembly: AssemblyProductAttribute("SusaninaJuliaHW")>]
 [<assembly: AssemblyDescriptionAttribute("Home work")>]
 [<assembly: AssemblyVersionAttribute("1.0")>]
 [<assembly: AssemblyFileVersionAttribute("1.0")>]

@@ -49,9 +49,9 @@
     <None Include="Script.fsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Task3\Task3\Task3.fsproj">
+    <ProjectReference Include="..\..\src\Task3\Task3.fsproj">
       <Name>Task3</Name>
-      <Project>{38a77838-42ac-4649-aa07-fd6d60aab1a6}</Project>
+      <Project>{57801d92-0867-4252-a7eb-b0e27388ff37}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

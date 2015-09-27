@@ -5,13 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>8602fcf9-f305-42ab-a8b3-a5fb40139e2c</ProjectGuid>
+    <ProjectGuid>567a56b0-58c4-44ad-8b37-a67e1c09f520</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Task2.Tests</RootNamespace>
-    <AssemblyName>Task2.Tests</AssemblyName>
+    <RootNamespace>Task9.Tests</RootNamespace>
+    <AssemblyName>Task9.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task2.Tests</Name>
+    <Name>Task9.Tests</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Task2.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Task9.Tests.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Task2.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Task9.Tests.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -38,20 +38,20 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\..\..\..\..\Downloads\edu\2015\143\SusaninaJulia\packages\NUnit\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Downloads\edu\2015\143\SusaninaJulia\packages\NUnit\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task2.Tests.fs" />
+    <Compile Include="Task9.Tests.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Task2\Task2.fsproj">
-      <Name>Task2</Name>
-      <Project>{5db84fa0-862f-4964-96af-06a058f14fbb}</Project>
+    <ProjectReference Include="..\..\src\Task9\Task9.fsproj">
+      <Name>Task9</Name>
+      <Project>{b06d23db-f0ad-4cf5-a48c-1345645fe09b}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

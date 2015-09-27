@@ -10,8 +10,8 @@ Introducing your project
 Say more
 
 *)
-#r "ArtyomovEgorHW.dll"
-open ArtyomovEgorHW
+#r "FSharp.ProjectScaffold.dll"
+open FSharp.ProjectScaffold
 
 Library.hello 0
 (**

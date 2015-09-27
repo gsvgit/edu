@@ -19,23 +19,23 @@ let gch =
      [Chart.Line( 
         [ for i in 1..40 -> 
             (i,time (fun () -> fibN1 i |> ignore)) 
-        ], Title = "Task8", Color = System.Drawing.Color.Black);
+        ],Color = System.Drawing.Color.Black);
       Chart.Line( 
         [ for i in 1..100..2000 -> 
             (i,time (fun () -> fibN2 i |> ignore)) 
-        ], Title = "Task9", Color = System.Drawing.Color.Violet);
+        ],Color = System.Drawing.Color.Violet);
       Chart.Line( 
         [ for i in 1..100..2000 -> 
             (i,time (fun () -> fibN3 i |> ignore)) 
-        ], Title = "Task10", Color = System.Drawing.Color.Coral);
+        ],Color = System.Drawing.Color.Coral);
       Chart.Line( 
         [ for i in 1..100..2000 -> 
             (i,time (fun () -> fibN4 i |> ignore)) 
-        ], Title = "Task11", Color = System.Drawing.Color.Cyan);
+        ],Color = System.Drawing.Color.Cyan);
       Chart.Line( 
         [ for i in 1..100..2000 -> 
             (i,time (fun () -> fibN5 i |> ignore)) 
-        ], Title = "Task12", Color = System.Drawing.Color.LawnGreen);]
+        ], Color = System.Drawing.Color.LawnGreen);]
 
 
 do System.Windows.Forms.Application.Run(gch.ShowChart())

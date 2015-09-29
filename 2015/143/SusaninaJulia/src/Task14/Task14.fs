@@ -1,4 +1,5 @@
-﻿module Task14
+﻿(*
+module Task14
 
 open FSharp.Charting
 
@@ -39,3 +40,4 @@ let gch =
 
 
 do System.Windows.Forms.Application.Run(gch.ShowChart())
+*)

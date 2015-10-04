@@ -15,5 +15,5 @@ let FindFib number =
         fib 1 0 number 1
 
 let main n =
-    let outArray = [|for i in 0..n -> (f i) |]
+    let outArray = [|for i in 0..n -> (FindFib i) |]
     outArray

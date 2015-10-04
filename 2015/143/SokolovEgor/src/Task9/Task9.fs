@@ -10,7 +10,7 @@ let main n =
             rezult <- first + second
             first <- second
             second <- rezult
-        if (n > 2) then rezult else first
+        if n > 2 then rezult else first
         
 
             

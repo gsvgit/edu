@@ -5,13 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>ff8f63fa-5189-46bb-a4f4-cc238f320fc7</ProjectGuid>
+    <ProjectGuid>1b0e22d0-eb5d-4291-81d9-b4e8c6c773b3</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Task10</RootNamespace>
-    <AssemblyName>Task10</AssemblyName>
+    <RootNamespace>Task12</RootNamespace>
+    <AssemblyName>Task12</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task10</Name>
+    <Name>Task12</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Task10.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Task12.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Task10.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Task12.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -42,7 +42,7 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task10.fs" />
+    <Compile Include="Task12.fs" />
     <None Include="Script.fsx" />
     <None Include="paket.references" />
   </ItemGroup>

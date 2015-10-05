@@ -1,8 +1,8 @@
 ﻿module Task16
 
-type int_List = 
+type List<'t> = 
     |Empty
-    |Cons of int*int_List
+    |Cons of 't*List<'t>
 
 let main list =
     let rec sumEl lst s =

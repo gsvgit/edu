@@ -1,5 +1,5 @@
 ﻿module Task15
 
-type int_List =
+type List<'t> =
     |Empty
-    |Cons of int*int_List
+    |Cons of 't*List<'t>

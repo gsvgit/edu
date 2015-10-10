@@ -9,24 +9,24 @@ let MatrixMult (A: int[,]) (B: int[,]) =
     let C = array2D [| [|c00; c01|] ; [|c10; c11|] |]
     C 
 
-let rec FindFib (n:int64) =
-    if n <= 1L
+let rec FindFib n =
+    if n <= 1
     then
         Matrix
     else
         let mutable m = Matrix
-        if n % 2L = 0L
+        if n % 2 = 0
         then
-            m <- FindFib (n / 2L)
+            m <- FindFib (n / 2)
             let MatrxFib = MatrixMult m m
             MatrxFib
         else
-            m <- FindFib ((n - 1L) / 2L)
+            m <- FindFib ((n - 1) / 2)
             let MatrxFib = MatrixMult Matrix (MatrixMult m m)
             MatrxFib
 
 let main n =
-    if n < 2L
+    if n < 2
     then
         n |> int
     else

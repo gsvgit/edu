@@ -4,7 +4,7 @@ open FSharp.Charting
 
 let time f =
     let start = System.DateTime.UtcNow
-    for i in 0..9 do f ()
+    for i in 0..499 do f ()
     (System.DateTime.UtcNow - start).TotalMilliseconds
 
 let gch = 

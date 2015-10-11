@@ -1,10 +1,13 @@
 ﻿module Task14
 
+open System.Drawing
+open System.Windows.Forms
 open FSharp.Charting
+
 
 let time f =
     let start = System.DateTime.UtcNow
-    for i in 0..499 do f ()
+    for i in 0..99 do f ()
     (System.DateTime.UtcNow - start).TotalMilliseconds
 
 let gch = 

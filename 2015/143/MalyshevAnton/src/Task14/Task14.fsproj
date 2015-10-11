@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Task14.fs" />
     <None Include="App.config" />
+    <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Task10\Task10.fsproj">

@@ -5,7 +5,8 @@ let rec fib fib_n1 fib_n2 n s =
     then 
         fib_n1
     else 
-        fib (fib_n1 + fib_n2) fib_n1 n (s + 1) 
+        fib (fib_n1 + fib_n2) fib_n1 n (s + 1)
+         
 let main n =
     if n < 2 
     then 

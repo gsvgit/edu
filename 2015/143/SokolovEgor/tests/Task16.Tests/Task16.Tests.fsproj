@@ -70,9 +70,14 @@
   </Target>
   -->
   <ItemGroup>
-    <ProjectReference Include="..\..\Task16\Task16.fsproj">
+    <ProjectReference Include="..\..\src\Task15\Task15.fsproj">
+      <Name>Task15</Name>
+      <Project>{90f3cfe2-c7eb-49ad-b00d-88f44b66a93e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Task16\Task16.fsproj">
       <Name>Task16</Name>
-      <Project>{2ec240bd-1a57-4704-ae3e-77f187492055}</Project>
+      <Project>{e81d4975-587d-4f09-afd4-bf1bc36bbfd7}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

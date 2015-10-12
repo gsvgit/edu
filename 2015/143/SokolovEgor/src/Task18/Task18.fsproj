@@ -5,13 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>85162d3e-793e-42ae-862d-3f122ab00f28</ProjectGuid>
+    <ProjectGuid>80a661ee-870d-4265-8260-bc94c8d64268</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Task17</RootNamespace>
-    <AssemblyName>Task17</AssemblyName>
+    <RootNamespace>Task18</RootNamespace>
+    <AssemblyName>Task18</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task17</Name>
+    <Name>Task18</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Task17.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Task18.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +30,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Task17.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Task18.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -48,7 +48,12 @@
   <ItemGroup>
     <ProjectReference Include="..\Task15\Task15.fsproj">
       <Name>Task15</Name>
-      <Project>{84839c1a-e022-40a2-a67d-23d87853a653}</Project>
+      <Project>{90f3cfe2-c7eb-49ad-b00d-88f44b66a93e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Task17\Task17.fsproj">
+      <Name>Task17</Name>
+      <Project>{d67c9d6e-0043-4549-945e-d4c775aaa692}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

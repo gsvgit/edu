@@ -2,7 +2,7 @@
 // "F# Tutorial".
 
 #load "Library1.fs"
-open Task19
+open Task15
 
 // Определите здесь код скрипта библиотеки
 

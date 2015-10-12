@@ -1,8 +1,6 @@
 ﻿module Task18
 
-type MyString =
-    |Empty
-    |Str of char*MyString
+open Task17
 
 let main string =
     let rec sum (str:string) result i =

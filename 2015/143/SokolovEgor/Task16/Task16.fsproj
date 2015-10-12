@@ -45,6 +45,13 @@
     <Compile Include="Task16.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Task15\Task15.fsproj">
+      <Name>Task15</Name>
+      <Project>{84839c1a-e022-40a2-a67d-23d87853a653}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>

@@ -1,5 +1,5 @@
 ﻿module Task17
 
-type MyString =
-    |Empty
-    |Str of char*MyString
+open Task15
+
+type MyString = List<char>

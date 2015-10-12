@@ -7,18 +7,18 @@ open NUnit.Framework
 
 [<Test>]
 let ``Usual`` () =
-  let res = main("Str")
+  let res = toMyString("Str")
   Assert.AreEqual(res, Cons('S', Cons('t', Cons('r', Empty))))
 
 [<Test>]
 let ``One`` () =
-  let res = main("S")
+  let res = toMyString("S")
   Assert.AreEqual(res, Cons('S', Empty))
 
 [<Test>]
-let ``Zero`` () =
-  let res = main("")
-  Assert.AreEqual(res, Empty)
+let ``Space`` () =
+  let res = toMyString(" ")
+  Assert.AreEqual(res, Cons(' ', Empty))
 
 
 

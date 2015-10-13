@@ -2,7 +2,9 @@
 
 
 let main n =
-    if (n <= 0) then 0 else
+    if n <= 0 
+    then 0 
+    else
         let mutable first = 1
         let mutable second = 1
         let mutable rezult = 0
@@ -10,7 +12,9 @@ let main n =
             rezult <- first + second
             first <- second
             second <- rezult
-        if n > 2 then rezult else first
+        if n > 2 
+        then rezult 
+        else first
         
 
             

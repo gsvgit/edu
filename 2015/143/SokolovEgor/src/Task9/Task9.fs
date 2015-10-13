@@ -3,7 +3,8 @@
 
 let main n =
     if n <= 0 
-    then 0 
+    then 
+        0 
     else
         let mutable first = 1
         let mutable second = 1

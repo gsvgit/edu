@@ -1,6 +1,7 @@
 ﻿module Task2
 
-let main x = x*x*x*x + x*x*x + x*x + x + 1
-let input = System.Console.ReadLine() |> int
+let main x = x * x * x * x + x * x * x + x * x + x + 1
 
-printfn "%A" (main input)
+let input = System.Console.ReadLine() |> int
+printfn 
+    "%A" (main input)

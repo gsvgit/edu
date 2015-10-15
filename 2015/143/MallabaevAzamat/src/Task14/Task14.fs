@@ -15,12 +15,12 @@ let many_time i f =
 
 [<EntryPoint>]
 let entry args =
-  let fib_graph = Chart.Line([for i in -50..50 -> (i, TaskC.main i)], Title="Fibonacci function").WithXAxis(Title="N").WithYAxis(Title="fib N")
-  let ``Task8.main N graph`` = Chart.Line ([for i in -30..30 -> (i, many_time i Task8.main)], Color = Color.Black)
-  let ``Task9.main N graph`` = Chart.Line ([for i in 0..100000..10000000 -> (i, many_time i Task9.main)], Color = Color.Gold)
-  let ``TaskA.main N graph`` = Chart.Line ([for i in 0..100000..10000000 -> (i, many_time i TaskA.main)], Color = Color.Green)
-  let ``TaskB.main N graph`` = Chart.Line ([for i in 0..100000..10000000 -> (i, many_time i TaskB.main)], Color = Color.Blue)
-  let ``TaskC.main N graph`` = Chart.Line ([for i in 0..100000..10000000 -> (i, many_time i TaskC.main)], Color = Color.Red)
+  let fib_graph = Chart.Line(seq {for i in -50..50 -> (i, TaskC.main i)}, Title="Fibonacci function").WithXAxis(Title="N").WithYAxis(Title="fib N")
+  let ``Task8.main N graph`` = Chart.Line (seq {for i in -30..30 do yield (i, many_time i Task8.main)}, Color = Color.Black)
+  let ``Task9.main N graph`` = Chart.Line (seq {for i in 0..100000..10000000 do yield (i, many_time i Task9.main)}, Color = Color.Gold)
+  let ``TaskA.main N graph`` = Chart.Line (seq {for i in 0..100000..10000000 do yield (i, many_time i TaskA.main)}, Color = Color.Green)
+  let ``TaskB.main N graph`` = Chart.Line (seq {for i in 0..100000..10000000 do yield (i, many_time i TaskB.main)}, Color = Color.Blue)
+  let ``TaskC.main N graph`` = Chart.Line (seq {for i in 0..100000..1000000 do yield (i, many_time i TaskC.main)}, Color = Color.Red)
   let tasks_stat = (Chart.Combine([
      ``Task8.main N graph``;
      ``Task9.main N graph``;

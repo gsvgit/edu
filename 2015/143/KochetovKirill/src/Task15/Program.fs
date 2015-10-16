@@ -7,6 +7,13 @@ type MyList<'Typex> =
     member this.add(el : 'Typex) = 
         Cons(el, this)
 
+    member this.addListToTheEnd(List : MyList<'Typex>) =
+        let rec adder this =
+            match this with
+            | Empty -> List
+            | Cons(vl, tl) -> Cons(vl, adder tl)
+        adder this
+
     member this.out() = 
         let rec outer lst = 
             match lst with
@@ -37,3 +44,14 @@ type MyList<'Typex> =
             | Empty -> s
             | Cons(vl, tl) -> lng tl (s + 1)
         lng this 0
+    
+    member this.filter(is) =
+        let rec flt lst =
+            match lst with
+            | Empty ->
+                lst
+            | Cons(vl, tl) ->
+                if is(vl)
+                then Cons(vl, flt tl)
+                else flt tl
+        flt this

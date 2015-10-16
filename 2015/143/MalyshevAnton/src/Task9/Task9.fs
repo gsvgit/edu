@@ -5,11 +5,11 @@ let main n =
     then 
         n
     else 
-        let mutable fib_n = 0  // fib_n = fib(n)
-        let mutable fib_n1 = 1 // fib_n1 = fib(n-1)
-        let mutable fib_n2 = 0 // fib_n2 = fib(n-2)
+        let mutable fibN = 0  // fibN = fib(n)
+        let mutable fibN1 = 1 // fibN1 = fib(n-1)
+        let mutable fibN2 = 0 // fibN2 = fib(n-2)
         for i in 2..n do
-            fib_n <- fib_n1 + fib_n2
-            fib_n2 <- fib_n1
-            fib_n1 <- fib_n
-        fib_n
+            fibN <- fibN1 + fibN2
+            fibN2 <- fibN1
+            fibN1 <- fibN
+        fibN

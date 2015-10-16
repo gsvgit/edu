@@ -1,5 +1,6 @@
 ﻿module Task18.Tests
 
+open Task17
 open Task18
 open NUnit.Framework
 

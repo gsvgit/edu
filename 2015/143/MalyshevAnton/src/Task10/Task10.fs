@@ -1,11 +1,11 @@
 ﻿module Task10
 
-let rec fib fib_n1 fib_n2 n s = 
+let rec fib fibN1 fibN2 n s = 
     if s = n
     then 
-        fib_n1
+        fibN1
     else 
-        fib (fib_n1 + fib_n2) fib_n1 n (s + 1)
+        fib (fibN1 + fibN2) fibN1 n (s + 1)
          
 let main n =
     if n < 2 

@@ -21,7 +21,7 @@ let gch =
       Chart.Line( [ for i in 1000..100..16000 -> (i,time (fun () -> Task11.main i |> ignore) ) ], Color = System.Drawing.Color.Black)
       Chart.Line( [ for i in 1000..100..30000 -> (i,time (fun () -> Task12.main i |> ignore) ) ], Color = System.Drawing.Color.Gray)
       Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task13.main i |> ignore) ) ], Color = System.Drawing.Color.Yellow)
-        ]
+     ]
 
 
 do System.Windows.Forms.Application.Run(gch.ShowChart())

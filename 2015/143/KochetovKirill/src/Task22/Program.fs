@@ -6,7 +6,9 @@ let main inList : MyList<int> =
         match list with
         | Empty -> list
         | Cons(head, tail) ->
-            (quickSort (tail.filter(fun x -> x < head))).addListToTheEnd(Cons(head, quickSort (tail.filter(fun x -> x = head)))).addListToTheEnd(quickSort (tail.filter(fun x -> x > head)))
+            (quickSort (tail.filter(fun x -> x < head))
+            ).addListToTheEnd(Cons(head, quickSort (tail.filter(fun x -> x = head)))
+            ).addListToTheEnd(quickSort (tail.filter(fun x -> x > head)))
     quickSort inList
 
 [<EntryPoint>]

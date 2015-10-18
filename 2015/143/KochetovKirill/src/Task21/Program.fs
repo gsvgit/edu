@@ -24,6 +24,6 @@ let main inList : MyList<int> =
 
 [<EntryPoint>]
 let inter argv = 
-    printfn "%A" <| main (Empty.add(1).add(2).add(3).add(4))
+    printfn "%A" <| main (Empty.add(1).add(1).add(3).add(1))
     let rk = System.Console.ReadKey(true)
     0

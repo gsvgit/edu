@@ -1,5 +1,7 @@
 source https://nuget.org/api/v2
 
+nuget FSharp.Charting
+nuget FSharp.Charting.Gtk
 nuget FSharp.Formatting
 nuget NUnit 
 nuget NUnit.Runners

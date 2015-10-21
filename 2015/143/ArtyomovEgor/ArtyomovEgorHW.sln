@@ -91,6 +91,11 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task16", "src\Task16\Task16
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task16.Tests", "tests\Task16.Tests\Task16.Tests.fsproj", "{3DF2E646-17BB-4A6F-BE2C-8EF168AFF89B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4A79CDBA-DC8D-476C-8DBD-D2651A07DBB9}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

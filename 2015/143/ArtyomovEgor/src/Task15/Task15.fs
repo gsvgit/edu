@@ -1,5 +1,5 @@
 ﻿module Task15
 
-type List<'t> =
+type MyList<'t> =
     | Empty
-    | Cons of 't * List<'t>
+    | Cons of 't * MyList<'t>

@@ -3,4 +3,4 @@
 open Task15
 
 type MyString =
-    List of char
+    MyList<char>

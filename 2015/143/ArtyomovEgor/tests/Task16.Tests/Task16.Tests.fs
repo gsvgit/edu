@@ -12,7 +12,7 @@ let ``len (Cons(1,Cons(2, Empty))) return 2`` () =
 
 [<Test>]
 let ``len List.Empty return 0`` () =
-  let lst = List.Empty
+  let lst = MyList.Empty
   let res = main lst
   Assert.AreEqual(0, res)
 

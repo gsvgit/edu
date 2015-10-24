@@ -3,7 +3,7 @@
 open Task15
 
 type Tree = 
-    | Node of int * List<Tree>
+    | Node of int * MyList<Tree>
     | Leaf of int
 
 let main treeB =

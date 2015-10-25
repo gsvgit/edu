@@ -1,7 +1,7 @@
-﻿module Task21.Tests
+﻿module Task22.Tests
 
 open Task15
-open Task21
+open Task22
 open NUnit.Framework
 
 [<Test>]

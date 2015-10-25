@@ -2,7 +2,7 @@
 
 open Task15
 
-let bubblesort (inList:MyList<int>) =
+let sort (inList:MyList<int>) =
     let rec listMove lst =
         match lst with
         | Empty -> lst
@@ -12,11 +12,11 @@ let bubblesort (inList:MyList<int>) =
             then Cons (tl.getHead(), listMove (Cons (hd, tl.getTail())))
             else Cons (hd, listMove tl)
 
-    let rec sort lst i =
+    let rec bubblesort lst i =
         if i < inList.length()
         then
-            sort (listMove lst) (i + 1)
+            bubblesort (listMove lst) (i + 1)
         else
             lst
 
-    sort inList 0
+    bubblesort inList 0

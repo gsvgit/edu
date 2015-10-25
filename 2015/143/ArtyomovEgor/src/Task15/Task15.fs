@@ -1,5 +1,7 @@
 ﻿module Task15
 
+open System
+
 type MyList<'t> =
     | Empty
     | Cons of 't * MyList<'t>
@@ -13,9 +15,29 @@ type MyList<'t> =
 
     member myLst.getHead() = 
         match myLst with
-        | Cons(vl, lst) -> vl
+        | Cons(hd, tl) -> hd
 
     member myLst.getTail() =
         match myLst with
-        | Cons(vl, lst) -> lst
+        | Cons(hd, tl) -> tl
         | Empty -> Empty
+
+    member myLst.filter(check) =
+        let rec fltr lst =
+            match lst with
+            | Empty -> lst
+            | Cons (hd, tl) ->
+                if check (hd) then Cons (hd, fltr tl) else fltr tl
+
+        fltr myLst
+
+    member myLst.addEnd(appendix) =
+        let rec add myLst = 
+            match myLst with
+            | Cons (hd, tl) -> Cons (hd, add tl)
+            | Empty -> appendix
+        
+        add myLst
+
+    member myLst.add(el) =
+        Cons (el, myLst)

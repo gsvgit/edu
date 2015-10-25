@@ -2,9 +2,9 @@
 
 let x = System.Console.ReadLine() |> int
 
-let sqr x = x * x
-
-let main x = (sqr x + x) * (sqr x + 1) + 1
+let main x =     
+    let sqr = x * x
+    (sqr + x) * (sqr + 1) + 1
 
 [<EntryPoint>]
 let entry args =

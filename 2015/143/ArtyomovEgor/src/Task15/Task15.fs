@@ -8,7 +8,7 @@ type MyList<'t> =
         let rec lng l lst =
             match lst with
             | Empty -> l
-            | Cons (hd, tl) -> lng (l+1) tl
+            | Cons (hd, tl) -> lng (l + 1) tl
         lng 0 myLst
 
     member myLst.getHead() = 

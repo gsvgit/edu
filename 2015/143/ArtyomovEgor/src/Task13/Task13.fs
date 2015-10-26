@@ -9,7 +9,7 @@ let fillArray (inp:int) =
         arr.[0] <- 1
         arr.[1] <- 1
         for i = 2 to inp - 1  do
-            arr.[i] <- arr.[i-1] + arr.[i-2]
+            arr.[i] <- arr.[i - 1] + arr.[i - 2]
         arr
     else
         [| 1 |]

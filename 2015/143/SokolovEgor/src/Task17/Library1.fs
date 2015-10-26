@@ -2,4 +2,4 @@
 
 open Task15
 
-type MyString = List<char>
+type MyString = MyList<char>

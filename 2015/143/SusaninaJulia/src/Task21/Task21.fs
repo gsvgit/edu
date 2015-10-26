@@ -18,7 +18,7 @@ let sift (lst : MyList<int>) =
     lst1  
 
 let main lst =          
-    let rec bubbleSort (lst: MyList<'t>) n =
+    let rec bubbleSort (lst: MyList<int>) n =
         if n < lst.getLength()
         then bubbleSort (sift lst) (n + 1)
         else lst

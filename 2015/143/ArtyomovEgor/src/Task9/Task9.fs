@@ -1,5 +1,7 @@
 ﻿module Task9
 
+let input = System.Console.ReadLine() |> int
+
 let fibN n =
     let mutable a = 1
     let mutable b = 1
@@ -7,4 +9,5 @@ let fibN n =
         a <- a + b
         b <- a - b
     b
-                            
+                 
+printfn "%d" (fibN input)         

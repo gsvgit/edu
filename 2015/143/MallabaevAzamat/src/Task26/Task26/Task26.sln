@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{471EC4BB-E47E-4229-A789-D1F5F83B52D4}") = "Task26", "Task26.fstarproj", "{E61CF521-59AD-40B0-AA0E-FAEC26C08D4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E61CF521-59AD-40B0-AA0E-FAEC26C08D4D}.Debug|x86.ActiveCfg = Debug|x86
+		{E61CF521-59AD-40B0-AA0E-FAEC26C08D4D}.Debug|x86.Build.0 = Debug|x86
+		{E61CF521-59AD-40B0-AA0E-FAEC26C08D4D}.Release|x86.ActiveCfg = Release|x86
+		{E61CF521-59AD-40B0-AA0E-FAEC26C08D4D}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

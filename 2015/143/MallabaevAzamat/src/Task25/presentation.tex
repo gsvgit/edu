@@ -1,0 +1,138 @@
+\documentclass{beamer}
+\usepackage{beamerthemesplit}
+\usepackage{wrapfig}
+\usetheme{SPbGU}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{cmap} 
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usetikzlibrary{shapes,arrows}
+\usepackage{fancyvrb}
+\newtheorem{rutheorem}{Теорема}
+\newtheorem{ruproof}{Доказательство}
+\newtheorem{rudefinition}{Определение}
+\newtheorem{rulemma}{Лемма}
+\beamertemplatenavigationsymbolsempty
+
+\title[]{Сортировка списков алгоритмом Хоара}
+%\subtitle[]{}
+% То, что в квадратных скобках, отображается в левом нижнем углу. 
+\institute[СПбГУ]{
+Санкт-Петербургский государственный университет \\
+Кафедра системного программирования }
+
+% То, что в квадратных скобках, отображается в левом нижнем углу.
+\author[Маллабаев Азамат]{Маллабаев Азамат Нурмухамадович, 143 группа \\
+  % У научного руководителя должна быть указана научная степень
+  \and  
+    {\bfseries Научный руководитель:} ст.пр. С.В. Григорьев \\ 
+  % Для курсовой не обязателен. Должна быть указана должность или ученая степень
+  %\and
+  %  {\bfseries Рецензент:} программист ООО ``Рога и копыта'' И.И. Иванов
+  }
+
+\date{ноябрь 2015г.}
+
+\definecolor{orange}{RGB}{179,36,31}
+
+\begin{document}
+{
+% Лого университета или организации, отображается в шапке титульного листа
+\begin{frame}
+  \begin{center}
+  {\includegraphics[width=1cm]{pictures/SPbGU_Logo.png}}
+  \end{center}
+  \titlepage
+\end{frame}
+}
+
+\begin{frame}[fragile]
+  \transwipe[direction=90]
+  \frametitle{Введение}
+  \begin{itemize}
+    \item Алгоритмы сортировки
+    \item Конструируемые структуры данных
+  \end{itemize}
+\end{frame}
+            
+\begin{frame}
+  \transwipe[direction=90]
+  \frametitle{Аналоги и инструменты}
+  \begin{itemize}
+    \item Похожие алгоритмы
+    \begin{itemize}
+      \item Алгоритм Хоара - наиболее эффективен для массивов
+      \item Алгоритм сортировки слиянием - рекурсивен
+      \item Алгоритм плавной сортировки и сортировки кучей - требует создания сортирующего дерева
+    \end{itemize}
+    \item Инструмент реализации          
+    \begin{itemize}                                              
+      \item F* - для реализации алгоритма и проверки его корректности         
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+% Обязательный слайд: четкая формулировка цели данной работы и постановка задачи
+% Описание выносимых на защиту результатов, процесса или особенностей их достижения и т.д.
+\begin{frame}
+  \transwipe[direction=90]
+  \frametitle{Постановка задачи}
+  \textbf{Целью} работы является разработка алгоритма Хоара, применимого для списков
+
+  \textbf{Задачи:}
+  \begin{itemize}
+    \item Разработать алгоритм, реализующий сортировку Хоара для списков
+    \item Проверить корректность и реализовать предложенный алгоритм
+    \item Провести проверку
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \transwipe[direction=90]
+  \frametitle{Проверка и реализация алгоритма}
+  \begin{itemize}
+    \item Проверка выходных данных с помощью зависимых типов
+    \item Реализованы следующие составляющие алгоритм функции:
+    \begin{itemize}
+      \item Конструкторы типа, реализующего список
+      \item Выбор элементов списка по шаблону
+      \item Выбор опорного элемента
+      \item Слияние списков
+    \end{itemize} 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \transwipe[direction=90]
+  \frametitle{Проверка реализации}
+  \begin{itemize}
+    \item Тестирование проводили на следующих списках:
+    \begin{itemize}
+      \item Из одинаковых и из полностью отсортированных элементов - стабильности
+      \item Из отсортированных в обратном порядке - работа
+      \item Из частично отсорированных данных - сложная работа
+      \item Из случайных данных - проблемные данные
+    \end{itemize}             
+  \end{itemize}
+\end{frame}
+                                                           
+\begin{frame}
+  \transwipe[direction=90]
+  \frametitle{Результаты}
+  \begin{itemize}
+    \item Разработан алгоритм, реализующий сортировку Хоара для списков
+    \item Проверена корректность и реализован предложенный алгоритм
+    \item Проведена проверка
+  \end{itemize}
+\end{frame}
+
+\end{document}

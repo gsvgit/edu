@@ -1,0 +1,6 @@
+\transwipe[direction=90]
+  \frametitle{Введение}
+  \begin{itemize}
+    \item Алгоритмы сортировки
+    \item Конструируемые структуры данных
+  \end{itemize}

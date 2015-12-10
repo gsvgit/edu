@@ -22,6 +22,6 @@ let rec result array n =
             func array (func rc rc)
  
 let main n = 
-    let mt = [|[|1; 1|]; [|1; 0|]|] 
+    let mt = [|[|1; 1|]; [|1; 0|]|]
     let res = result mt n
     res.[0].[1]

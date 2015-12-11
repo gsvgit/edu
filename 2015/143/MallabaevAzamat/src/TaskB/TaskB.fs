@@ -1,4 +1,4 @@
-﻿module TaskB
+module TaskB
 
 type num = int
 type 'a simmat = 'a array

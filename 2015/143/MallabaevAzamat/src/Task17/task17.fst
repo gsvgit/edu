@@ -1,7 +1,5 @@
 module Task17
 
-type MyList 'a =
-    | Empty: MyList 'a
-    | Smth: 'a -> MyList 'a -> MyList 'a
+open Task15
 
 type MyString = MyList char

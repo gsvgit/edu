@@ -1,2 +1,2 @@
 fstar --codegen FSharp task15.fst
-fsc --target:library task15.fs
+fsc --nowarn:62 --nowarn:25 --target:library task15.fs

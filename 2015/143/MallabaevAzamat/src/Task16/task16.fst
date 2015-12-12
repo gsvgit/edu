@@ -1,9 +1,7 @@
 module Task16
 
-type MyList 'a =
-    | Empty: MyList 'a
-    | Smth: 'a -> MyList 'a -> MyList 'a
-            
+open Task15
+        
 type nat0 = x:int{x>=0}
 
 val main: MyList 'a -> Tot nat0

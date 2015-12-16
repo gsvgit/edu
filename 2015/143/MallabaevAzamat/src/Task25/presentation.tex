@@ -4,8 +4,8 @@
 \usetheme{SPbGU}
 \usepackage{pdfpages}
 \usepackage{amsmath}
-\usepackage{cmap} 
-\usepackage[T2A]{fontenc} 
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 \usepackage{indentfirst}
@@ -25,22 +25,21 @@
 
 \title[]{Сортировка списков алгоритмом Хоара}
 %\subtitle[]{}
-% То, что в квадратных скобках, отображается в левом нижнем углу. 
+% То, что в квадратных скобках, отображается в левом нижнем углу.
 \institute[СПбГУ]{
-Санкт-Петербургский государственный университет \\
-Кафедра системного программирования }
+Санкт-Петербургский государственный университет }
 
 % То, что в квадратных скобках, отображается в левом нижнем углу.
 \author[Маллабаев Азамат]{Маллабаев Азамат Нурмухамадович, 143 группа \\
   % У научного руководителя должна быть указана научная степень
-  \and  
-    {\bfseries Научный руководитель:} ст.пр. С.В. Григорьев \\ 
+  \and
+    {\bfseries Научный руководитель:} ст.пр. С.В. Григорьев \\
   % Для курсовой не обязателен. Должна быть указана должность или ученая степень
   %\and
   %  {\bfseries Рецензент:} программист ООО ``Рога и копыта'' И.И. Иванов
   }
 
-\date{ноябрь 2015г.}
+\date{2015}
 
 \definecolor{orange}{RGB}{179,36,31}
 
@@ -58,26 +57,39 @@
 \begin{frame}[fragile]
   \transwipe[direction=90]
   \frametitle{Введение}
-  \begin{itemize}
-    \item Алгоритмы сортировки
-    \item Конструируемые структуры данных
-  \end{itemize}
+  \text{Разработан Чарльзом Хоаром во время работы в МГУ в 1960 году}
+  \text{Эффективность порядка от O$(n log n)$ до O$(n^2)$}
 \end{frame}
-            
+
+\begin{frame}
+  \transwipe[direction=90]
+  \frametitle{Алгоритм сортировки Хоара}
+  \begin{enumerate}
+    \item Взять опорный элемент (берем первый элемент списка)
+    \item Разбить список на 3 части, где элементы
+    \begin{enumerate}
+      \item Меньше опорного
+      \item Равны опорному
+      \item Больше опорного
+    \end{enumerate}
+    \item Отсортировать отдельно 1ую и 3юю часть
+    \item Объединить все 3 части
+  \end{enumerate}
+\end{frame}
+
 \begin{frame}
   \transwipe[direction=90]
   \frametitle{Аналоги и инструменты}
+  \text{Алгоритмы сортировки}
   \begin{itemize}
-    \item Похожие алгоритмы
-    \begin{itemize}
-      \item Алгоритм Хоара - наиболее эффективен для массивов
-      \item Алгоритм сортировки слиянием - рекурсивен
-      \item Алгоритм плавной сортировки и сортировки кучей - требует создания сортирующего дерева
-    \end{itemize}
-    \item Инструмент реализации          
-    \begin{itemize}                                              
-      \item F* - для реализации алгоритма и проверки его корректности         
-    \end{itemize}
+    \item Сортировка пузырьком
+    \item Шейкерная сортировка
+    \item Сортировка слиянием
+    \item Сортировка кучей и плавная сортировка
+  \end{itemize}
+  \text{Инструмент реализации}
+  \begin{itemize}
+    \item F* - для реализации алгоритма и доказательства его корректности
   \end{itemize}
 \end{frame}
 
@@ -86,52 +98,63 @@
 \begin{frame}
   \transwipe[direction=90]
   \frametitle{Постановка задачи}
-  \textbf{Целью} работы является разработка алгоритма Хоара, применимого для списков
+  \textbf{Целью} работы является доказательство сортировки Хоара для списков
 
-  \textbf{Задачи:}
-  \begin{itemize}
-    \item Разработать алгоритм, реализующий сортировку Хоара для списков
-    \item Проверить корректность и реализовать предложенный алгоритм
-    \item Провести проверку
-  \end{itemize}
+  \textbf{Задачи}
+  \begin{enumerate}
+    \item Реализовать алгоритм для сортировки списка чисел
+    \item Провести доказательство корректности алгоритма
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
   \transwipe[direction=90]
-  \frametitle{Проверка и реализация алгоритма}
-  \begin{itemize}
-    \item Проверка выходных данных с помощью зависимых типов
-    \item Реализованы следующие составляющие алгоритм функции:
-    \begin{itemize}
-      \item Конструкторы типа, реализующего список
-      \item Выбор элементов списка по шаблону
-      \item Выбор опорного элемента
-      \item Слияние списков
-    \end{itemize} 
-  \end{itemize}
+  \frametitle{Реализация алгоритма}
+  \begin{rudefinition}
+    module HoarSort\linebreak
+    type List 'a =\linebreak
+     - | Empty\linebreak
+     - | Smth: hd:'a -> tl:List 'a -> List 'a\linebreak
+    val part: int -> List int -> Tot (List int * List int * List int)\linebreak
+    val merge: List int * List int * List int -> Tot (List int)\linebreak
+    val qsort: List int -> Tot (List int)\linebreak
+    let rec qsort lst =\linebreak
+     - match lst with\linebreak
+     - | Empty -> Empty\linebreak
+     - | Smth h t ->\linebreak
+     -  - let al, bl, sl = part h lst\linebreak
+     -  - merge (qsort al) bl (qsort sl)\linebreak
+  \end{rudefinition}
 \end{frame}
 
 \begin{frame}
   \transwipe[direction=90]
-  \frametitle{Проверка реализации}
-  \begin{itemize}
-    \item Тестирование проводили на следующих списках:
-    \begin{itemize}
-      \item Из одинаковых и из полностью отсортированных элементов - стабильности
-      \item Из отсортированных в обратном порядке - работа
-      \item Из частично отсорированных данных - сложная работа
-      \item Из случайных данных - проблемные данные
-    \end{itemize}             
-  \end{itemize}
+  \frametitle{Доказательство корректности алгоритма}
+  \begin{ruproof}
+    module Proof\linebreak
+    open HoarSort\linebreak
+    val sorted: MyList int -> Tot bool\linebreak
+    let sorted lst =\linebreak
+     - match lst with\linebreak
+     - | Empty -> true\linebreak
+     - | Smth a Empty -> true\linebreak
+     - | Smth a (Smth b t) ->\linebreak
+     -  - if a > b\linebreak
+     -  - then false\linebreak
+     -  - else sorted (Smth b t)\linebreak
+    val sortedHoarSortResult: MyList 'a -> Tot unit\linebreak
+    let sortedHoarSortResult lst =\linebreak
+     - assert(sorted (qsort lst)) \linebreak
+  \end{ruproof}
 \end{frame}
-                                                           
+
 \begin{frame}
   \transwipe[direction=90]
   \frametitle{Результаты}
+  \text{Выполнены задачи}
   \begin{itemize}
-    \item Разработан алгоритм, реализующий сортировку Хоара для списков
-    \item Проверена корректность и реализован предложенный алгоритм
-    \item Проведена проверка
+    \item Реализована сортировка Хоара для списков с проверкой входных данных
+    \item Доказана корректность алгоритма
   \end{itemize}
 \end{frame}
 

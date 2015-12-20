@@ -11,6 +11,12 @@ let ``sort 1,2,3,4,5,6,7,8,9,10 return the same`` () =
   Assert.AreEqual(inList, res)
 
 [<Test>]
+let ``sort 1,1,1,1,2 return the same`` () =
+  let inList = (Cons(1,Cons(1, Cons(1, Cons(1, Cons(2, Empty))))))
+  let res = sort inList
+  Assert.AreEqual(inList, res)
+
+[<Test>]
 let ``sort 10,9,8,7,6,5,4,3,2,1 return 1,2,3,4,5,6,7,8,9,10`` () =
   let inList = (Cons(10, Cons(9, Cons(8, Cons(7, Cons(6, Cons(5, Cons(4, Cons(3, Cons(2, Cons(1, Empty)))))))))))
   let res = sort inList

@@ -1,7 +1,7 @@
 ﻿namespace System
 open System.Reflection
 
-[<assembly: AssemblyTitleAttribute("FSharp.ProjectTemplate")>]
+[<assembly: AssemblyTitleAttribute("Task28")>]
 [<assembly: AssemblyProductAttribute("ArtyomovEgorHW")>]
 [<assembly: AssemblyDescriptionAttribute("Home work")>]
 [<assembly: AssemblyVersionAttribute("1.0")>]

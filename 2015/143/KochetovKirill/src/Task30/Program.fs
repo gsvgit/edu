@@ -4,15 +4,29 @@ open Task15
 type Num =
     int * Task15.MyList<int>
 
-let rec compare (a : Task15.MyList<int>) (b : Task15.MyList<int>) (is : bool) =
-    if a.length > b.length
+let compare (a : Task15.MyList<int>) (b : Task15.MyList<int>) =
+    if a.length() > b.length()
     then
-        true
+        1
     else
-        if a.length = b.length
-            
+        if a.length() = b.length()
+        then
+            let rec cmpr (a : Task15.MyList<int>) (b : Task15.MyList<int>) (how) =
+                match a, b with
+                | Empty, Empty -> how
+                | Cons(a, atl), Cons(b, btl) ->
+                    if a = b
+                    then
+                        cmpr atl btl how
+                    else
+                        if a > b
+                        then
+                            cmpr atl btl 1
+                        else
+                            cmpr atl btl -1
+            cmpr a b 0
         else
-            false
+            -1
 
 let rec summer (a : Task15.MyList<int>) (b : Task15.MyList<int>) (ost : int) =
     match a with
@@ -79,13 +93,27 @@ let sum (a : Num) (b : Num) =
             then
                 if sa < 0 
                 then
-                    
-                else
-                    if ra.length > rb.length
+                    let cm = compare ra rb
+                    if cm = 0
                     then
-                       (-1, minuser ra rb false) 
-                    else                        
-                        if(ra.last >)
+                        (1,Cons(0, Empty))
+                    else
+                        if cm = 1
+                        then
+                            (-1, minuser ra rb false)
+                        else
+                            (1, minuser rb ra false)
+                else
+                    let cm = compare ra rb
+                    if cm = 0
+                    then
+                        (1,Cons(0, Empty))
+                    else
+                        if cm = 1
+                        then
+                            (1, minuser ra rb false)
+                        else
+                            (-1, minuser rb ra false)
             else
                 if sa < 0 
                 then

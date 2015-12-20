@@ -127,6 +127,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task30", "src\Task30\Task30
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task31", "src\Task31\Task31.fsproj", "{FC98906E-1FFE-46FE-BB93-A2D004FDFA25}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task26.Tests", "tests\Task26.Tests\Task26.Tests.fsproj", "{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -617,6 +619,16 @@ Global
 		{FC98906E-1FFE-46FE-BB93-A2D004FDFA25}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FC98906E-1FFE-46FE-BB93-A2D004FDFA25}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FC98906E-1FFE-46FE-BB93-A2D004FDFA25}.Release|Win32.ActiveCfg = Release|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -643,5 +655,6 @@ Global
 		{792FF4AE-59E5-4133-A126-1E2B78EA191E} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 		{3AB8A185-A4C7-416C-BB7C-0D0755C3971E} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 		{3673AF6B-A3BB-47F0-8782-6F080C553E7A} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
+		{0940CABD-B7DE-4558-86E8-BB75A5BAB1A6} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 	EndGlobalSection
 EndGlobal

@@ -52,6 +52,7 @@ let rec cut (a : Tape) (len : int) =
 //а эта херня короч применяет одно правило (first, second) на ленту tape (ну короч везде где можно заменяет first на second)
 let rec rulecheck ( (first : Tape), (second : Tape) ) (tape : Tape) =
     match tape with
+    | Empty -> Empty
     | Cons(ch, tail) ->
         if checker first tape
         then
@@ -77,6 +78,8 @@ let rec reader (grammar : Grammar) =
 //match reader Empty with
 //    | (grammar, tape) ->
 //        printfn "%A" <| (interpretator grammar tape)
+
+let main (string : string) =
 
 
 [<EntryPoint>]

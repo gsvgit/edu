@@ -2,7 +2,7 @@
 
 open Task15
 
-let sort inLst:MyList<int> =
+let main inLst:MyList<int> =
     let rec quicksort lst:MyList<int> =
         match lst with
         | Empty -> lst

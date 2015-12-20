@@ -3,7 +3,7 @@
 open Task15
 open Task17
 
-let toMyString (string:string) =
+let main (string:string) =
     let rec toMyStr (str:string) (myStr:MyString) i =
         if i < 0
         then 

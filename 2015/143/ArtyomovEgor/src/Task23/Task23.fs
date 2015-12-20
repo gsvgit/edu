@@ -17,8 +17,7 @@ let pivotDance(arr : 'a [], left, right, pivotNumber) =
     swap tempNumber right arr
     tempNumber
 
-let qsort (arr : 'a []) =
-    let arr : 'a [] = [||]
+let main (arr : 'a []) =
     let rec sort (arr, left, right) =
         if left < right then
             let pivotNumber = (left + right) / 2

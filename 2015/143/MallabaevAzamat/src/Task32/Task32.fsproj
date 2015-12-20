@@ -45,8 +45,6 @@
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task30.fs" />
-    <Compile Include="Task31.fs" />
     <Compile Include="Task32.fs" />
     <Compile Include="fspart.fs" />
   </ItemGroup>
@@ -58,6 +56,14 @@
     <ProjectReference Include="..\common\common.fsproj">
       <Project>{D753AFFD-9FBB-4B66-8156-C2B666795F26}</Project>
       <Name>common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Task31\Task31.fsproj">
+      <Project>{5005260D-37EE-4B47-A736-F3CE58814352}</Project>
+      <Name>Task31</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Task30\Task30.fsproj">
+      <Project>{E6BEEA5D-D7C1-40C6-AAC6-1B17019E789A}</Project>
+      <Name>Task30</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

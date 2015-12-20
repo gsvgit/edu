@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{afef7cbc-1ab3-4e05-b644-d91b05a44561}</ProjectGuid>
+    <ProjectGuid>{AFEF7CBC-1AB3-4E05-B644-D91B05A44561}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Task14</RootNamespace>
     <AssemblyName>Task14</AssemblyName>
@@ -17,7 +16,6 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <Tailcalls>false</Tailcalls>
     <OutputPath>bin\Debug\</OutputPath>
@@ -33,18 +31,19 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <DocumentationFile>bin\Release\Task14.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Task14.fs" />
@@ -53,33 +52,27 @@
   <ItemGroup>
     <ProjectReference Include="..\Task8\Task8.fsproj">
       <Name>Task8</Name>
-      <Project>{93b80711-2e2e-4171-b73c-a19fce0e1456}</Project>
-      <Private>True</Private>
+      <Project>{93B80711-2E2E-4171-B73C-A19FCE0E1456}</Project>
     </ProjectReference>
     <ProjectReference Include="..\Task9\Task9.fsproj">
       <Name>Task9</Name>
-      <Project>{2c5d96e1-44b4-4263-bf8b-3caee22dfe3a}</Project>
-      <Private>True</Private>
+      <Project>{2C5D96E1-44B4-4263-BF8B-3CAEE22DFE3A}</Project>
     </ProjectReference>
     <ProjectReference Include="..\TaskA\TaskA.fsproj">
       <Name>TaskA</Name>
-      <Project>{7fb7c9e2-f530-4803-b260-06b158046549}</Project>
-      <Private>True</Private>
+      <Project>{7FB7C9E2-F530-4803-B260-06B158046549}</Project>
     </ProjectReference>
     <ProjectReference Include="..\TaskB\TaskB.fsproj">
       <Name>TaskB</Name>
-      <Project>{1777bb8a-0fca-4706-867f-b077e98f5c1b}</Project>
-      <Private>True</Private>
+      <Project>{1777BB8A-0FCA-4706-867F-B077E98F5C1B}</Project>
     </ProjectReference>
     <ProjectReference Include="..\TaskC\TaskC.fsproj">
       <Name>TaskC</Name>
-      <Project>{c2696d20-2aa1-4de5-a0ef-eae78ee42872}</Project>
-      <Private>True</Private>
+      <Project>{C2696D20-2AA1-4DE5-A0EF-EAE78EE42872}</Project>
     </ProjectReference>
     <ProjectReference Include="..\TaskD\TaskD.fsproj">
       <Name>TaskD</Name>
-      <Project>{ef8d723c-3ce8-4544-af0f-51772712812a}</Project>
-      <Private>True</Private>
+      <Project>{EF8D723C-3CE8-4544-AF0F-51772712812A}</Project>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

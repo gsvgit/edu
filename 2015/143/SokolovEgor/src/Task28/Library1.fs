@@ -45,7 +45,7 @@ let result n =
         pres n
 
 let main n = 
-    if n = -2147483648 
+    if n = -2147483648
     then 
         let g = [|for i in 0..30 -> 0|]
         let f = Array.append [|1|] g

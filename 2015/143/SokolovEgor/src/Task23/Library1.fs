@@ -19,7 +19,8 @@ let partition (a:array<int>) l r piv =
 
 let quickSort (a:array<int>) =
     let rec loop (a:array<int>) l r =
-        if l < r then
+        if l < r 
+        then
             let piv = (l + r) / 2
             let pivotN = partition a l r piv
             loop a l (pivotN - 1)
@@ -28,4 +29,4 @@ let quickSort (a:array<int>) =
     a
 
 let main a =
-    quickSort a   
+    quickSort a

@@ -21,12 +21,13 @@ let entry args =
   let ``TaskA.main N graph`` = Chart.Line (seq {for i in 0..100000..10000000 do yield (i, many_time i TaskA.main)}, Color = Color.Green)
   let ``TaskB.main N graph`` = Chart.Line (seq {for i in 0..100000..10000000 do yield (i, many_time i TaskB.main)}, Color = Color.Blue)
   let ``TaskC.main N graph`` = Chart.Line (seq {for i in 0..100000..1000000 do yield (i, many_time i TaskC.main)}, Color = Color.Red)
-  let tasks_stat = (Chart.Combine([
-     ``Task8.main N graph``;
-     ``Task9.main N graph``;
-     ``TaskA.main N graph``; 
-     ``TaskB.main N graph``; 
-     ``TaskC.main N graph``]).WithTitle "Tasks time\n8 - Black, 9 - Gold, 10 - Green, 11 - Blue, 12 - Red").WithXAxis(Title="N").WithYAxis(Title="milliseconds")
+  let tasks_stat = (
+      Chart.Combine(
+          [``Task8.main N graph``;
+           ``Task9.main N graph``;
+           ``TaskA.main N graph``; 
+           ``TaskB.main N graph``; 
+           ``TaskC.main N graph``]).WithTitle "Tasks time\n8 - Black, 9 - Gold, 10 - Green, 11 - Blue, 12 - Red").WithXAxis(Title="N").WithYAxis(Title="milliseconds")
   let table = Chart.Rows [fib_graph; tasks_stat]
   let window = table.ShowChart()
 

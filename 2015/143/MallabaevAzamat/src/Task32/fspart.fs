@@ -20,25 +20,27 @@ let rec fib1 n =
 
 let fib2 n =
   match n with
-  | Pos Empty | Neg Empty -> 0
+  | Pos Empty | Neg Empty -> toNum 0
   | _ ->
-    let mutable fibN2 = 0
-    let mutable fibN1 = 1
+    let mutable fibN2 = toNum 0
+    let mutable fibN1 = toNum 1
 
     match n with
     | Pos _ ->
       let mutable i = dec (dec (dec n))
       while isPos i do
-        let fibN = fibN2 + fibN1
+        let fibN = sum fibN2 fibN1
         fibN2 <- fibN1
         fibN1 <- fibN
+        i <- dec i
 
     | Neg _ ->
       let mutable i = dec (dec (dec (un n)))
       while isPos i do
-        let fibN = fibN2 - fibN1
+        let fibN = sum fibN2 fibN1
         fibN2 <- fibN1
         fibN1 <- fibN
+        i <- dec i
 
     fibN1
 
@@ -121,8 +123,10 @@ let powN (a:Num simmat) (n: Num) =
     let mutable ops = []
     let mutable isExit = true
     while isExit do
-      match n with
-      | Pos (Smth ((), Empty)) -> isExit <- false
+      match i with
+      | Pos Empty
+      | Neg _ -> isExit <- false
+      | Pos (Smth (_, Empty)) -> isExit <- false
       | _ ->
         if isDivBy2 i then
           ops <- false :: ops
@@ -130,6 +134,7 @@ let powN (a:Num simmat) (n: Num) =
         else
           ops <- true :: ops
           i <- dec i
+    
     for it in ops do
       if it then
         a.[2] <- a.[1]
@@ -171,7 +176,7 @@ let rec toInt n =
 let entry args =
   printfn "Введите, пожалуйста, верхнюю границу счета чисел"
   let n = System.Console.ReadLine() |> int
-  let fib_graph = Chart.Line(seq {for i in 0..n -> (i, fib2 (toNum i))}, Title="Fibonacci function").WithXAxis(Title="N").WithYAxis(Title="fib N")
+  let fib_graph = Chart.Line(seq {for i in 0..n -> (i, toInt (fib4 (toNum i)))}, Title="Fibonacci function").WithXAxis(Title="N").WithYAxis(Title="fib N")
   let ``fib1 N graph`` = Chart.Line (seq {for i in 0..n do yield (i, many_time i fib1)}, Color = Color.Black)
   let ``fib2 N graph`` = Chart.Line (seq {for i in 0..n do yield (i, many_time i fib2)}, Color = Color.Gold)
   let ``fib3 N graph`` = Chart.Line (seq {for i in 0..n do yield (i, many_time i fib3)}, Color = Color.Green)
@@ -184,10 +189,10 @@ let entry args =
         ``fib2 N graph``;
         ``fib3 N graph``;
         ``fib4 N graph``;
-        ``fib5 N graph``]).WithTitle "Tasks time\n8 - Black, 9 - Gold, 10 - Green, 11 - Blue, 12 - Red").WithXAxis(Title="N").WithYAxis(Title="milliseconds")
+        ``fib5 N graph``
+       ]).WithTitle "Tasks time\n8 - Black, 9 - Gold, 10 - Green, 11 - Blue, 12 - Red").WithXAxis(Title="N").WithYAxis(Title="milliseconds")
   let table = Chart.Rows [fib_graph; tasks_stat]
   let window = table.ShowChart()
-  let window = new Form()
 
   Application.Run(window)
 

@@ -61,15 +61,15 @@ let drob n = fracfrom10to2 (abs n)
 let poryad n =
     if (abs n) >= 1.00
     then
-        127 + (cel n).Length - 1
+        1023 + (cel n).Length - 1
     else
         let mutable j = 0;
         while (drob n).[j] = 0 do
             j <- j + 1
-        127 - j - 1
+        1023 - j - 1
 
 let mantis n =
-    let mutable arr = Array.zeroCreate 23
+    let mutable arr = Array.zeroCreate 52
     if (abs n) >= 1.00
     then
         let mutable j = 0
@@ -90,23 +90,31 @@ let mantis n =
     arr
 
 let sbor n =
-    let arr = Array.zeroCreate 32
+    let arr = Array.zeroCreate 64
     arr.[0] <- znak n
     let porArray = intfrom10to2 (poryad n)
     let mutable i = porArray.Length - 1
-    for j in 8..-1..(8 - i) do
+    for j in 11..-1..(11 - i) do
         arr.[j] <- porArray.[i]
         i <- i - 1
     i <- 0
-    for j in 9..31 do
+    for j in 12..63 do
         arr.[j] <- (mantis n).[i]
         i <- i + 1
     arr
 
+let test n =
+    if n = 0.0 
+    then
+        Array.zeroCreate 64
+        
+    else
+        sbor n
+
 let main n =
     if n = 0.0 
     then
-        let res = Array.zeroCreate 32
+        let res = Array.zeroCreate 64
         for i in 0..(res.Length - 1) do
             printf "%d" res.[i]
     else

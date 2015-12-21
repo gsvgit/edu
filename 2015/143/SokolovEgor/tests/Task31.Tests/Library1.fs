@@ -20,3 +20,13 @@ let ``input 20 * 31`` () =
 let ``input 20 * (-600)`` () =
   let res = Task31.mult (1, Cons(2, Cons(0, Empty))) (-1, Cons(6, Cons(0, Cons(0, Empty))))
   Assert.AreEqual((-1, Cons (1,Cons (2,Cons (0,Cons (0,Cons (0,Empty)))))), res)
+
+[<Test>]
+let ``input 0 * (600)`` () =
+  let res = Task31.mult (1, Cons(0, Empty)) (1, Cons(6, Cons(0, Cons(0, Empty))))
+  Assert.AreEqual((1, Cons (0,Empty)), res)
+  
+[<Test>]
+let ``input 0020 * (-600)`` () =
+  let res = Task31.mult (1, Cons(0, Cons(0, Cons(2, Cons(0, Empty))))) (-1, Cons(6, Cons(0, Cons(0, Empty))))
+  Assert.AreEqual((-1, Cons (1,Cons (2,Cons (0,Cons (0,Cons (0,Empty)))))), res)

@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Library1.fs" />
     <None Include="Script.fsx" />
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Task15\Task15.fsproj">
@@ -66,7 +67,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\src\Task32\Task32.fsproj">
       <Name>Task32</Name>
-      <Project>{33afc159-052b-40a4-9395-1b3ffac68d58}</Project>
+      <Project>{e6d5c769-c5b4-449e-8d27-9cd35340a4f8}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

@@ -124,6 +124,27 @@ let rec delOn2 list1 iter ost =
                 else
                     Cons (num / 2, delOn2 (1, tale) (iter + 1) (num % 2))
 
+let inInt n =
+    match n with
+    | sign, list ->
+        let rec inInt1 list res =
+            match list with 
+            | Empty -> res
+            | Cons (n1, n2) ->
+                inInt1 n2 (res * 10 + n1)
+        sign * (inInt1 list 0)
+
+let fromInt n =
+    let rec sum result i =
+        if i = 0
+        then 
+            result
+        else 
+            sum (Cons (i % 10, result)) (i / 10)
+    if n > 0
+    then 1, sum Empty n
+    else -1, sum Empty n
+
 let rec fromLstInNum list1 = 1, list1
 let fibFrom12 n =
     let func (A : Num[][]) (B : Num[][]) =
@@ -152,31 +173,11 @@ let fibFrom12 n =
     res.[0].[1]
 
 let fibFrom13 n =
-    let outArray = Array.create n (1, Cons(1, Empty))
-    for i in 2..(n - 1) do
+    let nInt = inInt n
+    let outArray = Array.create nInt (1, Cons(1, Empty))
+    for i in 2..(nInt - 1) do
         outArray.[i] <- sum outArray.[i - 1] outArray.[i - 2]
     outArray
-
-let inInt n =
-    match n with
-    | sign, list ->
-        let rec inInt1 list res =
-            match list with 
-            | Empty -> res
-            | Cons (n1, n2) ->
-                inInt1 n2 (res * 10 + n1)
-        sign * (inInt1 list 0)
-
-let fromInt n =
-    let rec sum result i =
-        if i = 0
-        then 
-            result
-        else 
-            sum (Cons (i % 10, result)) (i / 10)
-    if n > 0
-    then 1, sum Empty n
-    else -1, sum Empty n
 
 let time f =
     let start = System.DateTime.Now
@@ -192,6 +193,6 @@ let charting =
              Chart.Line( [ for i in 1..1000..90000 -> (i, time(fun () -> fibFrom10 (fromInt i) |> ignore) ) ], "Iter. method without mutable", Color = System.Drawing.Color.Gray)
              Chart.Line( [ for i in 1..1000..10000 -> (i, time(fun () -> fibFrom11 (fromInt i) |> ignore) ) ], "Matrix, easy method", Color = System.Drawing.Color.Blue)
              Chart.Line( [ for i in 1..1000..100000 -> (i, time(fun () -> fibFrom12 (fromInt i) |> ignore) ) ], "Matrix, log", Color = System.Drawing.Color.Green)
-             Chart.Line( [ for i in 1..1000..100000 -> (i, time(fun () -> fibFrom13 i |> ignore) ) ], "Array", Color = System.Drawing.Color.Red)
+             Chart.Line( [ for i in 1..1000..100000 -> (i, time(fun () -> fibFrom13 (fromInt i) |> ignore) ) ], "Array", Color = System.Drawing.Color.Red)
         ]
 do System.Windows.Forms.Application.Run(charting.ShowChart())

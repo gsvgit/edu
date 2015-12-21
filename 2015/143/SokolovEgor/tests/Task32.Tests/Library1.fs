@@ -48,7 +48,7 @@ let ``Test on 16 fibfrom12`` () =
   Assert.AreEqual((1, Cons (9,Cons (8, Cons(7, Empty)))), res)
 [<Test>]
 let ``Test on 10 fibfrom13`` () =
-  let res = fibFrom13 10
+  let res = fibFrom13(1, Cons(1, Cons(0, Empty)))
   Assert.AreEqual([|(1, Cons (1,Empty)); (1, Cons (1,Empty)); (1, Cons (2,Empty)); (1, Cons (3,Empty)); (1, Cons (5,Empty)); (1, Cons (8,Empty)); (1, Cons (1,Cons (3,Empty))); (1, Cons (2,Cons (1,Empty))); (1, Cons (3,Cons (4,Empty))); (1, Cons (5,Cons (5,Empty)))|], res)
 [<Test>]
 let ``Check inInt`` () =

@@ -15,6 +15,7 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{algorithm}
 \usepackage{algorithmicx}
+\usepackage{verbatim}
 \usetikzlibrary{shapes,arrows}
 \usepackage{fancyvrb}
 \newtheorem{rutheorem}{Теорема}
@@ -106,42 +107,42 @@
 \begin{frame}
   \transwipe[direction=90]
   \frametitle{Реализация алгоритма}
-  \begin{rudefinition}
-    module HoarSort\linebreak
-    type List 'a =\linebreak
-     - | Empty\linebreak
-     - | Smth: hd:'a -> tl:List 'a -> List 'a\linebreak
-    val part: int -> List int -> Tot (List int * List int * List int)\linebreak
-    val merge: List int * List int * List int -> Tot (List int)\linebreak
-    val qsort: List int -> Tot (List int)\linebreak
-    let rec qsort lst =\linebreak
-     - match lst with\linebreak
-     - | Empty -> Empty\linebreak
-     - | Smth h t ->\linebreak
-     -  - let al, bl, sl = part h lst\linebreak
-     -  - merge (qsort al) bl (qsort sl)\linebreak
-  \end{rudefinition}
+  \begin{verbatim}
+    module HoarSort\newline
+    type List 'a =\newline
+     - | Empty\newline
+     - | Smth: hd:'a -> tl:List 'a -> List 'a\newline
+    val part: int -> List int -> Tot (List int * List int * List int)\newline
+    val merge: List int * List int * List int -> Tot (List int)\newline
+    val qsort: List int -> Tot (List int)\newline
+    let rec qsort lst =\newline
+     - match lst with\newline
+     - | Empty -> Empty\newline
+     - | Smth h t ->\newline
+     - - let al, bl, sl = part h lst\newline
+     - - merge (qsort al) bl (qsort sl)\newline
+  \end{verbatim}
 \end{frame}
 
 \begin{frame}
   \transwipe[direction=90]
   \frametitle{Доказательство корректности алгоритма}
-  \begin{ruproof}
-    module Proof\linebreak
-    open HoarSort\linebreak
-    val sorted: MyList int -> Tot bool\linebreak
-    let sorted lst =\linebreak
-     - match lst with\linebreak
-     - | Empty -> true\linebreak
-     - | Smth a Empty -> true\linebreak
-     - | Smth a (Smth b t) ->\linebreak
-     -  - if a > b\linebreak
-     -  - then false\linebreak
-     -  - else sorted (Smth b t)\linebreak
-    val sortedHoarSortResult: MyList 'a -> Tot unit\linebreak
-    let sortedHoarSortResult lst =\linebreak
-     - assert(sorted (qsort lst)) \linebreak
-  \end{ruproof}
+  \begin{verbatim}
+    module Proof\newline
+    open HoarSort\newline
+    val sorted: MyList int -> Tot bool\newline
+    let sorted lst =\newline
+     - match lst with\newline
+     - | Empty -> true\newline
+     - | Smth a Empty -> true\newline
+     - | Smth a (Smth b t) ->\newline
+     - - if a > b\newline
+     - - then false\newline
+     - - else sorted (Smth b t)\newline
+    val sortedHoarSortResult: MyList 'a -> Tot unit\newline
+    let sortedHoarSortResult lst =\newline
+     - assert(sorted (qsort lst))\newline
+  \end{verbatim}
 \end{frame}
 
 \begin{frame}
@@ -160,4 +161,4 @@
   \end{itemize}
 \end{frame}
 
-\end{document} 
+\end{document}

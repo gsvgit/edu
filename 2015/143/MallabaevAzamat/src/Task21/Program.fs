@@ -37,7 +37,7 @@ let sort lst =
                 l <- swap l i j
             else ()
     l
-
+   
 let main lst = sort lst
 
 [<EntryPoint>]

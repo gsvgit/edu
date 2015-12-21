@@ -1,4 +1,4 @@
-﻿namespace Task30
+﻿module Task30
 
 type Class1() = 
     member this.X = "F#"

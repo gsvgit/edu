@@ -2,8 +2,6 @@
 
 open Task15
 
-type num = int
-
 type Tree =
     | Node of int * MyList<Tree>
     | Leaf of int
@@ -16,7 +14,7 @@ let rec main (tree: Tree) =
         | Cons(tree, subList) ->  
             let (maximal, minimal) = maxminList subList
             (max (fst (main tree)) maximal, min (snd (main tree)) minimal)
-        | Empty -> (num.MinValue, num.MaxValue)
+        | Empty -> (System.Int32.MinValue, System.Int32.MaxValue)
 
     match tree with
     | Leaf(a) -> (a, a)

@@ -4,6 +4,15 @@ type MyList<'t> =
     | Empty
     | Cons of 't * MyList<'t>
  
+    member this.head() =
+         match this with
+         | Cons(vl, lst) -> vl
+
+    member this.tail() =
+        match this with
+        | Cons(vl, lst) -> lst
+        | Empty -> Empty  
+
     member this.filter(is) =
         let rec fil lst =
             match lst with
@@ -20,3 +29,17 @@ type MyList<'t> =
             | Empty -> list
             | Cons(head, tail) -> Cons(head, addThis tail)
         addThis this
+    
+    member this.addIn(el : 't) = 
+        Cons(el, this)
+
+    member this.length() =
+        let rec lng list s =
+            match list with
+            | Empty -> s
+            | Cons(vl, tl) -> lng tl (s + 1)
+        lng this 0
+     
+     
+
+ 

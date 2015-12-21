@@ -2,7 +2,7 @@
 
 let inp = System.Console.ReadLine() |> int
 
-let fillArray (inp:int) =
+let main (inp:int) =
     let arr = Array.zeroCreate inp
     if inp > 1 
     then 
@@ -14,4 +14,4 @@ let fillArray (inp:int) =
     else
         [| 1 |]
 
-printfn "%A" (fillArray inp)
+printfn "%A" (main inp)

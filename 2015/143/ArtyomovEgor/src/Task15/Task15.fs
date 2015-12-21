@@ -15,7 +15,8 @@ type MyList<'t> =
 
     member myLst.getHead() = 
         match myLst with
-        | Cons(hd, tl) -> hd
+        | Empty -> failwith "Error."
+        | Cons(a, __) -> a
 
     member myLst.getTail() =
         match myLst with
@@ -27,7 +28,9 @@ type MyList<'t> =
             match lst with
             | Empty -> lst
             | Cons (hd, tl) ->
-                if check (hd) then Cons (hd, fltr tl) else fltr tl
+                if check (hd) 
+                then Cons (hd, fltr tl) 
+                else fltr tl
 
         fltr myLst
 

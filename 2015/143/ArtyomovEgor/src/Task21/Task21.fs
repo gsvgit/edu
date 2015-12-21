@@ -2,7 +2,7 @@
 
 open Task15
 
-let sort (inList:MyList<int>) =
+let main (inList:MyList<int>) =
     let rec listMove lst =
         match lst with
         | Empty -> lst

@@ -6,7 +6,7 @@ open Task19
 open NUnit.Framework
 
 [<Test>]
-let `` main (Node(6, Cons(Leaf 1, Cons(Leaf 2, Empty)))) return (3, 1) `` () =
+let `` main (Node(3, Cons(Leaf 1, Cons(Leaf 2, Empty)))) return (3, 1) `` () =
   let res = main (Node(3, Cons(Leaf 1, Cons(Leaf 2, Empty))))
   Assert.AreEqual((3, 1), res)
 

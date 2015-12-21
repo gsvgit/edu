@@ -7,15 +7,15 @@ open NUnit.Framework
 
 [<Test>]
 let ``toMyString "123"`` () =
-  let res = toMyString("123")
+  let res = main("123")
   Assert.AreEqual(res, Cons('1', Cons('2', Cons('3', Empty))))
 
 [<Test>]
 let ``toMyString "F"`` () =
-  let res = toMyString("F")
+  let res = main("F")
   Assert.AreEqual(res, Cons('F', Empty))
 
 [<Test>]
 let ``toMyString Space`` () =
-  let res = toMyString(" ")
+  let res = main(" ")
   Assert.AreEqual(res, Cons(' ', Empty))

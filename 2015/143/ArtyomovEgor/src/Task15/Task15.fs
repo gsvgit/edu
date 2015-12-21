@@ -15,8 +15,8 @@ type MyList<'t> =
 
     member myLst.getHead() = 
         match myLst with
-        | Empty -> failwith "Error."
-        | Cons(a, __) -> a
+        | Empty -> failwith "Cannot get head (list is empty)"
+        | Cons(hd, tl) -> hd
 
     member myLst.getTail() =
         match myLst with

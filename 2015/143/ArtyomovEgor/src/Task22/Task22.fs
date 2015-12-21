@@ -7,5 +7,5 @@ let main inLst:MyList<int> =
         match lst with
         | Empty -> lst
         | Cons (hd, tl) ->
-            (quicksort (lst.filter(fun x -> x < hd))).addEnd(Cons(hd, quicksort (tl.filter(fun x -> x = hd)))).addEnd(quicksort (tl.filter(fun x -> x > hd)))
+            (quicksort (lst.filter(fun x -> x < hd))).addEnd(Cons(hd, (tl.filter(fun x -> x = hd)))).addEnd(quicksort (tl.filter(fun x -> x > hd)))
     quicksort inLst

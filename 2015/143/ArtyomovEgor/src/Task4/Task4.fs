@@ -1,14 +1,13 @@
 ﻿module Task4
 
-let main (inArray:array<int>) (num:int) =
-    let mutable answer = List.Empty
+let main inArray num = 
+    let mutable answer = 0 
 
-    for i in 0..inArray.Length - 1 do
-        if num >= inArray.[i] 
-        then answer <- i :: answer
+    for i in 0..(Array.length inArray - 1) do
+        if inArray.[i] <= num
+        then 
+            inArray.[answer] <- i
+            answer <- answer + 1
 
-    let immut = answer
-    let outArray = [| for i in List.rev(immut) -> i |]
-
-    printfn "%A" outArray
+    let outArray: int array = Array.sub inArray 0 answer
     outArray

@@ -29,9 +29,10 @@ let binary x len =
                 then
                     tmp.[i] <- 1
                     digit <- 0
-                else tmp.[i] <- 0
-            if (i = 0)&&(digit = 1) then
-                tmp.[i] <- 1
+                else 
+                    tmp.[i] <- 0
+            if (i = 0) && (digit = 1) 
+            then tmp.[i] <- 1
         tmp
 
 let arraymain n =

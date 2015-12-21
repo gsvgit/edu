@@ -29,9 +29,10 @@ let binary (x: int64) len =
                 then
                     tmp.[i] <- 1L
                     digit <- 0
-                else tmp.[i] <- 0L
-            if (i = 0)&&(digit = 1) then
-                tmp.[i] <- 1L
+                else 
+                    tmp.[i] <- 0L
+            if (i = 0) && (digit = 1) 
+            then tmp.[i] <- 1L
         tmp
 
 let arraymain n =

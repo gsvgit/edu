@@ -5,13 +5,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>8b78e191-f45a-458f-b3db-c0e749da52ab</ProjectGuid>
+    <ProjectGuid>6cd39a35-56b1-434b-b75c-553c37b2aae4</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Task18.Tests</RootNamespace>
-    <AssemblyName>Task18.Tests</AssemblyName>
+    <RootNamespace>Task21</RootNamespace>
+    <AssemblyName>Task21</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task18.Tests</Name>
+    <Name>Task21</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Task18.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Task21.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,38 +30,30 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Task18.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Task21.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\packages\NUnit\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task18.Tests.fs" />
+    <Compile Include="Task21.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Task15\Task15.fsproj">
+    <ProjectReference Include="..\Task15\Task15.fsproj">
       <Name>Task15</Name>
       <Project>{1ec9794a-b5e5-4662-8259-725ebc8bd3c1}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Task17\Task17.fsproj">
-      <Name>Task17</Name>
-      <Project>{da934b2d-5a57-404c-a657-34e167c929a3}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Task18\Task18.fsproj">
-      <Name>Task18</Name>
-      <Project>{2e4dc25a-826f-44c8-a617-48679ac4a759}</Project>
+    <ProjectReference Include="..\Task16\Task16.fsproj">
+      <Name>Task16</Name>
+      <Project>{8c9b4052-85c5-453e-ba7e-7f4145e707c5}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

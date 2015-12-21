@@ -8,5 +8,5 @@ let toMyString string =
         then
             lst
         else
-            String(str.[s], (DoList str lst (s + 1)))
-    DoList string Empty 0
+            MyString.Cons(str.[s], (DoList str lst (s + 1)))
+    DoList string MyString.Empty 0

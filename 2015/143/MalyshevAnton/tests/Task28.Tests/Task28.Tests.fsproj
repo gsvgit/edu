@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>8b78e191-f45a-458f-b3db-c0e749da52ab</ProjectGuid>
+    <ProjectGuid>6538f7a5-2a00-4eb9-80e9-8ec8b8c1676f</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Task18.Tests</RootNamespace>
-    <AssemblyName>Task18.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task18.Tests</Name>
+    <RootNamespace>Task28.Tests</RootNamespace>
+    <AssemblyName>Task28.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Name>Task28.Tests</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Debug\Task18.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Task28.Tests.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +31,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>bin\Release\Task18.Tests.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Task28.Tests.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -45,23 +46,13 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task18.Tests.fs" />
+    <Compile Include="Task28.Tests.fs" />
     <None Include="Script.fsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Task15\Task15.fsproj">
-      <Name>Task15</Name>
-      <Project>{1ec9794a-b5e5-4662-8259-725ebc8bd3c1}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Task17\Task17.fsproj">
-      <Name>Task17</Name>
-      <Project>{da934b2d-5a57-404c-a657-34e167c929a3}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Task18\Task18.fsproj">
-      <Name>Task18</Name>
-      <Project>{2e4dc25a-826f-44c8-a617-48679ac4a759}</Project>
+    <ProjectReference Include="..\..\src\Task28\Task28.fsproj">
+      <Name>Task28</Name>
+      <Project>{0e3964a7-8c13-47fe-ae9d-9a085c71edd4}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

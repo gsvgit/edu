@@ -1,4 +1,5 @@
-﻿module Task24
+﻿(* 
+module Task24
 
 open FSharp.Charting
 open System.Drawing
@@ -31,3 +32,4 @@ let main =
             Chart.Line( [ for i in 1..2..1500 -> (i, time(fun () -> List.sort([for k in 1..i ->rand.Next()]) |> ignore) ) ], "List.sort", Color = System.Drawing.Color.DarkSeaGreen)
         ]
 do System.Windows.Forms.Application.Run(main.ShowChart())
+*)

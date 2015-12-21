@@ -1,4 +1,5 @@
-﻿module Task14
+﻿(*
+module Task14
 
 open FSharp.Charting
 open System.Drawing
@@ -20,3 +21,4 @@ let charting =
              Chart.Line( [ for i in 1..1000..100000 -> (i, time(fun () -> Task13.main i |> ignore) ) ], "Task13", Color = System.Drawing.Color.MediumTurquoise)
         ]
 do System.Windows.Forms.Application.Run(charting.ShowChart())
+*)

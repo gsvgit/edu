@@ -146,6 +146,7 @@ let fromInt n =
     else -1, sum Empty n
 
 let rec fromLstInNum list1 = 1, list1
+
 let fibFrom12 n =
     let func (A : Num[][]) (B : Num[][]) =
         let ar00 = sum (mult A.[0].[0] B.[0].[0]) (mult A.[0].[1] B.[1].[0])
@@ -181,7 +182,7 @@ let fibFrom13 n =
 
 let time f =
     let start = System.DateTime.Now
-    for i = 1 to 2 do f()
+    for i = 1 to 20 do f()
     (System.DateTime.Now - start).TotalMilliseconds / 20.00
 
  

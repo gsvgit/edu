@@ -25,6 +25,7 @@ type MyList<'Typex> =
 
     member this.head() = 
         match this with
+        | Empty -> failwith "Empty"
         | Cons(vl, lst) -> vl
 
     member this.tail() =

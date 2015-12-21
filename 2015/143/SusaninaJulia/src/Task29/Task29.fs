@@ -48,6 +48,12 @@ let main n =
         for i in 0..63 do
             printf "%d" g.[i]
         printf "\n"
-
 let n = System.Console.ReadLine() |> int64
 System.Console.WriteLine(main n)
+
+let resfortest n = 
+    if n = -9223372036854775808L 
+    then 
+        let g = [|for i in 0..62 -> 0L|]
+        Array.append [|1L|] g 
+    else binRepresent n

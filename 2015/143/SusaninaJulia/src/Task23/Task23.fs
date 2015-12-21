@@ -9,8 +9,8 @@ let main arr =
         let rec qs (arr : array<int>) left right = 
             if left < right 
             then 
-                let ind = (left + right) / 2 
                 let sep = 
+                    let ind = (left + right) / 2 
                     let pivot = arr.[ind]
                     swap arr ind right
                     let mutable j = left
@@ -21,7 +21,6 @@ let main arr =
                             j <- j + 1
                     swap arr j right
                     j                  
-                sep |> ignore
                 qs arr left (sep - 1)
                 qs arr (sep + 1) right
         qs arr 0 (arr.Length - 1)

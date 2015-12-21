@@ -84,12 +84,6 @@ let merge n =
         i <- i + 1
     arr
 
-let result n =
-    //if n = 0.0 
-    //then 
-    //    Array.zeroCreate 64  
-    //else 
-        merge n
 let main n =
     if n = 0.0 
     then 
@@ -100,6 +94,10 @@ let main n =
         let res = merge n
         for i in 0..63 do
             printf "%d" res.[i]
-
 System.Console.WriteLine(main n)
 let rk = System.Console.ReadKey(true)
+
+let resfortest n = 
+    if n = 0.0 
+    then Array.zeroCreate 64 
+    else merge n

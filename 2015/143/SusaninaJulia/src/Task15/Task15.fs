@@ -28,7 +28,7 @@ type MyList<'t> =
 
     member this.getTail() =
         match this with
-        | Empty -> failwith "Empty!"
+        | Empty -> Empty
         | Cons(hd, tl) -> tl
 
     member this.swap() = 
@@ -43,19 +43,9 @@ type MyList<'t> =
             | Cons(hd, tl) -> length tl (len + 1)
         length this 0  
 
-    member this.filter(cond) =
-        let rec filt lst = 
-            match lst with
-            | Empty -> lst
-            | Cons(hd, tl) -> 
-                if cond(hd)
-                then Cons(hd, filt tl)
-                else filt tl
-        filt this
-
     member this.append(x) = 
-        let rec app this = 
-            match this with 
+        let rec app lst = 
+            match lst with 
             | Empty -> x
             | Cons (hd, tl) -> Cons(hd, app tl)                                 
         app this

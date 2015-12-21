@@ -10,9 +10,9 @@ let rec filter (less: MyList<'a>) (more: MyList<'a>) tail head =
         then filter (Cons(subhead, less)) more subtail head
         else filter less (Cons(subhead, more)) subtail head
 
-let rec connect less more =
+let rec union less more =
     match less with
-    | Cons(a, subtail) -> Cons(a, (connect subtail more))
+    | Cons(a, subtail) -> Cons(a, (union subtail more))
     | Empty -> more
                 
 
@@ -23,8 +23,7 @@ let main list =
         let rec quicksort list =
             match list with
             | Empty -> list
-            | Cons(a, Empty) -> Cons(a, Empty)
             | Cons(head, tail) ->
                 let (less, more) = filter Empty Empty tail head
-                connect (quicksort less) ((Cons(head, (quicksort more))))
+                union (quicksort less) (Cons(head, (quicksort more)))
         quicksort list

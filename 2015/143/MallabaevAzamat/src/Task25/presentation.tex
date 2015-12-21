@@ -104,44 +104,47 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \transwipe[direction=90]
   \frametitle{Реализация алгоритма}
   \begin{verbatim}
-    module HoarSort\newline
-    type List 'a =\newline
-     - | Empty\newline
-     - | Smth: hd:'a -> tl:List 'a -> List 'a\newline
-    val part: int -> List int -> Tot (List int * List int * List int)\newline
-    val merge: List int * List int * List int -> Tot (List int)\newline
-    val qsort: List int -> Tot (List int)\newline
-    let rec qsort lst =\newline
-     - match lst with\newline
-     - | Empty -> Empty\newline
-     - | Smth h t ->\newline
-     - - let al, bl, sl = part h lst\newline
-     - - merge (qsort al) bl (qsort sl)\newline
+    module HoarSort
+    type List 'a =
+         | Empty
+         | Smth: hd:'a -> tl:List 'a -> List 'a
+    val part: int -> List int 
+              -> Tot (List int * List int * List int)
+    val merge: List int * List int * List int 
+               -> Tot (List int)
+    val qsort: List int -> Tot (List int)
+    let rec qsort lst =
+        match lst with
+        | Empty -> Empty
+        | Smth h t ->
+          let al, bl, sl = part h lst
+          merge (qsort al) bl (qsort sl)
   \end{verbatim}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \transwipe[direction=90]
   \frametitle{Доказательство корректности алгоритма}
   \begin{verbatim}
-    module Proof\newline
-    open HoarSort\newline
-    val sorted: MyList int -> Tot bool\newline
-    let sorted lst =\newline
-     - match lst with\newline
-     - | Empty -> true\newline
-     - | Smth a Empty -> true\newline
-     - | Smth a (Smth b t) ->\newline
-     - - if a > b\newline
-     - - then false\newline
-     - - else sorted (Smth b t)\newline
-    val sortedHoarSortResult: MyList 'a -> Tot unit\newline
-    let sortedHoarSortResult lst =\newline
-     - assert(sorted (qsort lst))\newline
+    module Proof
+    open HoarSort
+    val sorted: MyList int -> Tot bool
+    let sorted lst =
+        match lst with
+        | Empty -> true
+        | Smth a Empty -> true
+        | Smth a (Smth b t) ->
+          // А вот за такое сразу незачёт
+          if a > b
+          then false
+          else sorted (Smth b t)
+    val sortedHoarSortResult: MyList 'a -> Tot unit
+    let sortedHoarSortResult lst =
+        assert(sorted (qsort lst))
   \end{verbatim}
 \end{frame}
 

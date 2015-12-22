@@ -137,6 +137,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task28.Tests", "tests\Task2
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task29.Tests", "tests\Task29.Tests\Task29.Tests.fsproj", "{121C40D1-377A-4377-A2C4-CFACE3F2AA93}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task31.Tests", "tests\Task31.Tests\Task31.Tests.fsproj", "{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -677,6 +679,16 @@ Global
 		{121C40D1-377A-4377-A2C4-CFACE3F2AA93}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{121C40D1-377A-4377-A2C4-CFACE3F2AA93}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{121C40D1-377A-4377-A2C4-CFACE3F2AA93}.Release|Win32.ActiveCfg = Release|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -708,5 +720,6 @@ Global
 		{9549D1A2-76E8-4F44-8C14-B50D7B72C170} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 		{30BD3626-B36E-41A9-9483-DAFB479A7F05} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 		{121C40D1-377A-4377-A2C4-CFACE3F2AA93} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
+		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 	EndGlobalSection
 EndGlobal

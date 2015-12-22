@@ -139,6 +139,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task29.Tests", "tests\Task2
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task31.Tests", "tests\Task31.Tests\Task31.Tests.fsproj", "{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task32", "src\Task32\Task32.fsproj", "{E7F42873-A56D-4D80-8373-46A45AF159CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -689,6 +691,16 @@ Global
 		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0}.Release|Win32.ActiveCfg = Release|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E7F42873-A56D-4D80-8373-46A45AF159CF}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

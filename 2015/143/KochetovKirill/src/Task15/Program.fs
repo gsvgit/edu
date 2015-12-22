@@ -35,8 +35,10 @@ type MyList<'Typex> =
 
     member this.nextSwap() =
         match this with
+        | Empty -> Empty
         | Cons(vl, tl) ->
             match tl with
+            | Empty -> Cons(vl, Empty)
             | Cons(nextVl, nextTl) -> Cons(nextVl, Cons(vl, nextTl))
 
     member this.length() =

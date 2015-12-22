@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.0" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
+	<xmi:Documentation exporter="StarUML" exporterVersion="2.0"/>
+	<uml:Model xmi:id="AAAAAAFRxoHFBRQTSe0=" xmi:type="uml:Model" name="RootModel">
+		<packagedElement xmi:id="AAAAAAFF+qBWK6M3Z8Y=" name="Model" visibility="public" xmi:type="uml:Model">
+			<packagedElement xmi:id="AAAAAAFRxhkkTPUuByo=" name="LongArith" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAFRxiMZ3Pngr/g=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAFRxhkkTPUuByo=" supplier="AAAAAAFRxhmOKfVYetQ="/>
+				<interfaceRealization xmi:id="AAAAAAFRxiLWpPmtm04=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAFRxhkkTPUuByo=" contract="AAAAAAFRxiAp3fkvIrY="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxhmOKfVYetQ=" name="DefaultArith" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<interfaceRealization xmi:id="AAAAAAFRxiMD/fnPn9Y=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAFRxhmOKfVYetQ=" contract="AAAAAAFRxiAp3fkvIrY="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxiAp3fkvIrY=" name="IArithOp" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedOperation xmi:id="AAAAAAFRxibtZvpgcqw=" name="sum" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAFRxicsEvpnCrU=" name="first" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAFRxicsE/poWXE=" name="second" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+				<ownedOperation xmi:id="AAAAAAFRxiZCHvpVHpw=" name="mult" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAFRxibBfPpci2U=" name="first" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+					<ownedParameter xmi:id="AAAAAAFRxibBf/pd6UA=" name="second" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxjmCFfx5ypU=" name="IFibComputer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Interface">
+				<ownedOperation xmi:id="AAAAAAFRxj5KIv2KWpY=" name="Fib" visibility="public" isStatic="false" isLeaf="false" concurrency="sequential" isQuery="false" isAbstract="false" xmi:type="uml:Operation">
+					<ownedParameter xmi:id="AAAAAAFRxj5vF/2RJDc=" name="number" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" direction="in" xmi:type="uml:Parameter"/>
+				</ownedOperation>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxjpItvyoIiY=" name="RecFibComputer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAFRxlBl8BBgd7w=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAFRxjpItvyoIiY=" supplier="AAAAAAFRxiAp3fkvIrY="/>
+				<interfaceRealization xmi:id="AAAAAAFRxj6MMf2TE7I=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAFRxjpItvyoIiY=" contract="AAAAAAFRxjmCFfx5ypU="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxjrTa/zU4OY=" name="IterFibComputer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAFRxlB1/xBxFtg=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAFRxjrTa/zU4OY=" supplier="AAAAAAFRxiAp3fkvIrY="/>
+				<interfaceRealization xmi:id="AAAAAAFRxj6j0P2kfgk=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAFRxjrTa/zU4OY=" contract="AAAAAAFRxjmCFfx5ypU="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxjtC5P0A/Gg=" name="AccFibComputer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAFRxlCIthCCegk=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAFRxjtC5P0A/Gg=" supplier="AAAAAAFRxiAp3fkvIrY="/>
+				<interfaceRealization xmi:id="AAAAAAFRxj676f214ZE=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAFRxjtC5P0A/Gg=" contract="AAAAAAFRxjmCFfx5ypU="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxjyEXP0zHaI=" name="MatrixMultFibComputer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAFRxlBSXBBP1/w=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAFRxjyEXP0zHaI=" supplier="AAAAAAFRxiAp3fkvIrY="/>
+				<interfaceRealization xmi:id="AAAAAAFRxmcpvRO71Co=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAFRxjyEXP0zHaI=" contract="AAAAAAFRxjmCFfx5ypU="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxj01KP1ek4k=" name="MatrixSqrFibCompter" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAFRxlCf7hCTejI=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAFRxj01KP1ek4k=" supplier="AAAAAAFRxiAp3fkvIrY="/>
+				<ownedMember xmi:id="AAAAAAFRxlYbvRJjD1s=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAFRxj01KP1ek4k=" supplier="AAAAAAFRxjyEXP0zHaI="/>
+				<interfaceRealization xmi:id="AAAAAAFRxj7mX/3X8r0=" visibility="public" xmi:type="uml:InterfaceRealization" implementingClassifier="AAAAAAFRxj01KP1ek4k=" contract="AAAAAAFRxjmCFfx5ypU="/>
+			</packagedElement>
+			<packagedElement xmi:id="AAAAAAFRxlVMABIlmLc=" name="ChartDrawer" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Component" isIndirectlyInstantiated="true">
+				<ownedMember xmi:id="AAAAAAFRxlWgNBJQrpU=" visibility="public" xmi:type="uml:Dependency" client="AAAAAAFRxlVMABIlmLc=" supplier="AAAAAAFRxjmCFfx5ypU="/>
+			</packagedElement>
+		</packagedElement>
+	</uml:Model>
+</xmi:XMI>

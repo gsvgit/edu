@@ -10,8 +10,7 @@ let main trLst =
     let init tr = 
         match tr with 
         | Leaf (h) -> (h, h)
-        | Node (h, t) -> (h, h)
-    
+        | Node (h, t) -> (h, h)    
     let rec searchInTree tree (min, max) = 
         match tree with
         | Leaf (hd) -> 

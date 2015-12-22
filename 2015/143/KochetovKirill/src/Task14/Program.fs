@@ -15,7 +15,7 @@ let time f =
 
 let gch = 
     Chart.Combine
-     [Chart.Line( [ for i in 10..5..35 -> (i,time (fun () -> Task8.main i |> ignore) ) ], Color = System.Drawing.Color.Red)
+     [Chart.Line( [ for i in 10..5..30 -> (i,time (fun () -> Task8.main i |> ignore) ) ], Color = System.Drawing.Color.Red)
       Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task9.main i |> ignore) ) ], Color = System.Drawing.Color.Green)
       Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task10.main i |> ignore) ) ], Color = System.Drawing.Color.Blue)
       Chart.Line( [ for i in 1000..100..16000 -> (i,time (fun () -> Task11.main i |> ignore) ) ], Color = System.Drawing.Color.Black)

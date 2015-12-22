@@ -25,6 +25,7 @@ type MyList<'Typex> =
 
     member this.head() = 
         match this with
+        | Empty -> failwith "Empty"
         | Cons(vl, lst) -> vl
 
     member this.tail() =
@@ -34,8 +35,10 @@ type MyList<'Typex> =
 
     member this.nextSwap() =
         match this with
+        | Empty -> Empty
         | Cons(vl, tl) ->
             match tl with
+            | Empty -> Cons(vl, Empty)
             | Cons(nextVl, nextTl) -> Cons(nextVl, Cons(vl, nextTl))
 
     member this.length() =
@@ -55,3 +58,4 @@ type MyList<'Typex> =
                 then Cons(vl, flt tl)
                 else flt tl
         flt this
+    

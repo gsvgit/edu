@@ -12,14 +12,18 @@ let main tr =
         let rec trier tre ((mn, mx), is) =
             let rec lister lest ((men, mex), isi) =
                 match lest with
-                | Empty -> ((men, mex), isi)
-                | Cons (tere, stl) -> lister stl (trier tere ((men, mex), isi))
+                | Empty -> 
+                    ((men, mex), isi)
+                | Cons (tere, stl) -> 
+                    lister stl (trier tere ((men, mex), isi))
             match tre with
             | Leaf vl ->
                 if is
                 then
-                    if vl < mn then ((vl, mx), is)
-                    elif vl > mx then ((mn, vl), is)
+                    if vl < mn 
+                    then ((vl, mx), is)
+                    elif vl > mx 
+                    then ((mn, vl), is)
                     else ((mn, mx), is)
                 else
                     ((vl, vl), true)

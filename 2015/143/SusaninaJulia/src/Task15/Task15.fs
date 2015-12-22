@@ -6,14 +6,8 @@ type MyList<'t> =
 
     member this.getHead() =
         match this with
-        | Empty -> 
-            let a = None
-            let tmp = Option.get(a)
-            tmp
-        | Cons (hd, tl) -> 
-            let a = Some(hd)
-            let tmp = Option.get(a)
-            tmp
+        | Empty -> failwith  "Empty!"
+        | Cons (hd, tl) -> hd
 
     member this.add(x) = 
         match this with
@@ -21,8 +15,8 @@ type MyList<'t> =
         | Cons(hd, tl) -> Cons(x, Cons(hd, tl))
 
     member this.addToTheEnd(x) =
-        let rec add list x =
-            match list with
+        let rec add this x =
+            match this with
             | Empty -> Cons (x, Empty)
             | Cons(hd, tl) -> Cons(hd, add tl x)
         add this x
@@ -43,8 +37,15 @@ type MyList<'t> =
         | Cons(hd, tl) -> Cons(tl.getHead(), Cons(hd, tl.getTail()))
 
     member this.getLength() =
-        let rec length list len =
-            match list with
+        let rec length this len =
+            match this with
             | Empty -> len
             | Cons(hd, tl) -> length tl (len + 1)
-        length this 0   
+        length this 0  
+
+    member this.append(x) = 
+        let rec app lst = 
+            match lst with 
+            | Empty -> x
+            | Cons (hd, tl) -> Cons(hd, app tl)                                 
+        app this

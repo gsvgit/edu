@@ -17,4 +17,5 @@ let main n =
 [<EntryPoint>]
 let entry args =
     printfn "%A" (main n)
+    let rk = System.Console.ReadKey(true)
     0

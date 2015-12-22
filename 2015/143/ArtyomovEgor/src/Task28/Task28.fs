@@ -13,7 +13,8 @@ let numsys (x: int) len =
 let binary x len =
     let mutable n = x
     if n >= 0
-    then numsys x len
+    then 
+        numsys x len
     else
         n <- (-1) * n
         let mutable tmp = numsys n len

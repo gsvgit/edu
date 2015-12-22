@@ -6,7 +6,7 @@ let main n =
     let a = array2D [ [1; 1]; [1; 0] ]
     let b = array2D [ [1; 1]; [1; 0] ]
 
-    for i = 1 to n-1 do
+    for i = 1 to (n - 1) do
         let a00 = a.[0, 0] * b.[0, 0] + a.[0, 1] * b.[1, 0]
         let a01 = a.[0, 0] * b.[0, 1] + a.[0, 1] * b.[1, 1]
         let a10 = a.[1, 0] * b.[0, 0] + a.[1, 1] * b.[1, 0]

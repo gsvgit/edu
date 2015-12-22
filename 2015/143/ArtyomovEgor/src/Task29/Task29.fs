@@ -13,7 +13,8 @@ let numsys (x: int64) len =
 let binary (x: int64) len =
     let mutable n = x
     if n >= 0L
-    then numsys x len
+    then 
+        numsys x len
     else
         n <- (-1L) * n
         let mutable tmp = numsys n len

@@ -2,12 +2,12 @@
 
 let input = System.Console.ReadLine() |> int
 
-let mult (a:int[,]) (b:int[,]) =
+let mult (a: int[,]) (b: int[,]) =
     let a00 = a.[0, 0] * b.[0, 0] + a.[0, 1] * b.[1, 0]
     let a01 = a.[0, 0] * b.[0, 1] + a.[0, 1] * b.[1, 1]
     let a10 = a.[1, 0] * b.[0, 0] + a.[1, 1] * b.[1, 0]
     let a11 = a.[1, 0] * b.[0, 1] + a.[1, 1] * b.[1, 1]
-    array2D [ [ a00; a01 ]; [ a10; a11 ] ]
+    array2D [ [a00; a01]; [a10; a11] ]
 
 let rec pow n arr =
     if n = 1

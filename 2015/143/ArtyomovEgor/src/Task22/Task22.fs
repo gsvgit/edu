@@ -2,8 +2,8 @@
 
 open Task15
 
-let main inLst:MyList<int> =
-    let rec quicksort lst:MyList<int> =
+let main inLst: MyList<int> =
+    let rec quicksort lst: MyList<int> =
         match lst with
         | Empty -> lst
         | Cons (hd, tl) ->

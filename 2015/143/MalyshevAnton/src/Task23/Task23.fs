@@ -1,7 +1,7 @@
 ﻿module Task23
 
 let main (arr: array<int>) = 
-    let Parttition left right =
+    let parttition left right =
         let x = arr.[left]
         let mutable j = left
 
@@ -22,9 +22,9 @@ let main (arr: array<int>) =
     let rec qsort left right =
         if left < right 
         then
-            let m = Parttition left right
-            (qsort left (m - 1))
-            (qsort (m + 1) right)
+            let middle = parttition left right
+            (qsort left (middle - 1))
+            (qsort (middle + 1) right)
 
     qsort 0 (arr.Length - 1)
 

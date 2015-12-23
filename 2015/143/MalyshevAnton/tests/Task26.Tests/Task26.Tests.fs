@@ -4,25 +4,13 @@ open Task26
 open NUnit.Framework
 
 [<Test>]
-let ``Hello -> Bye`` () =
-    let result = interpretator [("Hello", "Bye")] "Hello World"
+let ``hello world`` () =
+    let result = interpretator rules "hello world"
     printfn "%A" result
-    Assert.AreEqual(result, "Bye World")
+    Assert.AreEqual(result, "0110100001100101011011000110110001101111001000000111011101101111011100100110110001100100")
 
 [<Test>]
-let ``Empty rules`` () =
-    let result = interpretator [] "Hello World"
+let ``do nothing`` () =
+    let result = interpretator rules "Код"
     printfn "%A" result
-    Assert.AreEqual(result, "Hello World")
-
-[<Test>]
-let ``Empty message`` () =
-    let result = interpretator [("a", "b"); ("c", "d")] ""
-    printfn "%A" result
-    Assert.AreEqual(result, "")
-
-[<Test>]
-let ``rule: something -> empty`` () =
-    let result = interpretator [("a", ""); ("c", ""); ("d", "")] "abcdabcdabcdabcd"
-    printfn "%A" result
-    Assert.AreEqual(result, "bbbb")
+    Assert.AreEqual(result, "Код")

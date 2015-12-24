@@ -83,17 +83,6 @@ let binary n =
         i <- i + 1
     arr
 
-//let main n =
-//    if n = 0.0 
-//    then
-//        let res = Array.zeroCreate 64
-//        for i in 0..63 do
-//            printf "%d" res.[i]
-//    else
-//        let res = binary n
-//        for i in 0..63 do
-//            printf "%d" res.[i]
-
 let arraymain n =
     if n = 0.0 
     then

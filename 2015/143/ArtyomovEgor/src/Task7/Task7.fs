@@ -7,5 +7,5 @@ let main (inArray:array<int>) (i:int) (j:int) =
         inArray.[i] <- inArray.[j] - inArray.[i]
         inArray.[j] <- inArray.[j] - inArray.[i]
     
-    printfn "%A" inArray
-    inArray
+    let outArray = inArray
+    outArray

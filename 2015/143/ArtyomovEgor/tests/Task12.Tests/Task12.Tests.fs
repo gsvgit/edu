@@ -1,4 +1,4 @@
-﻿ module Task12.Tests
+﻿module Task12.Tests
 
 open Task12
 open NUnit.Framework

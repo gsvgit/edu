@@ -13,10 +13,11 @@ type MyList<'t> =
             | Cons (hd, tl) -> lng (l + 1) tl
         lng 0 myLst
 
+
     member myLst.getHead() = 
         match myLst with
-        | Empty -> failwith "Error."
-        | Cons(a, __) -> a
+        | Empty -> failwith "Cannot get head (list is empty)"
+        | Cons(hd, tl) -> hd
 
     member myLst.getTail() =
         match myLst with
@@ -31,7 +32,6 @@ type MyList<'t> =
                 if check (hd) 
                 then Cons (hd, fltr tl) 
                 else fltr tl
-
         fltr myLst
 
     member myLst.addEnd(appendix) =
@@ -39,7 +39,6 @@ type MyList<'t> =
             match myLst with
             | Cons (hd, tl) -> Cons (hd, add tl)
             | Empty -> appendix
-        
         add myLst
 
     member myLst.add(el) =

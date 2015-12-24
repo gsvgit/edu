@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6c3e9208-7a3f-4ea8-b833-7f37e4481873</ProjectGuid>
+    <ProjectGuid>d259052f-71ec-4b44-9f41-53140253d113</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task30</RootNamespace>
-    <AssemblyName>Task30</AssemblyName>
+    <RootNamespace>Task31</RootNamespace>
+    <AssemblyName>Task31</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
-    <Name>Task30</Name>
+    <Name>Task31</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\Task30.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Task31.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\Task30.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Task31.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
@@ -47,13 +47,18 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Task30.fs" />
+    <Compile Include="Task31.fs" />
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Task15\Task15.fsproj">
       <Name>Task15</Name>
       <Project>{f9dc4d61-cb43-4f3e-9c61-41de7ad78359}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Task30\Task30.fsproj">
+      <Name>Task30</Name>
+      <Project>{6c3e9208-7a3f-4ea8-b833-7f37e4481873}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 open Task15
 
-let rec filter (less: MyList<'a>) (more: MyList<'a>) tail head =
+let rec filter (less: MyList<int>) (more: MyList<int>) tail head =
     match tail with
     | Empty -> (less, more)
     | Cons(subhead, subtail) ->
@@ -16,14 +16,9 @@ let rec union less more =
     | Empty -> more
                 
 
-let main list = 
-    if list = Empty 
-    then MyList<int>.Empty
-    else
-        let rec quicksort list =
-            match list with
-            | Empty -> list
-            | Cons(head, tail) ->
-                let (less, more) = filter Empty Empty tail head
-                union (quicksort less) (Cons(head, (quicksort more)))
-        quicksort list
+let rec main list = 
+    match list with
+    | Empty -> list
+    | Cons(head, tail) ->
+        let (less, more) = filter Empty Empty tail head
+        union (main less) (Cons(head, (main more)))

@@ -6,21 +6,21 @@ open NUnit.Framework
 
 [<Test>]
 let ``2 List`` () =
-  let result = main(Cons(5,Cons(2, Empty)))
-  printfn "%A" result
-  Assert.AreEqual(result, Cons(2, Cons(5, Empty)))
+    let result = main(Cons(5,Cons(2, Empty)))
+    printfn "%A" result
+    Assert.AreEqual(result, Cons(2, Cons(5, Empty)))
 
 [<Test>]
 let ``0 List`` () =
-  let result = main(Empty)
-  printfn "%A" result
-  Assert.AreEqual(result, MyList<int>.Empty)
+    let result = main(Empty)
+    printfn "%A" result
+    Assert.AreEqual(result, MyList<int>.Empty)
 
 [<Test>]
 let ``1 List`` () =
-  let result = main(Cons(2, Empty))
-  printfn "%A" result
-  Assert.AreEqual(result, Cons(2, Empty))
+    let result = main(Cons(2, Empty))
+    printfn "%A" result
+    Assert.AreEqual(result, Cons(2, Empty))
 
 [<Test>]
 let ``6 List`` () =

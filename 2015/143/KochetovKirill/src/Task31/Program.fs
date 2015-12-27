@@ -3,6 +3,13 @@
 open Task30
 open Task15
 
+let rec degger (t : MyList<int>) deg =
+    if deg = 0
+    then
+        t
+    else
+        degger (t.add(0)) (deg - 1)
+
 let rec smr (t : Task15.MyList<int>) (amount : int) = 
     if amount = 0
     then
@@ -23,7 +30,7 @@ let rec mlt (a : Task15.MyList<int>) (sum : Task15.MyList<int>) (b : Task15.MyLi
     | Cons(head, tail) ->
         mlt 
         <| tail 
-        <| (Task30.summer sum (smr b (head * (System.Math.Pow(10 |> float, deg |> float) |> int))) 0) 
+        <| (Task30.summer sum (smr (degger b deg) head) 0) 
         <| b 
         <| (deg + 1)
         

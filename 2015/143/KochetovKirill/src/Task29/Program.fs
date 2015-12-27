@@ -1,6 +1,6 @@
 ﻿module Task29
 
-let main number=
+let main number =
     let mutable nm = number
     let mutable bit = ""
 
@@ -9,8 +9,7 @@ let main number=
         nm <- nm &&&  System.Int64.MaxValue
 
     for i in 0..62 do
-        bit <- ((nm % 2L) |> string) + bit
-        nm <- (nm - nm % 2L)/2L
+        bit <- (((nm >>> i) &&& 1L) |> string) + bit
 
     if number < 0L
     then bit <- "1" + bit

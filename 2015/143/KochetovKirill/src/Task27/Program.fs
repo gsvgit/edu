@@ -7,10 +7,9 @@ let main number =
     if nm < 0L
     then 
         nm <- nm &&&  System.Int64.MaxValue
-    
+
     for i in 0..62 do
-        bit <- ((nm % 2L) |> string) + bit
-        nm <- (nm - nm % 2L)/2L
+        bit <- (((nm >>> i) &&& 1L) |> string) + bit
 
     if number < 0.0
     then bit <- "1" + bit
@@ -18,8 +17,10 @@ let main number =
 
     bit
 
+
+
 [<EntryPoint>]
 let inter argv =
-    printf "%s" (main (System.Console.ReadLine() |> float))
+    printfn "%s" (main(System.Console.ReadLine() |> float))
     let rk = System.Console.ReadKey(true)
     0

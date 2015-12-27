@@ -53,7 +53,6 @@
     <None Include="App.config" />
     <Compile Include="RuleReader.fs" />
     <Compile Include="TapeReader.fs" />
-    <Compile Include="Reader.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

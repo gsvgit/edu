@@ -3,9 +3,8 @@
 open Task31
 open Task30
 open Task15
+open Task3211
 
-let unit = (1, Cons(1, Empty))
-let zero = (1, Cons(0, Empty))
 let rec main (n : Num) =
     if n = zero
     then

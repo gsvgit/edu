@@ -7,12 +7,12 @@ open Task15
 let numToInt (n : Num) = 
     match n with
     |(sign, abs) ->
-        let rec listToInt lst sm =
+        let rec listToInt lst sm k =
             match lst with 
             | Empty -> sm
             | Cons (head, tail) ->
-                listToInt tail (10 * sm + head)
-        sign * (listToInt abs 0)
+                listToInt tail (sm + k * head) (k * 10)
+        sign * (listToInt abs 0 1)
 
 let main (n : Num) = 
     let Fib = Array.create (numToInt n) (1, Cons(1, Empty))

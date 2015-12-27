@@ -20,6 +20,6 @@ let rec mpower (Arr : Num[,]) (n : Num) =
         mult Arr (mpower Arr (sum n (-1, Cons(1, Empty))))
 
 let main (n : Num) =
-    let mtrx = array2D [ [ (1, Cons(1, Empty)); (1, Cons(1, Empty)) ]; [ (1, Cons(1, Empty)); (1, Cons(1, Empty)) ] ]
+    let mtrx = array2D [ [ (1, Cons(1, Empty)); (1, Cons(1, Empty)) ]; [ (1, Cons(1, Empty)); (1, Cons(0, Empty)) ] ]
     let ret = mpower mtrx (sum n (-1, Cons(1, Empty)))
     ret.[0,0]

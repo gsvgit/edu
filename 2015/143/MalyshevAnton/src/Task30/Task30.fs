@@ -4,6 +4,10 @@ open Task15
 
 type Num = int * MyList<int>
 
+type ForComparing =
+    | MoreOrEq
+    | Less
+
 let rec length list =
     match list with 
     | Empty -> 0
@@ -12,42 +16,43 @@ let rec length list =
 let rec reverse (list: MyList<int>) =
     let rec last list =
         match list with
-        | Cons (hd, Empty) -> hd
-        | Cons (hd, tl) -> last tl
+        | Cons(head, Empty) -> head
+        | Cons(head, tail) -> last tail
         | Empty -> 0
-    let rec cut lst =
-        match lst with 
-        | Cons (hd, Empty) -> Empty
-        | Cons (hd, tl) -> Cons (hd, cut tl)
+    let rec cut list =
+        match list with 
+        | Cons(head, Empty) -> Empty
+        | Cons(head, tail) -> Cons(head, cut tail)
         | Empty -> Empty
     match list with
     | Empty -> Empty
-    | Cons (hd, tl) -> Cons (last list, reverse (cut list))
+    | Cons(head, tail) -> Cons(last list, reverse (cut list))
 
 let rec comparing alist blist =
     match alist, blist with
     | Cons(a, atail), Cons(b, btail) ->
         if a > b
-        then "more"
-        elif a < b
-        then "less"
-        else comparing atail btail
-    | Empty, Empty -> "0"
+        then MoreOrEq
+        elif a = b
+        then comparing atail btail
+        else Less
+    | Empty, Empty -> MoreOrEq
 
-let compare alist blist =
+let comparation alist blist =
     if length alist > length blist
-    then "more"
+    then MoreOrEq
     elif length alist < length blist
-    then "less"
+    then Less
     else comparing alist blist
 
 let rec cutzero list =
     match list with
+    | Cons(0, Empty) -> Cons(0, Empty)
     | Empty -> Empty
-    | Cons (hd, tail) ->
-        if hd = 0
+    | Cons(head, tail) ->
+        if head = 0
         then cutzero tail
-        else Cons (hd, tail)  
+        else Cons(head, tail)
  
 let rec sum numlist1 numlist2 remain =
     match numlist1, numlist2 with
@@ -94,19 +99,15 @@ let rec difference numlist1 numlist2 remain =
 
     | Empty, Empty -> Empty
 
-let main (num1: Num) (num2: Num) =
+let addition (num1: Num) (num2: Num) =
     match num1, num2 with
     | (-1, lista), (-1, listb) -> (-1, (reverse (sum (reverse lista) (reverse listb) 0)))
     | (1, lista), (1, listb) -> (1, (reverse (sum (reverse lista) (reverse listb) 0)))
     | (-1, lista), (1, listb) ->
-        if compare lista listb = "more"
+        if comparation lista listb = MoreOrEq
         then (-1, (cutzero (reverse (difference (reverse lista) (reverse listb) 0))))
-        elif compare lista listb = "less"
-        then (1, (cutzero (reverse (difference (reverse listb) (reverse lista) 0))))
-        else (1, Cons(0, Empty))
+        else (1, (cutzero (reverse (difference (reverse listb) (reverse lista) 0))))
     | (1, lista), (-1, listb) ->
-        if compare lista listb = "more"
+        if comparation lista listb = MoreOrEq
         then (1, (cutzero (reverse (difference (reverse lista) (reverse listb) 0))))
-        elif compare lista listb = "less"
-        then (-1, (cutzero (reverse (difference (reverse listb) (reverse lista) 0))))
-        else (1, Cons(0, Empty))
+        else (-1, (cutzero (reverse (difference (reverse listb) (reverse lista) 0))))

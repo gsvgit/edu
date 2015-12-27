@@ -143,6 +143,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task32", "src\Task32\Task32
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task34", "src\Task34\Task34.fsproj", "{D689223C-60AB-480C-8550-AAB6D6380FD1}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Task32.Tests", "tests\Task32.Tests\Task32.Tests.fsproj", "{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -713,6 +715,16 @@ Global
 		{D689223C-60AB-480C-8550-AAB6D6380FD1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D689223C-60AB-480C-8550-AAB6D6380FD1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D689223C-60AB-480C-8550-AAB6D6380FD1}.Release|Win32.ActiveCfg = Release|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -745,5 +757,6 @@ Global
 		{30BD3626-B36E-41A9-9483-DAFB479A7F05} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 		{121C40D1-377A-4377-A2C4-CFACE3F2AA93} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 		{8C50BC65-CA1F-475D-9B7C-4A4733426CE0} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
+		{2B2096FD-04FB-44AE-8BEE-F7F4DCCA5BBB} = {ED8079DD-2B06-4030-9F0F-DC548F98E1C4}
 	EndGlobalSection
 EndGlobal

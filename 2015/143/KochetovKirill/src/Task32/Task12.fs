@@ -5,6 +5,9 @@ open Task30
 open Task15
 open Task3211
 
+
+let unit = (1, Cons(1, Empty))
+let zero = (1, Cons(0, Empty))
 let rec reverse (n : MyList<int>) = 
     match n with
     | Empty -> Empty
@@ -45,7 +48,7 @@ let division2 (n : Num) =
     
 
 let rec Fib (Arr : Num[,]) (n : Num) =
-    if n = (1, Cons(1, Empty)) || n = (1, Cons(0, Empty))
+    if n = unit || n = zero
     then
         Arr
     else
@@ -59,6 +62,6 @@ let rec Fib (Arr : Num[,]) (n : Num) =
             ret
  
 let main (n : Num) = 
-    let mtrx = array2D [ [ (1, Cons(1, Empty)); (1, Cons(1, Empty)) ] ; [ (1, Cons(1, Empty)); (1, Cons(0, Empty)) ] ]
+    let mtrx = array2D [ [ unit; unit ] ; [ unit; zero ] ]
     let fibn = Fib mtrx (sum n (-1, Cons(1, Empty)))
     fibn.[0,0]

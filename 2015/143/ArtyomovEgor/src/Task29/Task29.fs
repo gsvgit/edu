@@ -32,7 +32,7 @@ let binary (x: int64) len =
                     digit <- 0
                 else 
                     tmp.[i] <- 0L
-            if (i = 0) && (digit = 1) 
+            if i = 0 && digit = 1
             then tmp.[i] <- 1L
         tmp
 

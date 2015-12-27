@@ -8,12 +8,14 @@ open FSharp.Charting
 open System.Drawing
 open System.Windows.Forms
 
+let L1 () = (1, Cons(1, Empty))
+let L2 () = (1, Cons(2, Empty))
+let L0 () = (1, Cons(0, Empty))
+
 let rec task8Long (n: Num) =
-    match n with
-    | sign, lst ->
-        if compare lst (Cons(1, Empty)) = Less then (1, Cons(0, Empty))
-        elif compare lst (Cons(2, Empty)) = More || compare lst (Cons(2, Empty)) = Equals then (1, Cons(1, Empty))
-        else sum (task8Long (sum n (-1, Cons(1, Empty)))) (task8Long (sum n (-1, Cons(2, Empty))))
+     if n = L1() || n = L2()
+     then L1()
+     else sum (task8Long (sum n (-1, Cons(1, Empty)))) (task8Long (sum n (-1, Cons(2, Empty))))
 
 let task9Long n =
     let mutable a = (1, Cons(1, Empty))
@@ -38,11 +40,10 @@ let task10Long n =
             else fibN n (sum fib1 fib2) fib1 (sum i (1, Cons(1, Empty)))
     fibN n (1, Cons(1, Empty)) (1, Cons(1, Empty)) (1, Cons(2, Empty))
 
-
 let task11Long (n: Num) =
-    let a = array2D [ [(1, Cons(1, Empty)); (1, Cons(1, Empty))]; [(1, Cons(1, Empty)); (1, Cons(0, Empty))] ]
-    let b = array2D [ [(1, Cons(1, Empty)); (1, Cons(1, Empty))]; [(1, Cons(1, Empty)); (1, Cons(0, Empty))] ]
-    let i = Cons(1, Empty)
+    let a = array2D [ [L1(); L1()]; [L1(); L0()] ]
+    let b = a
+    let mutable i = Cons(1, Empty)
     match n with
     | sign, lst ->
         while compare i lst = Less do
@@ -55,8 +56,8 @@ let task11Long (n: Num) =
             a.[0, 1] <- multarray.[0, 1]
             a.[1, 0] <- multarray.[1, 0]
             a.[1, 1] <- multarray.[1, 1]
+            i <- increment 1 i 1 (Cons(1, Empty)) 0
         a.[0, 1]
-
 
 let multMatrixLong (a: Num[,]) (b: Num[,]) =
     let a00 = sum (mult a.[0, 0] b.[0, 0]) (mult a.[0, 1] b.[1, 0])
@@ -74,11 +75,14 @@ let divBy2 dend =
             | Cons(hd, tl) ->
                     if hd < 2 && i < 1
                     then division (1, tl) (i + 1) hd
-                    elif carry > 0
-                    then Cons(((carry * 10 + hd)/hd), division (1, tl) (i + 1) (carry * 10 + hd % 2))
-                    else Cons(hd / 2, division (1, tl) (i + 1) (hd % 2))
+                    elif carry > 0 && hd >= 2
+                    then 
+                        let carrynxt = carry * 10 + hd
+                        Cons (carrynxt / 2, division (1, tl) (i + 1) (carrynxt % 2))
+                    else 
+                        Cons(hd / 2, division (1, tl) (i + 1) (hd % 2))
     division dend 0 0
-
+     
 let modBy2 (n: Num) = 
     match n with
     | sign, tl ->
@@ -91,7 +95,7 @@ let modBy2 (n: Num) =
         res % 2
 
 let rec matrixPow (n: Num) arr =
-    if n = (1, Cons(1, Empty))
+    if n = L1()
     then
         arr
     elif modBy2 n = 0
@@ -103,7 +107,7 @@ let rec matrixPow (n: Num) arr =
         multMatrixLong arr (multMatrixLong pown pown)
 
 let task12Long n =
-    let array1 = array2D [ [(1, Cons(1, Empty)); (1, Cons(1, Empty))]; [(1, Cons(1, Empty)); (1, Cons(0, Empty))] ]
+    let array1 = array2D [ [L1(); L1()]; [L1(); L0()] ]
     let output = matrixPow n array1
     output.[0, 1]
 
@@ -124,12 +128,12 @@ let task13Long n =
     | sign, lst ->
         if compare lst (Cons(1, Empty)) = More 
         then 
-            outArray.[0] <- (1, Cons(1, Empty))
-            outArray.[1] <- (1, Cons(1, Empty))
+            outArray.[0] <- L1()
+            outArray.[1] <- L1()
             for i = 2 to len - 1 do
                 outArray.[i] <- sum outArray.[i - 1] outArray.[i - 2]
         else
-            outArray.[0] <- (1, Cons(1, Empty))
+            outArray.[0] <- L1()
         outArray
 
 let intToNum n =
@@ -139,8 +143,8 @@ let intToNum n =
         else 
             sum (Cons (i % 10, a)) (i / 10)
     if n > 0
-    then 1, sum Empty n
-    else -1, sum Empty n
+    then 1, sum Empty (abs n)
+    else -1, sum Empty (abs n)
 
 let time f =
     let start = System.DateTime.Now

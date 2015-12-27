@@ -3,6 +3,11 @@ open Task15
 
 type Num = int * MyList<int>
 
+type comparison = 
+    | Less
+    | More
+    | Equal
+
 let sum (num1 : Num) (num2 : Num) =
 
     let rec reverse lst =
@@ -22,20 +27,20 @@ let sum (num1 : Num) (num2 : Num) =
 
     let rec compare (num1 : MyList<int>) (num2 : MyList<int>) =
         if num1.getLength() > num2.getLength()
-        then Some(true)
+        then More
         elif num2.getLength() > num1.getLength()
-        then Some(false)
+        then Less
         else
         match num1, num2 with
-        | Empty, Empty -> None
+        | Empty, Empty -> Equal
         | Cons (hd1, tl1), Cons (hd2, tl2) ->
             if hd1 > hd2
-            then Some(true)
+            then More
             elif hd2 > hd1
-            then Some(false)
+            then Less
             else compare tl1 tl2 
-        | Cons (hd1, myList1), Empty -> Some(true)
-        | Empty, Cons (hd2, myList2) -> Some(false)          
+        | Cons (hd1, myList1), Empty -> More
+        | Empty, Cons (hd2, myList2) -> Less       
                                                         
     let rec addition num1 num2 ost s1 s2 =
         match num1, num2 with
@@ -82,16 +87,16 @@ let sum (num1 : Num) (num2 : Num) =
                 if s1 = s2
                 then 
                     s1, addition (reverse n1) (reverse n2) 0 1 1 |> reverse |> zeroDelete
-                elif s1 = 1 && s2 = -1 && compr = Some(true)
+                elif s1 = 1 && s2 = -1 && compr = More
                 then 
                     1, addition (reverse n1) (reverse n2) 0 1 -1 |> reverse |> zeroDelete
-                elif s1 = 1 && s2 = -1 && compr = Some(false)
+                elif s1 = 1 && s2 = -1 && compr = Less
                 then 
                     -1, addition (reverse n1) (reverse n2) 0 -1 1 |> reverse |> zeroDelete
-                elif s1 = -1 && s2 = 1 && compr = Some(true)
+                elif s1 = -1 && s2 = 1 && compr = More
                 then 
                     -1, addition (reverse n1) (reverse n2) 0 1 -1 |> reverse |> zeroDelete
-                elif s1 = -1 && s2 = 1 && compr = Some(false)
+                elif s1 = -1 && s2 = 1 && compr = Less
                 then 
                     1, addition (reverse n1) (reverse n2) 0 -1 1 |> reverse |> zeroDelete
                 else 1, Cons(0, Empty)

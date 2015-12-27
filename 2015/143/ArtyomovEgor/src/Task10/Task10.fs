@@ -1,6 +1,10 @@
 ﻿module Task10
 
-let rec main n =
-    let mas = [| 1; 1; 2; 3 |] 
-    if n <= 4 then mas.[n - 1]
-    else main(n - 1) + main(n - 2)
+let main n = 
+    let rec fibN n fib1 fib2 i = 
+        if n <= 2 
+        then 1
+        elif n = i
+        then fib1
+        else fibN n (fib1 + fib2) fib1 (i + 1)
+    fibN n 1 1 2

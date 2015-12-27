@@ -2,18 +2,18 @@
 
 open Task15
 
-let rec parser (rules : Task15.MyList<MyList<char> * MyList<char>>) =
+let rec getString (rules : Task15.MyList<MyList<char> * MyList<char>>) =
     let tape: MyList<'a> = Empty
-    let rec parse (tape : MyList<char>) (str : string) i =
+    let rec getStr (tape : MyList<char>) (str : string) i =
         if i <= str.Length
-        then parse (tape.add(str.[str.Length - i])) str (i + 1)
+        then getStr (tape.add(str.[str.Length - i])) str (i + 1)
         else tape
 
     let string = System.Console.ReadLine()
-    let line1 = parse tape string 1
+    let line1 = getStr tape string 1
     match System.Console.ReadLine() with
     | "" -> (rules, line1)
-    | newStr -> parser (rules.addEnd(Cons((line1, parse tape newStr 1), Empty))) 
+    | newStr -> getString (rules.addEnd(Cons((line1, getStr tape newStr 1), Empty))) 
 
 
 let rec merge (a : MyList<char>) (b : MyList<char>) =
@@ -47,7 +47,7 @@ let rec matchRules ( (line1 : MyList<char>), (line2 : MyList<char>) ) (tape : My
     | Cons(ch, tail) ->
         if matchPattern line1 tape
         then
-            merge line2 (matchRules (line1, line2) (part tape (line1.length())) )
+            merge line2 (matchRules (line1, line2) (part tape (line1.length())))
         else
             merge (Cons(ch, Empty) ) (matchRules (line1, line2) tail)
 
@@ -59,8 +59,8 @@ let rec main (rules : Task15.MyList<MyList<char> * MyList<char>>) (tape : MyList
 
 [<EntryPoint>]
 let inter argv = 
-    match parser Empty with
+    match getString Empty with
     | (rules, tape) ->
-        printfn "%A" <| (main rules tape)
+        printfn "%A" <| main rules tape
     let stay = System.Console.ReadKey(true)
     0

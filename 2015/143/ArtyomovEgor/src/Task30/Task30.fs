@@ -5,26 +5,33 @@ open Task15
 type Num =
     int * Task15.MyList<int>
 
-let rec compare (lst1: MyList<int>) (lst2: MyList<int>) =
-    if 
-        lst1.length() > lst2.length()
-    then 
-        1
-    elif 
-        lst1.length() < lst2.length()
-    then 
-        2
-    else
-        match lst1, lst2 with
-        | Cons(hd1, tl1), Cons(hd2, tl2) ->
-            if hd1 > hd2
-            then 1
-            elif hd1 < hd2
-            then 2
-            else compare tl1 tl2
-        | Cons(hd1, tl1), Empty -> 1
-        | Empty, Cons(hd2, tl2) -> 2
-        | Empty, Empty -> -1
+type compared =
+    | More
+    | Less
+    | Equals
+
+let compare (lst1: MyList<int>) (lst2: MyList<int>) =
+    let h1 = lst1
+    let h2 = lst2
+    let rec compare (lst1: MyList<int>) (lst2: MyList<int>) =
+        if lst1.length() > lst2.length()
+        then 
+            More
+        elif lst1.length() < lst2.length()
+        then 
+            Less
+        else
+            match lst1, lst2 with
+            | Cons(hd1, tl1), Cons(hd2, tl2) ->
+                if hd1 > hd2
+                then More
+                elif hd1 < hd2
+                then Less
+                else compare tl1 tl2
+            | Cons(hd1, tl1), Empty -> More
+            | Empty, Cons(hd2, tl2) -> Less
+            | Empty, Empty -> Equals
+    compare lst1 lst2
 
 
 let rec cutOff lst =
@@ -81,24 +88,22 @@ let rec increment (sign1: int) (num1: MyList<int>) (sign2: int) (num2: MyList<in
 
 let sum (num1: Num) (num2: Num) =
     let addition (num1: Num) (num2: Num) =
-        match num1 with
-        | sign1, num1 ->
-            match num2 with
-            | sign2, num2 ->
+        match num1, num2 with
+        | (sign1, num1), (sign2, num2) ->
                 let high = compare num1 num2
                 if sign1 = sign2
                 then sign1, cutOff(leftToRight(increment 1 (leftToRight num1) 1 (leftToRight num2) 0))
                 else
-                    if high = 1
+                    if high = More
                     then 
                         if sign1 = 1
                         then sign1, cutOff(leftToRight(increment sign1 (leftToRight num1) sign2 (leftToRight num2) 0))
                         else sign1, cutOff(leftToRight(increment sign2 (leftToRight num1) sign1 (leftToRight num2) 0))
-                    elif high = 2
+                    elif high = Less
                     then
                         if sign2 = 1
                         then sign2, cutOff(leftToRight(increment sign1 (leftToRight num1) sign2 (leftToRight num2) 0))
                         else sign2, cutOff(leftToRight(increment sign2 (leftToRight num1) sign1 (leftToRight num2) 0))
                     else 
-                        1, Cons(0, Empty)
+                        (1, Cons(0, Empty))
     addition (num1: Num) (num2: Num)

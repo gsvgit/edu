@@ -41,8 +41,8 @@ let task10Long n =
     fibN n (1, Cons(1, Empty)) (1, Cons(1, Empty)) (1, Cons(2, Empty))
 
 let task11Long (n: Num) =
-    let a = array2D [ [L1(); L1()]; [L1(); L0()] ]
-    let b = a
+    let mutable a = array2D [ [L1(); L1()]; [L1(); L0()] ]
+    let b = array2D [ [L1(); L1()]; [L1(); L0()] ]
     let mutable i = Cons(1, Empty)
     match n with
     | sign, lst ->

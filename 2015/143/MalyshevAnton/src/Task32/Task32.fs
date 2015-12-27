@@ -7,59 +7,56 @@ open System.Drawing
 open System.Windows.Forms
 open FSharp.Charting
 
+let zero () = (1, Cons(0, Empty))
+let one () = (1, Cons(1, Empty))
+
 let rec fibTask8 (n: Num) =
-    if comparation (snd n) (snd (1, Cons(2, Empty))) = More
+    if comparation (snd n) (snd (1, Cons(2, Empty))) = MoreOrEq
     then addition (fibTask8 (addition n (-1, Cons(1, Empty)))) (fibTask8 (addition n (-1, Cons(2, Empty))))
     else n
 
 let fibTask9 (n: Num) =
-    let zero = (1, Cons(0, Empty))
-    let one = (1, Cons(1, Empty))
-    if comparation (snd n) (snd (1, Cons(2, Empty))) = More
+    if comparation (snd n) (snd (1, Cons(2, Empty))) = MoreOrEq
     then
-        let mutable fibN = zero  // fibN = fib(n)
-        let mutable fibN1 = one // fibN1 = fib(n-1)
-        let mutable fibN2 = zero // fibN2 = fib(n-2)
+        let mutable fibN = zero ()
+        let mutable fibN1 = one ()
+        let mutable fibN2 = zero ()
         let mutable ilong = (1, Cons(2, Empty))
         let mutable i = snd (1, Cons(2, Empty))
         let list = snd n
-        while comparation list i = More do
+        while comparation list i = MoreOrEq do
             fibN <- addition fibN1 fibN2
             fibN2 <- fibN1
             fibN1 <- fibN
-            ilong <- addition ilong one
+            ilong <- addition ilong (one ())
             i <- snd ilong
         fibN
     else n
 
        
 let fibTask10 (n: Num) =
-    let zero = (1, Cons(0, Empty))
-    let one = (1, Cons(1, Empty))
     let rec fib fibN1 fibN2 n s = 
-        if comparation (snd (addition n (-1, Cons(1, Empty)))) (snd s) = More
-        then fib (addition fibN1 fibN2) fibN1 n (addition s one)
+        if comparation (snd (addition n (-1, Cons(1, Empty)))) (snd s) = MoreOrEq
+        then fib (addition fibN1 fibN2) fibN1 n (addition s (one ()))
         else fibN1
 
     let fibFind n =
-        if comparation (snd n) (snd (1, Cons(2, Empty))) = More
-        then fib one zero n one
+        if comparation (snd n) (snd (1, Cons(2, Empty))) = MoreOrEq
+        then fib (one ()) (zero ()) n (one ())
         else n
     fibFind n
 
 
 let fibTask11 (n: Num) =
-    let zero = (1, Cons(0, Empty))
-    let one = (1, Cons(1, Empty))
-    if comparation (snd n) (snd (1, Cons(2, Empty))) = More
+    if comparation (snd n) (snd (1, Cons(2, Empty))) = MoreOrEq
     then
-        let C = array2D [| [|zero; zero|]; [|zero; zero|] |]
-        let B = array2D [| [|one; one|]; [|one; one|] |]
-        let A = array2D [| [|one; one|]; [|one; zero|] |]
+        let C = array2D [| [|zero (); zero ()|]; [|zero (); zero ()|] |]
+        let B = array2D [| [|one (); one ()|]; [|one (); one ()|] |]
+        let A = array2D [| [|one (); one ()|]; [|one (); zero ()|] |]
         let mutable ilong = (1, Cons(2, Empty))
         let mutable i = snd (1, Cons(2, Empty))
         let list = snd n
-        while comparation list i = More do
+        while comparation list i = MoreOrEq do
             C.[0, 0] <- addition (multiplication B.[0, 0] A.[0, 0]) (multiplication B.[0, 1] A.[1, 0])
             C.[0, 1] <- addition (multiplication B.[0, 0] A.[0, 1]) (multiplication B.[0, 1] A.[1, 1])
             C.[1, 0] <- addition (multiplication B.[1, 0] A.[0, 0]) (multiplication B.[1, 1] A.[1, 0])
@@ -68,7 +65,7 @@ let fibTask11 (n: Num) =
             B.[0, 1] <- C.[0, 1]
             B.[1, 0] <- C.[1, 0]
             B.[1, 1] <- C.[1, 1]
-            ilong <- addition ilong one
+            ilong <- addition ilong (one ())
             i <- snd ilong
         B.[0, 1]
     else n
@@ -91,10 +88,8 @@ let div2 (num: Num) =
 
 
 let fibTask12 (n: Num) =
-    let zero = (1, Cons(0, Empty))
-    let one = (1, Cons(1, Empty))
 
-    let Matrix = array2D [| [|one; one|]; [|one; zero|] |]
+    let Matrix = array2D [| [|one (); one ()|]; [|one (); zero ()|] |]
 
     let MatrixMult (A: Num[,]) (B: Num[,]) =
         let c00 = addition (multiplication A.[0, 0] B.[0, 0]) (multiplication A.[0, 1] B.[1, 0])
@@ -105,7 +100,7 @@ let fibTask12 (n: Num) =
         C 
 
     let rec FindFib n =
-        if comparation (snd n) (snd (1, Cons(2, Empty))) = More
+        if comparation (snd n) (snd (1, Cons(2, Empty))) = MoreOrEq
         then
             let mutable m = Matrix
             if isDiv2 n = 0
@@ -120,7 +115,7 @@ let fibTask12 (n: Num) =
         else Matrix
 
     let fibF n =
-        if comparation (snd n) (snd (1, Cons(2, Empty))) = More
+        if comparation (snd n) (snd (1, Cons(2, Empty))) = MoreOrEq
         then
             let FinalMatrix = FindFib n
             FinalMatrix.[0, 1]
@@ -146,18 +141,16 @@ let fromInt n =
 
 
 let fibTask13 (n: Num) =
-    let zero = (1, Cons(0, Empty))
-    let one = (1, Cons(1, Empty))
     let nint = toInt n
     if nint = 0 
-    then [|zero|]
+    then [|zero ()|]
     else 
         if nint = 1 
-        then [|zero; one|]
+        then [|zero (); one ()|]
         else
-            let fib = [|for i in 0..nint -> zero|]
-            fib.[0] <- zero
-            fib.[1] <- one
+            let fib = [|for i in 0..nint -> zero ()|]
+            fib.[0] <- zero ()
+            fib.[1] <- one ()
             for i in 2..nint do
                 fib.[i] <- addition fib.[i - 1] fib.[i - 2]   
             fib

@@ -5,7 +5,7 @@ open Task15
 type Num = int * MyList<int>
 
 type ForComparing =
-    | More //more or equal
+    | MoreOrEq
     | Less
 
 let rec length list =
@@ -32,15 +32,15 @@ let rec comparing alist blist =
     match alist, blist with
     | Cons(a, atail), Cons(b, btail) ->
         if a > b
-        then More
+        then MoreOrEq
         elif a = b
         then comparing atail btail
         else Less
-    | Empty, Empty -> More
+    | Empty, Empty -> MoreOrEq
 
 let comparation alist blist =
     if length alist > length blist
-    then More
+    then MoreOrEq
     elif length alist < length blist
     then Less
     else comparing alist blist
@@ -104,10 +104,10 @@ let addition (num1: Num) (num2: Num) =
     | (-1, lista), (-1, listb) -> (-1, (reverse (sum (reverse lista) (reverse listb) 0)))
     | (1, lista), (1, listb) -> (1, (reverse (sum (reverse lista) (reverse listb) 0)))
     | (-1, lista), (1, listb) ->
-        if comparation lista listb = More
+        if comparation lista listb = MoreOrEq
         then (-1, (cutzero (reverse (difference (reverse lista) (reverse listb) 0))))
         else (1, (cutzero (reverse (difference (reverse listb) (reverse lista) 0))))
     | (1, lista), (-1, listb) ->
-        if comparation lista listb = More
+        if comparation lista listb = MoreOrEq
         then (1, (cutzero (reverse (difference (reverse lista) (reverse listb) 0))))
         else (-1, (cutzero (reverse (difference (reverse listb) (reverse lista) 0))))

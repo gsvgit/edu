@@ -8,53 +8,58 @@ open System.Windows.Forms
 open FSharp.Charting
 
 let rec fibTask8 (n: Num) =
-    if compare (snd n) (snd (1, Cons(2, Empty))) 
+    if comparation (snd n) (snd (1, Cons(2, Empty))) = More
     then addition (fibTask8 (addition n (-1, Cons(1, Empty)))) (fibTask8 (addition n (-1, Cons(2, Empty))))
     else n
 
 let fibTask9 (n: Num) =
-    if compare (snd n) (snd (1, Cons(2, Empty)))
+    let zero = (1, Cons(0, Empty))
+    let one = (1, Cons(1, Empty))
+    if comparation (snd n) (snd (1, Cons(2, Empty))) = More
     then
-        let mutable fibN = (1, Cons(0, Empty))  // fibN = fib(n)
-        let mutable fibN1 = (1, Cons(1, Empty)) // fibN1 = fib(n-1)
-        let mutable fibN2 = (1, Cons(0, Empty)) // fibN2 = fib(n-2)
+        let mutable fibN = zero  // fibN = fib(n)
+        let mutable fibN1 = one // fibN1 = fib(n-1)
+        let mutable fibN2 = zero // fibN2 = fib(n-2)
         let mutable ilong = (1, Cons(2, Empty))
-        let mutable i = Cons(2, Empty)
+        let mutable i = snd (1, Cons(2, Empty))
         let list = snd n
-        while compare list i do
+        while comparation list i = More do
             fibN <- addition fibN1 fibN2
             fibN2 <- fibN1
             fibN1 <- fibN
-            ilong <- addition ilong (1, Cons(1, Empty))
+            ilong <- addition ilong one
             i <- snd ilong
         fibN
     else n
 
        
 let fibTask10 (n: Num) =
-
+    let zero = (1, Cons(0, Empty))
+    let one = (1, Cons(1, Empty))
     let rec fib fibN1 fibN2 n s = 
-        if compare (snd (addition n (-1, Cons(1, Empty)))) (snd s)
-        then fib (addition fibN1 fibN2) fibN1 n (addition s (1, Cons(1, Empty)))
+        if comparation (snd (addition n (-1, Cons(1, Empty)))) (snd s) = More
+        then fib (addition fibN1 fibN2) fibN1 n (addition s one)
         else fibN1
 
     let fibFind n =
-        if n = (1, Cons(0, Empty)) || n = (1, Cons(1, Empty))
-        then n 
-        else fib (1, Cons(1, Empty)) (1, Cons(0, Empty)) n (1, Cons(1, Empty))
+        if comparation (snd n) (snd (1, Cons(2, Empty))) = More
+        then fib one zero n one
+        else n
     fibFind n
 
 
 let fibTask11 (n: Num) =
-    if compare (snd n) (snd (1, Cons(2, Empty)))
+    let zero = (1, Cons(0, Empty))
+    let one = (1, Cons(1, Empty))
+    if comparation (snd n) (snd (1, Cons(2, Empty))) = More
     then
-        let C = array2D [| [|(1, Cons(0, Empty)); (1, Cons(0, Empty))|]; [|(1, Cons(0, Empty)); (1, Cons(0, Empty))|] |]
-        let B = array2D [| [|(1, Cons(1, Empty)); (1, Cons(1, Empty))|]; [|(1, Cons(1, Empty)); (1, Cons(1, Empty))|] |]
-        let A = array2D [| [|(1, Cons(1, Empty)); (1, Cons(1, Empty))|]; [|(1, Cons(1, Empty)); (1, Cons(0, Empty))|] |]
+        let C = array2D [| [|zero; zero|]; [|zero; zero|] |]
+        let B = array2D [| [|one; one|]; [|one; one|] |]
+        let A = array2D [| [|one; one|]; [|one; zero|] |]
         let mutable ilong = (1, Cons(2, Empty))
-        let mutable i = Cons(2, Empty)
+        let mutable i = snd (1, Cons(2, Empty))
         let list = snd n
-        while compare list i do
+        while comparation list i = More do
             C.[0, 0] <- addition (multiplication B.[0, 0] A.[0, 0]) (multiplication B.[0, 1] A.[1, 0])
             C.[0, 1] <- addition (multiplication B.[0, 0] A.[0, 1]) (multiplication B.[0, 1] A.[1, 1])
             C.[1, 0] <- addition (multiplication B.[1, 0] A.[0, 0]) (multiplication B.[1, 1] A.[1, 0])
@@ -63,7 +68,7 @@ let fibTask11 (n: Num) =
             B.[0, 1] <- C.[0, 1]
             B.[1, 0] <- C.[1, 0]
             B.[1, 1] <- C.[1, 1]
-            ilong <- addition ilong (1, Cons(1, Empty))
+            ilong <- addition ilong one
             i <- snd ilong
         B.[0, 1]
     else n
@@ -81,15 +86,15 @@ let rec isDiv2 ((n, list): Num) =
 let div2 (num: Num) =
     let list = reverse (snd (multiplication num (1, Cons(5, Empty))))
     match list with
-    | Cons(0, Empty) -> (1, Cons(0, Empty))
-    | Cons(5, Empty) -> (1, Cons(1, Empty))
     | Cons(a, tail) -> (1, reverse tail)
     | Empty -> (1, Empty)
 
 
 let fibTask12 (n: Num) =
+    let zero = (1, Cons(0, Empty))
+    let one = (1, Cons(1, Empty))
 
-    let Matrix = array2D [| [|(1, Cons(1, Empty)); (1, Cons(1, Empty))|]; [|(1, Cons(1, Empty)); (1, Cons(0, Empty))|] |]
+    let Matrix = array2D [| [|one; one|]; [|one; zero|] |]
 
     let MatrixMult (A: Num[,]) (B: Num[,]) =
         let c00 = addition (multiplication A.[0, 0] B.[0, 0]) (multiplication A.[0, 1] B.[1, 0])
@@ -100,7 +105,7 @@ let fibTask12 (n: Num) =
         C 
 
     let rec FindFib n =
-        if compare (snd n) (snd (1, Cons(2, Empty)))
+        if comparation (snd n) (snd (1, Cons(2, Empty))) = More
         then
             let mutable m = Matrix
             if isDiv2 n = 0
@@ -112,15 +117,14 @@ let fibTask12 (n: Num) =
                 m <- FindFib (div2 (addition n (-1, Cons(1, Empty))))
                 let MatrxFib = MatrixMult Matrix (MatrixMult m m)
                 MatrxFib
-        else
-            Matrix
+        else Matrix
 
     let fibF n =
-        if n = (1, Cons(0, Empty)) || n = (1, Cons(1, Empty))
-        then n
-        else
+        if comparation (snd n) (snd (1, Cons(2, Empty))) = More
+        then
             let FinalMatrix = FindFib n
             FinalMatrix.[0, 1]
+        else n
     fibF n
 
 
@@ -142,16 +146,18 @@ let fromInt n =
 
 
 let fibTask13 (n: Num) =
+    let zero = (1, Cons(0, Empty))
+    let one = (1, Cons(1, Empty))
     let nint = toInt n
     if nint = 0 
-    then [|(1, Cons(0, Empty))|]
+    then [|zero|]
     else 
         if nint = 1 
-        then [|(1, Cons(0, Empty)); (1, Cons(1, Empty))|]
+        then [|zero; one|]
         else
-            let fib = [|for i in 0..nint -> (1, Cons(0, Empty))|]
-            fib.[0] <- (1, Cons(0, Empty))
-            fib.[1] <- (1, Cons(1, Empty))
+            let fib = [|for i in 0..nint -> zero|]
+            fib.[0] <- zero
+            fib.[1] <- one
             for i in 2..nint do
                 fib.[i] <- addition fib.[i - 1] fib.[i - 2]   
             fib

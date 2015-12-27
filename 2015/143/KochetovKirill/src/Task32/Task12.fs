@@ -17,11 +17,7 @@ let isMod2Eq0 (n : Num) =
         match reverse abs with
         | Empty -> failwith "Empty"
         | Cons(hd, tail) ->
-            if hd % 2 = 0
-            then
-                true
-            else
-                false
+            hd % 2 = 0
 
 let division2 (n : Num) =
     match n with

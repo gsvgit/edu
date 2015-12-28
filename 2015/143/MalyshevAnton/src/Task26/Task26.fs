@@ -31,11 +31,12 @@ let rec applyRule ((old : string) , (changed : string)) (str: string) =
 
 let interpretator (stringrule: string) (str: string) =
 
-    let remToRules (strlist: string []) = 
+    let remToRules (strN: string) =
+        let arrstr = strN.Split([|";"|], System.StringSplitOptions.RemoveEmptyEntries)
         let mutable rules = [] 
-        let reslength = strlist.Length
+        let reslength = arrstr.Length
         for i in 0..(reslength - 1) do 
-            let istring = strlist.[i]
+            let istring = arrstr.[i]
             let [|old; changed|] = istring.Split([|"->"|], System.StringSplitOptions.RemoveEmptyEntries)
             rules <- rules @ [(old, changed)]
         rules
@@ -45,7 +46,7 @@ let interpretator (stringrule: string) (str: string) =
         | [] -> str
         | hd :: tail -> interpret tail (applyRule hd str)
 
-    interpret (remToRules (stringrule.Split([|";"|], System.StringSplitOptions.RemoveEmptyEntries))) str
+    interpret (remToRules stringrule) str
 
 let readConsoleRules (newrules: string) =
     printfn "%s" "Enter a rules"

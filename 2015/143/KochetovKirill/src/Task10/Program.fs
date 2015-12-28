@@ -12,11 +12,12 @@
     else 
       next 1 1 2 n
   
-//  let n = System.Console.ReadLine() |> int
-//
-//  [<EntryPoint>]
-//  let inter argv = 
-//    printfn "%A" <| main n
-//    let rk = System.Console.ReadKey(true)
-//    0
+  let n = System.Console.ReadLine() |> int
+
+  [<EntryPoint>]
+  let inter argv = 
+    printfn "%s" "dsafsefe"
+    printfn "%A" <| main n
+    let rk = System.Console.ReadKey(true)
+    0
     

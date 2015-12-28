@@ -1,7 +1,7 @@
 ﻿module Task12
 open Task11
 
-  let rec Fib (Arr:int[,]) (n:int) =
+  let rec Fib (Arr : int[,]) (n : int) =
     if n = 1 || n = 0 then
       Arr
     else

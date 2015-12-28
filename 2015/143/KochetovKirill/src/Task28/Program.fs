@@ -9,8 +9,7 @@ let main number =
         nm <- nm &&&  System.Int32.MaxValue
 
     for i in 0..30 do
-        bit <- ((nm % 2) |> string) + bit
-        nm <- (nm - nm % 2)/2
+        bit <- (((nm >>> i) &&& 1) |> string) + bit
 
     if number < 0
     then bit <- "1" + bit

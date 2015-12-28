@@ -15,12 +15,12 @@ let time f =
 
 let gch = 
     Chart.Combine
-     [Chart.Line( [ for i in 10..5..30 -> (i,time (fun () -> Task8.main i |> ignore) ) ], Color = System.Drawing.Color.Red)
-      Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task9.main i |> ignore) ) ], Color = System.Drawing.Color.Green)
-      Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task10.main i |> ignore) ) ], Color = System.Drawing.Color.Blue)
-      Chart.Line( [ for i in 1000..100..16000 -> (i,time (fun () -> Task11.main i |> ignore) ) ], Color = System.Drawing.Color.Black)
-      Chart.Line( [ for i in 1000..100..30000 -> (i,time (fun () -> Task12.main i |> ignore) ) ], Color = System.Drawing.Color.Gray)
-      Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task13.main i |> ignore) ) ], Color = System.Drawing.Color.Yellow)
+     [Chart.Line( [ for i in 10..5..30 -> (i,time (fun () -> Task8.main i |> ignore) ) ], "Rec", Color = System.Drawing.Color.Red)
+      Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task9.main i |> ignore) ) ], "Iter", Color = System.Drawing.Color.Green)
+      Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task10.main i |> ignore) ) ], "Iter without mut", Color = System.Drawing.Color.Blue)
+      Chart.Line( [ for i in 1000..100..16000 -> (i,time (fun () -> Task11.main i |> ignore) ) ], "Matrix", Color = System.Drawing.Color.Black)
+      Chart.Line( [ for i in 1000..100..30000 -> (i,time (fun () -> Task12.main i |> ignore) ) ], "Matrix log", Color = System.Drawing.Color.Gray)
+      Chart.Line( [ for i in 1000..100..100000 -> (i,time (fun () -> Task13.main i |> ignore) ) ], "Array", Color = System.Drawing.Color.Yellow)
      ]
 
 

@@ -1,17 +1,13 @@
 ﻿module Task13
 
-let inp = System.Console.ReadLine() |> int
-
-let main (inp:int) =
-    let arr = Array.zeroCreate inp
-    if inp > 1 
+let main n =
+    let outArray = Array.zeroCreate n
+    if n > 1 
     then 
-        arr.[0] <- 1
-        arr.[1] <- 1
-        for i = 2 to inp - 1  do
-            arr.[i] <- arr.[i-1] + arr.[i-2]
-        arr
+        outArray.[0] <- 1
+        outArray.[1] <- 1
+        for i = 2 to n - 1  do
+            outArray.[i] <- outArray.[i - 1] + outArray.[i - 2]
     else
-        [| 1 |]
-
-printfn "%A" (main inp)
+        outArray.[0] <- 1
+    outArray

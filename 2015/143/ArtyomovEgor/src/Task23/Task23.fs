@@ -1,11 +1,11 @@
 ﻿module Task23
 
-let swap i j (arr : 'a []) =
+let swap i j (arr: int array) =
     let tmp = arr.[i]
     arr.[i] <- arr.[j]
     arr.[j] <- tmp
 
-let pivotDance(arr : 'a [], left, right, pivotNumber) = 
+let pivotDance(arr: int array, left, right, pivotNumber) = 
     let pivot = arr.[pivotNumber]
     swap pivotNumber right arr
 
@@ -17,7 +17,7 @@ let pivotDance(arr : 'a [], left, right, pivotNumber) =
     swap tempNumber right arr
     tempNumber
 
-let main (arr : 'a []) =
+let main (arr: int array) =
     let rec sort (arr, left, right) =
         if left < right then
             let pivotNumber = (left + right) / 2

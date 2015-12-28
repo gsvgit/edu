@@ -13,7 +13,8 @@ let numsys (x: int64) len =
 let binary (x: int64) len =
     let mutable n = x
     if n >= 0L
-    then numsys x len
+    then 
+        numsys x len
     else
         n <- (-1L) * n
         let mutable tmp = numsys n len
@@ -29,9 +30,10 @@ let binary (x: int64) len =
                 then
                     tmp.[i] <- 1L
                     digit <- 0
-                else tmp.[i] <- 0L
-            if (i = 0)&&(digit = 1) then
-                tmp.[i] <- 1L
+                else 
+                    tmp.[i] <- 0L
+            if i = 0 && digit = 1
+            then tmp.[i] <- 1L
         tmp
 
 let arraymain n =

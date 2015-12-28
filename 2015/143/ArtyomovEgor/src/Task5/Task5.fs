@@ -13,7 +13,5 @@ let main (inArray:array<int>) (lowBound:int) (highBound:int) =
             then answer <- i :: answer
 
     let immut = answer
-    let outArray = [| for i in List.rev(immut) -> i |]
-
-    printfn "%A" outArray
+    let outArray: int array = [| for i in List.rev(immut) -> i |]
     outArray

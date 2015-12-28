@@ -22,26 +22,22 @@ let rec merge (a : MyList<char>) (b : MyList<char>) =
     | Cons(hd, tl) -> Cons(hd, merge tl b)
 
 
-let rec cut (ruleLenght : int) (tape: MyList<char>) =
-    if ruleLenght = 0
-    then
-        tape
-    else
+let rec cut len tape =
+    match len with
+    | 0 -> tape
+    | stg ->
         match tape with
         | Empty -> Empty
-        | Cons(hd, tl) -> cut (ruleLenght - 1) tl
-        
+        | Cons(hd, tl) -> cut (len - 1) tl
 
 let rec matchRules ( (line1 : MyList<char>), (line2 : MyList<char>) ) (tape : MyList<char>) =
     let rec matchPattern (pattern : MyList<char>) (tape : MyList<char>) = 
         match pattern, tape with
         | Empty, stg -> true
         | Cons(hd1, tl1), Cons(hd2, tl2) ->
-            if hd1 = hd2
-            then matchPattern tl1 tl2
-            else false
+            hd1 = hd2
         | stg, Empty -> false
-
+                
     match tape with
     | Empty -> Empty
     | Cons(ch, tail) ->

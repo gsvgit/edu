@@ -29,43 +29,28 @@ let rec applyRule ((old : string) , (changed : string)) (str: string) =
     else
         str
 
-let rec interpretator (stringrule: string) (str: string) =
+let interpretator (stringrule: string) (str: string) =
 
-    let remakeStrToRule (str: string) =
-    
-        let mutable (strList: string []) = [||]
-        let rec remToStrList (string: string) =
-            if string.Length = 0
-            then [||]
-            else
-                let i = string.IndexOf(";")
-                strList <- Array.append [|(string.[0..(i - 1)])|] (remToStrList (string.[(i + 1)..(string.Length - 1)]))
-                strList
-
-        let remToRules (strlist: string []) = 
-            let mutable rules = [] 
-            let reslength = strlist.Length
-            for i in 0..(reslength - 1) do 
-                let istring = strlist.[i]
-                let istrlen = String.length(istring)
-                let i = istring.IndexOf("->")
-                let old = istring.[0..(i - 1)]
-                let changed = istring.[(i + 2)..(istrlen - 1)]
-                rules <- rules @ [(old, changed)]
-            rules
-        remToRules (remToStrList stringrule)
+    let remToRules (strlist: string []) = 
+        let mutable rules = [] 
+        let reslength = strlist.Length
+        for i in 0..(reslength - 1) do 
+            let istring = strlist.[i]
+            let [|old; changed|] = istring.Split([|"->"|], System.StringSplitOptions.RemoveEmptyEntries)
+            rules <- rules @ [(old, changed)]
+        rules
 
     let rec interpret rule (str: string) =
         match rule with
         | [] -> str
         | hd :: tail -> interpret tail (applyRule hd str)
 
-    interpret (remakeStrToRule stringrule) str
+    interpret (remToRules (stringrule.Split([|";"|], System.StringSplitOptions.RemoveEmptyEntries))) str
 
-let readConsoleRules (rules: string) =
+let readConsoleRules (newrules: string) =
     printfn "%s" "Enter a rules"
-    let rules = System.Console.ReadLine()
-    rules
+    let newrules = System.Console.ReadLine()
+    newrules
 
 let rec readConsoleMessages rules (newmessage: string) =
     printfn "%s" "Enter a message, or Enter an empty message to complete"

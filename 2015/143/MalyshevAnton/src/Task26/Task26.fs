@@ -5,7 +5,7 @@ type StrList = List<string * string>
 printfn "%s" "Choose method of specifying rules:"
 printfn "%s" "Enter 'console' for setting rules from console"
 printfn "%s" "Enter 'file' for seting rules from file"
-printfn "%s" "Enter 'standart' for setting standart rules (English (lower case) -> ASCII; Example: (a -> 01100001))"
+printfn "%s" "Enter 'standart' for setting standart rules (ab->c;d->f)"
 
 let rulechoice = System.Console.ReadLine()
 
@@ -16,36 +16,7 @@ printfn "%s" "Enter 'standart' for standart message: 'Hello world'"
 
 let messagechoice = System.Console.ReadLine()
 
-//Алфавит: {a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, x, z, 0, 1, (space)}
-let standartRules: StrList = [
-    ("a", "01100001")
-    ("b", "01100010")
-    ("c", "01100011")
-    ("d", "01100100")
-    ("e", "01100101")
-    ("f", "01100110")
-    ("g", "01100111")
-    ("h", "01101000")
-    ("i", "01101001")
-    ("j", "01101010")
-    ("k", "01101011")
-    ("l", "01101100")
-    ("m", "01101101")
-    ("n", "01101110")
-    ("o", "01101111")
-    ("p", "01110000")
-    ("q", "01110001")
-    ("r", "01110010")
-    ("s", "01110011")
-    ("t", "01110100")
-    ("u", "01110101")
-    ("v", "01110110")
-    ("w", "01110111")
-    ("x", "01111000")
-    ("y", "01111001")
-    ("z", "01111010")
-    (" ", "00100000")
-    ]
+let standartRules = "ab->c;d->f"
 
 let rec applyRule ((old : string) , (changed : string)) (str: string) =
     let i = str.IndexOf old
@@ -58,24 +29,43 @@ let rec applyRule ((old : string) , (changed : string)) (str: string) =
     else
         str
 
-let rec interpretator (rules: StrList) (str: string) =
-    match rules with
-    | [] -> str
-    | hd :: tail ->
-        interpretator tail (applyRule hd str)
+let rec interpretator (stringrule: string) (str: string) =
 
-let rec readConsoleRules (rules: StrList) =
-    printfn "%s" "Enter a rule"
-    let old = System.Console.ReadLine()
-    if old = ""
-    then
-        rules
-    else
-        printfn "%s" "->"
-        let changed = System.Console.ReadLine()
-        printfn "%s" "To enter a message, enter an empty rule"
-        let newrules: StrList = [(old, changed)] @ (readConsoleRules rules)
-        newrules
+    let remakeStrToRule (str: string) =
+    
+        let mutable (strList: string []) = [||]
+        let rec remToStrList (string: string) =
+            if string.Length = 0
+            then [||]
+            else
+                let i = string.IndexOf(";")
+                strList <- Array.append [|(string.[0..(i - 1)])|] (remToStrList (string.[(i + 1)..(string.Length - 1)]))
+                strList
+
+        let remToRules (strlist: string []) = 
+            let mutable rules = [] 
+            let reslength = strlist.Length
+            for i in 0..(reslength - 1) do 
+                let istring = strlist.[i]
+                let istrlen = String.length(istring)
+                let i = istring.IndexOf("->")
+                let old = istring.[0..(i - 1)]
+                let changed = istring.[(i + 2)..(istrlen - 1)]
+                rules <- rules @ [(old, changed)]
+            rules
+        remToRules (remToStrList stringrule)
+
+    let rec interpret rule (str: string) =
+        match rule with
+        | [] -> str
+        | hd :: tail -> interpret tail (applyRule hd str)
+
+    interpret (remakeStrToRule stringrule) str
+
+let readConsoleRules (rules: string) =
+    printfn "%s" "Enter a rules"
+    let rules = System.Console.ReadLine()
+    rules
 
 let rec readConsoleMessages rules (newmessage: string) =
     printfn "%s" "Enter a message, or Enter an empty message to complete"
@@ -90,19 +80,8 @@ let rec readConsoleMessages rules (newmessage: string) =
 let readFileRules string = 
     printfn "%s" "Enter the path to the rules" 
     let path = System.Console.ReadLine() 
-    let filestr = System.IO.File.ReadAllLines(path) 
-    let makeRules (str : string []) = 
-        let mutable rules = [] 
-        let reslength = str.Length 
-        for i in 0..(reslength - 1) do 
-            let istring = str.[i]
-            let istrlen = String.length(istring)
-            let i = istring.IndexOf("->")
-            let old = istring.[0..(i - 1)]
-            let changed = istring.[(i + 2)..(istrlen - 1)]
-            rules <- rules @ [(old, changed)]
-        rules
-    makeRules filestr
+    let rules = System.IO.File.ReadAllText(path)
+    rules
 
 let readFileMessages rules =
     printfn "%s" "Enter the path to the message"
@@ -118,7 +97,7 @@ let reallymain rulechoice messagechoice =
 
     let ruler rulechoice =
         if rulechoice = "console"
-        then readConsoleRules []
+        then readConsoleRules "" 
             elif rulechoice = "standart"
             then standartRules
                 elif rulechoice = "file"
@@ -135,7 +114,6 @@ let reallymain rulechoice messagechoice =
                 else printfn "%s" "wrong"
 
     messager messagechoice
-
 
 [<EntryPoint>]
 let main argv = 

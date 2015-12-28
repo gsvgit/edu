@@ -52,9 +52,10 @@ let fileInputRules rules =
 
 let rec consoleInputStr rules (newmessage: string) =
         printfn "%s" "Enter string"
-        let mutable str = System.Console.ReadLine()
+        let str = System.Console.ReadLine()
         if str <> ""
         then
+            printfn "%s" (interpreter rules str)
             consoleInputStr rules ""
         else
             printfn "%s" "End"

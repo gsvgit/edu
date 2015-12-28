@@ -4,9 +4,8 @@ open Task15
 open Task26
 open System.IO
 
-
-let console =
-    printf "%s" "Вводите прaвила:\n"
+let console (is : string) =
+    printf "%s" "Вводите првила:\n"
     let rec reader (rules : Rules) = 
         match System.Console.ReadLine() with
         | "" -> rules
@@ -46,13 +45,12 @@ let sstring (str : string) =
                 first <- first.addListToTheEnd(Cons(str.[i], Empty))
     rules
 
-let main =
-    printfn "%s" "Выберете откуда читать правила\nИз консоли: 1\nИз файла: 2\n"
-    let case = System.Console.Read()
-    if case = 1
-    then
-        console
-    else
-        printfn "%s" "Укажите путь к файлу:\n"
-        let path = System.Console.ReadLine()
-        file path
+//let main =
+//    printfn "%s" "Выберете откуда читать правила\nИз консоли: 1\nИз файла: 2\n"
+//    let case = System.Console.ReadLine()
+//    match case with
+//    |"1" ->
+//        Console.rule
+//    |"2" ->
+//        printfn "%s" "Укажите путь к файлу:\n"
+//        File.rule (System.Console.ReadLine())

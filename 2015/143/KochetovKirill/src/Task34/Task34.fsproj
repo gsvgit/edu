@@ -51,8 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Compile Include="File.fs" />
+    <Compile Include="Console.fs" />
     <Compile Include="RuleReader.fs" />
     <Compile Include="TapeReader.fs" />
+    <Compile Include="Chooser.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

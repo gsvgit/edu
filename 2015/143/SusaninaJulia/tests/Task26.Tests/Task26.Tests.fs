@@ -20,3 +20,4 @@ let ``Interpretator without tape`` () =
     let result = interpretator [("1", "2"); ("3", "4")] ""
     printfn "%A" result
     Assert.AreEqual(result, "")
+

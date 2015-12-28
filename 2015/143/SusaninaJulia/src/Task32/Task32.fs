@@ -102,15 +102,12 @@ let inInt n =
                 inInt1 tl (res * 10 + hd)
         s * (inInt1 lst 0)
 
-
 let matrixMultiply (arr1 : Num[][]) (arr2 : Num[][]) = 
     let e00 = sum (multiplication arr1.[0].[0] arr2.[0].[0]) (multiplication arr1.[0].[1] arr2.[1].[0])
     let e01 = sum (multiplication arr1.[0].[0] arr2.[0].[1]) (multiplication arr1.[0].[1] arr2.[1].[1])
     let e10 = sum (multiplication arr1.[1].[0] arr2.[0].[0]) (multiplication arr1.[1].[1] arr2.[1].[0])
     let e11 = sum (multiplication arr1.[1].[0] arr2.[0].[1]) (multiplication arr1.[1].[1] arr2.[1].[1])
     [|[|e00; e01|];[|e10; e11|]|]
-
-
 
 let rec matrixPower arr (n: Num) =
     if n = toNum1 ()

@@ -13,7 +13,7 @@ let rec getString (rules : Task15.MyList<MyList<char> * MyList<char>>) =
     let line1 = getStr tape string 1
     match System.Console.ReadLine() with
     | "" -> (rules, line1)
-    | newStr -> getString (rules.addEnd(Cons((line1, getStr tape newStr 1), Empty))) 
+    | newStr -> getString (rules.addEnd(Cons((line1, getStr tape newStr 1), Empty)))
 
 
 let rec merge (a : MyList<char>) (b : MyList<char>) =
@@ -60,6 +60,6 @@ let rec main (rules: Task15.MyList<MyList<char> * MyList<char>>) (tape: MyList<c
 let inter argv = 
     match getString Empty with
     | (rules, tape) ->
-        printfn "%A" <| main rules tape
+        printf "%A" <| main rules tape
     let stay = System.Console.ReadKey(true)
     0

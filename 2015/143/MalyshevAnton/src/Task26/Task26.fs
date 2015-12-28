@@ -32,14 +32,10 @@ let rec applyRule ((old : string) , (changed : string)) (str: string) =
 let interpretator (stringrule: string) (str: string) =
 
     let remToRules (strN: string) =
-        let arrstr = strN.Split([|";"|], System.StringSplitOptions.RemoveEmptyEntries)
-        let mutable rules = [] 
-        let reslength = arrstr.Length
-        for i in 0..(reslength - 1) do 
-            let istring = arrstr.[i]
-            let [|old; changed|] = istring.Split([|"->"|], System.StringSplitOptions.RemoveEmptyEntries)
-            rules <- rules @ [(old, changed)]
-        rules
+        strN.Split([|";"|], System.StringSplitOptions.RemoveEmptyEntries)
+        |> Array.map (fun s -> s.Split([|"->"|], System.StringSplitOptions.RemoveEmptyEntries))
+        |> Array.map (fun a -> a.[0], a.[1])
+        |> Array.toList
 
     let rec interpret rule (str: string) =
         match rule with

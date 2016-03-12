@@ -6,10 +6,10 @@ open Task17
 open NUnit.Framework
 
 [<Test>]
-let ``toMyString return Cons('3',Cons('2',Cons('1',Empty)))`` () =
+let ``toMyString return Cons('1',Cons('2',Cons('3',Empty)))`` () =
   let s = "123"
   let res = toMyString s
-  Assert.AreEqual(Cons('3',Cons('2',Cons('1',Empty))), res)
+  Assert.AreEqual(Cons('1',Cons('2',Cons('3',Empty))), res)
 
 [<Test>]
 let ``toMyString return Empty`` () =
@@ -18,8 +18,8 @@ let ``toMyString return Empty`` () =
   Assert.AreEqual(MyString.Empty, res)
 
 [<Test>]
-let ``toMyString return Cons('2',Cons('1',Empty))`` () =
+let ``toMyString return Cons('1',Cons('2',Empty))`` () =
   let s = "12"
   let res = toMyString s
-  Assert.AreEqual(Cons('2',Cons('1',Empty)), res)
+  Assert.AreEqual(Cons('1',Cons('2',Empty)), res)
 

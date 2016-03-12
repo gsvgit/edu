@@ -1,7 +1,7 @@
 ﻿module Task16
 open Task15
 
-let main (list:List<'T>) = 
+let main (list:MyList<'T>) = 
     let rec length list l =
         match list with
         | Empty -> l

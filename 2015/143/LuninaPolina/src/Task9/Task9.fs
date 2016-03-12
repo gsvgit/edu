@@ -7,7 +7,7 @@ let main n =
     if n < 2 then fibN <- n
     else
         for i in 1..n - 1 do 
-            fibN <- a+b
+            fibN <- a + b
             a <- b
             b <- fibN
     fibN

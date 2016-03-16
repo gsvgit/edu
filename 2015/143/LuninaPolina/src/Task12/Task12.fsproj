@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>ecb167b4-f2de-4691-bbb2-858bb33ebcdf</ProjectGuid>
+    <ProjectGuid>065ba5df-1e1c-4818-8da2-04fc2ff6e9f2</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Task12</RootNamespace>
     <AssemblyName>Task12</AssemblyName>

@@ -1,7 +1,7 @@
 ﻿module Task12.Tests
 open Task12
 open NUnit.Framework
-
+ 
 [<Test>]
 let ``main return 55`` () =
   let res = main 10

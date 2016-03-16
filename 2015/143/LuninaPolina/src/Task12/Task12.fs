@@ -16,9 +16,7 @@ let rec fib n (matrix:int [,]) =
         mlt_matrix (fib (n / 2) matrix) (fib(n / 2) matrix) 
     else
         mlt_matrix matrix (mlt_matrix (fib ((n - 1) / 2) matrix) (fib((n - 1) / 2 ) matrix))
-            
+          
 let main n = 
     let matrix = array2D [|[|0;1|];[|1;1|]|]
     (fib n matrix).[0,1]
-             
-

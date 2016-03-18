@@ -1,10 +1,9 @@
 ﻿module Task13
 
-let rec fib n = 
-    if n < 2 
-    then n
-    else fib(n - 1) + fib(n - 2)
-
 let main n = 
-    let (outArray : int array) = [|for i in 0..n do yield fib i|]
+    let outArray = Array.empty
+    for i in 1..n do
+        if n < 2 
+        then outArray.[n] <- n
+        else outArray.[n] <- outArray.[n - 1] + outArray.[n - 2]
     outArray

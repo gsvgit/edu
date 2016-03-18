@@ -1,9 +1,9 @@
 ﻿module Task13
 
 let main n = 
-    let outArray = Array.empty
+    let outArray: int array = Array.zeroCreate (n + 1)
     for i in 0..n do
-        if n < 2 
-        then outArray.[n] <- n
-        else outArray.[n] <- outArray.[n - 1] + outArray.[n - 2]
+        if i < 2 
+        then outArray.[i] <- i
+        else outArray.[i] <- outArray.[i - 1] + outArray.[i - 2]
     outArray

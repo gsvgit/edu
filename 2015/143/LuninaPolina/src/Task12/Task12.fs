@@ -9,13 +9,8 @@ let mlt_matrix (matrix1:int [,]) (matrix2:int [,]) =
     result
 
 let sqr_matrix (matrix:int [,]) = 
-    let a = matrix.[0,0] * matrix.[0,0] + matrix.[0,1] * matrix.[1,0]
-    let b = matrix.[0,0] * matrix.[0,1] + matrix.[0,1] * matrix.[1,1]
-    let c = matrix.[1,0] * matrix.[0,0] + matrix.[1,1] * matrix.[1,0]
-    let d = matrix.[1,0] * matrix.[0,1] + matrix.[1,1] * matrix.[1,1]
-    let result = array2D [|[|a;b|];[|c;d|]|]
-    result
-
+    mlt_matrix matrix matrix
+    
 let rec fib n (matrix:int [,]) = 
     if n < 2 
     then matrix

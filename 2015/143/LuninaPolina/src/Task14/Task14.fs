@@ -1,5 +1,7 @@
 ﻿module Task14
 open FSharp.Charting
+open System.Drawing
+open System.Windows.Forms
 open Task8
 open Task9
 open Task10

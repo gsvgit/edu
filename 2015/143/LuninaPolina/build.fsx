@@ -377,8 +377,8 @@ Target "All" DoNothing
   ==> "Build"
   ==> "CopyBinaries"
   ==> "RunTests"
-  ==> "GenerateReferenceDocs"
-  ==> "GenerateDocs"
+  //==> "GenerateReferenceDocs"
+  //==> "GenerateDocs"
   ==> "All"
   =?> ("ReleaseDocs",isLocalBuild)
 
@@ -392,8 +392,8 @@ Target "All" DoNothing
 
 "CleanDocs"
   ==> "GenerateHelp"
-  ==> "GenerateReferenceDocs"
-  ==> "GenerateDocs"
+ // ==> "GenerateReferenceDocs"
+ // ==> "GenerateDocs"
 
 "CleanDocs"
   ==> "GenerateHelpDebug"

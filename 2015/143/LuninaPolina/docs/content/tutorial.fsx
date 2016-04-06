@@ -10,8 +10,8 @@ Introducing your project
 Say more
 
 *)
-#r "LuninaPolinaHW.dll"
-open LuninaPolinaHW
+#r "GrigorevSemyonHW.dll"
+open GrigorevSemyonHW
 
 Library.hello 0
 (**

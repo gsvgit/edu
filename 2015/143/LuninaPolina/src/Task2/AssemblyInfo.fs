@@ -1,7 +1,7 @@
 ﻿namespace System
 open System.Reflection
 
-[<assembly: AssemblyTitleAttribute("LuninaPolinaHW")>]
+[<assembly: AssemblyTitleAttribute("Task2")>]
 [<assembly: AssemblyProductAttribute("LuninaPolinaHW")>]
 [<assembly: AssemblyDescriptionAttribute("Home work")>]
 [<assembly: AssemblyVersionAttribute("1.0")>]

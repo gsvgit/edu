@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{63297B98-5CED-492C-A5B7-A5B4F73CF142}"
 	ProjectSection(SolutionItems) = preProject
 		paket.dependencies = paket.dependencies
@@ -34,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ED8079DD
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GrigorevSemyonHW.Tests", "tests\GrigorevSemyonHW.Tests\GrigorevSemyonHW.Tests.fsproj", "{D34CEAD0-DB53-48C5-BC07-AFF75EF62D13}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Parallels", "Parallels\Parallels.fsproj", "{EFB73473-3421-47A4-AF93-BA9711239690}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +51,10 @@ Global
 		{D34CEAD0-DB53-48C5-BC07-AFF75EF62D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D34CEAD0-DB53-48C5-BC07-AFF75EF62D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D34CEAD0-DB53-48C5-BC07-AFF75EF62D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB73473-3421-47A4-AF93-BA9711239690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB73473-3421-47A4-AF93-BA9711239690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB73473-3421-47A4-AF93-BA9711239690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB73473-3421-47A4-AF93-BA9711239690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

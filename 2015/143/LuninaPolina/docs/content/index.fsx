@@ -4,7 +4,7 @@
 #I "../../bin"
 
 (**
-LuninaPolinaHW
+GrigorevSemyonHW
 ======================
 
 Documentation
@@ -13,8 +13,8 @@ Documentation
   <div class="span1"></div>
   <div class="span6">
     <div class="well well-small" id="nuget">
-      The LuninaPolinaHW library can be <a href="https://nuget.org/packages/LuninaPolinaHW">installed from NuGet</a>:
-      <pre>PM> Install-Package LuninaPolinaHW</pre>
+      The GrigorevSemyonHW library can be <a href="https://nuget.org/packages/GrigorevSemyonHW">installed from NuGet</a>:
+      <pre>PM> Install-Package GrigorevSemyonHW</pre>
     </div>
   </div>
   <div class="span1"></div>
@@ -26,8 +26,8 @@ Example
 This example demonstrates using a function defined in this sample library.
 
 *)
-#r "LuninaPolinaHW.dll"
-open LuninaPolinaHW
+#r "GrigorevSemyonHW.dll"
+open GrigorevSemyonHW
 
 printfn "hello = %i" <| Library.hello 0
 
@@ -59,9 +59,9 @@ The library is available under Public Domain license, which allows modification 
 redistribution for both commercial and non-commercial purposes. For more information see the 
 [License file][license] in the GitHub repository. 
 
-  [content]: https://github.com/fsprojects/LuninaPolinaHW/tree/master/docs/content
-  [gh]: https://github.com/fsprojects/LuninaPolinaHW
-  [issues]: https://github.com/fsprojects/LuninaPolinaHW/issues
-  [readme]: https://github.com/fsprojects/LuninaPolinaHW/blob/master/README.md
-  [license]: https://github.com/fsprojects/LuninaPolinaHW/blob/master/LICENSE.txt
+  [content]: https://github.com/fsprojects/GrigorevSemyonHW/tree/master/docs/content
+  [gh]: https://github.com/fsprojects/GrigorevSemyonHW
+  [issues]: https://github.com/fsprojects/GrigorevSemyonHW/issues
+  [readme]: https://github.com/fsprojects/GrigorevSemyonHW/blob/master/README.md
+  [license]: https://github.com/fsprojects/GrigorevSemyonHW/blob/master/LICENSE.txt
 *)

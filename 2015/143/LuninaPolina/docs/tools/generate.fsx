@@ -11,24 +11,25 @@
 // (This is the original behaviour of ProjectScaffold prior to multi project support)
 let referenceBinaries = []
 // Web site location for the generated documentation
-let website = "/LuninaPolinaHW"
+let website = "/GrigorevSemyonHW"
 
-let githubLink = "http://github.com/LuninaPolina/LuninaPolinaHW"
+let githubLink = "http://github.com/gsvgit/GrigorevSemyonHW"
 
 // Specify more information about your project
 let info =
-  [ "project-name", "LuninaPolinaHW"
-    "project-author", "LuninaPolina"
-    "project-summary", "Home work"
+  [ "project-name", "GrigorevSemyonHW"
+    "project-author", "Grigorev Semyon"
+    "project-summary", "my hw"
     "project-github", githubLink
-    "project-nuget", "http://nuget.org/packages/LuninaPolinaHW" ]
+    "project-nuget", "http://nuget.org/packages/GrigorevSemyonHW" ]
 
 // --------------------------------------------------------------------------------------
 // For typical project, no changes are needed below
 // --------------------------------------------------------------------------------------
 
-#load "../../packages/build/FSharp.Formatting/FSharp.Formatting.fsx"
-#I "../../packages/build/FAKE/tools/"
+#I "../../packages/FAKE/tools/"
+#load "../../packages/FSharp.Formatting/FSharp.Formatting.fsx"
+#r "NuGet.Core.dll"
 #r "FakeLib.dll"
 open Fake
 open System.IO
@@ -50,7 +51,7 @@ let content    = __SOURCE_DIRECTORY__ @@ "../content"
 let output     = __SOURCE_DIRECTORY__ @@ "../output"
 let files      = __SOURCE_DIRECTORY__ @@ "../files"
 let templates  = __SOURCE_DIRECTORY__ @@ "templates"
-let formatting = __SOURCE_DIRECTORY__ @@ "../../packages/build/FSharp.Formatting/"
+let formatting = __SOURCE_DIRECTORY__ @@ "../../packages/FSharp.Formatting/"
 let docTemplate = "docpage.cshtml"
 
 // Where to look for *.csproj templates (in this order)

@@ -50,7 +50,7 @@ let main n =
         printf "\n"
 let n = System.Console.ReadLine() |> int64
 System.Console.WriteLine(main n)
-
+0
 let resfortest n = 
     if n = -9223372036854775808L 
     then 

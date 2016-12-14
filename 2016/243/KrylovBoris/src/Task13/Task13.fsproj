@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Program.fs" />
+    <Compile Include="Task13.fs" />
     <None Include="App.config" />
   </ItemGroup>
   <PropertyGroup>

@@ -76,7 +76,7 @@ let fibMat n =
 
     let e = 1, Cons(1, Empty)
     let o = 0, Cons(0, Empty)
-    let R = array2D[[e; e];[e; o]]
+    let R = array2D[[e; e]; [e; o]]
     let res = mxpow R n
     res.[1, 0]
 
@@ -93,7 +93,7 @@ let fibMat2 n =
 
     let e = 1, Cons(1, Empty)
     let o = 0, Cons(0, Empty)
-    let Fib1 = array2D[[e; e];[e; o]]
+    let Fib1 = array2D[[e; e]; [e; o]]
     let FibN = mxpow Fib1 n
     FibN.[1, 0]
 
@@ -109,9 +109,10 @@ let fibArr n =
 
 
 let timer f =
+    let n = 10.0
     let start = DateTime.Now
-    for i in 0..9 do f ()
-    (DateTime.Now - start).TotalMilliseconds / 10.0 
+    for i in 0 .. int(n - 1.0) do f ()
+    (DateTime.Now - start).TotalMilliseconds / n
 
 let gch =
     Chart.Combine

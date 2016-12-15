@@ -31,4 +31,4 @@ let rec multiplyRec (a: MyList<int>) (buff: MyList<int>) (b: MyList<int>) (ind: 
 let multiply (a: Num) (b: Num) =
     match a, b with
     |(signA, lstA), (signB, lstB) ->
-        (signA * signB, multiplyRec lstA Empty lstB 0)
+        signA * signB, multiplyRec lstA Empty lstB 0

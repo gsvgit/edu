@@ -9,5 +9,5 @@ open Task17
                 lst
             else
                 let MyStr = Cons(str.[pointer], lst)
-                mutate MyStr str (pointer-1)
-        mutate Empty string (string.Length-1)
+                mutate MyStr str (pointer - 1)
+        mutate Empty string (string.Length - 1)

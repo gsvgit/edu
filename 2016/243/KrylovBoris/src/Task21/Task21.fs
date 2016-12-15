@@ -5,16 +5,17 @@ let main inList: MyList<int> =
     
     let rec sort (lst: MyList<int>) =
       match lst with
-          |Empty -> 
-              lst
-          |Cons(h, Empty) -> 
-              lst
+          |Empty -> lst
           |Cons(hd, tl) -> 
-              if tl.head() <= hd 
+              if tl <> Empty
               then
-                  Cons(tl.head(), (sort (Cons (hd, tl.tail()))))
+                  if tl.head() <= hd 
+                  then
+                      Cons(tl.head(), (sort (Cons (hd, tl.tail()))))
+                  else
+                      Cons(hd, sort(tl))
               else
-                  Cons(hd, sort(tl))
+                  lst
 
     let rec cycle (list: MyList<int>) count =
         if count < list.length()

@@ -27,19 +27,17 @@ type MyList<'t> =
         |Cons (hd, tl) -> Cons(x, Cons(hd, tl))
     
     member this.exists (condition) =
-        let mutable flag = false
-        let rec exist lst =
-            if (flag)
-            then flag
-            else   
+        let rec exist lst flag =
+            if not(flag)
+            then
                 match lst with
                 |Empty -> false
                 |Cons(hd, tl) -> 
-                    if condition(hd)
-                    then flag = true
-                    else exist(tl)
-        exist this |> ignore
-        flag
+                    if condition hd
+                    then true
+                    else exist tl flag
+            else flag
+        exist this false
 
     member this.swap() =
         match this with
@@ -55,7 +53,7 @@ type MyList<'t> =
             match res with
             |Empty -> res
             |Cons (hd, tl) -> 
-                if condition(hd)
+                if condition hd
                 then Cons(hd, filt tl)
                 else filt tl
         filt this

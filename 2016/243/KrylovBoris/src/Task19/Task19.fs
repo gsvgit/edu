@@ -19,7 +19,7 @@ type Tree =
                         lis tl (search hd ((mn, mx), cond))
                 match tre with
                 |Leaf vl ->
-                    if (i)
+                    if i
                     then
                         if vl < min then ((vl, max), i)
                         elif vl > max then ((min, vl), i)

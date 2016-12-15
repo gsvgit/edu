@@ -65,7 +65,7 @@ let main (a: Num) (b: Num) =
     | (0, Empty), (0, Empty) -> 
         failwith "NaN"
         (0, Cons(0, Empty))
-    | (signa, tla) , (signb, tlb) ->
+    | (signa, tla), (signb, tlb) ->
     if signa <> signb
     then 
         let signR = compare tla tlb signa signb 0

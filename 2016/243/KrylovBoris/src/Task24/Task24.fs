@@ -10,9 +10,10 @@ open Task23
 let random = new Random()
 
 let timer f =
+    let n = 10.0
     let start = DateTime.Now
-    for i in 0..9 do f ()
-    (DateTime.Now - start).TotalMilliseconds / 10.0
+    for i in 0 .. int(n - 1.0) do f ()
+    (DateTime.Now - start).TotalMilliseconds / n
 
 let ArrayGenerator length =
      Array.init length (fun i -> int(random.NextDouble() * 50.0 - 25.0))

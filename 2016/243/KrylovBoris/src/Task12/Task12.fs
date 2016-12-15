@@ -5,7 +5,7 @@ let rec mxpow (A: int[,]) n =
     then
         A
     else
-        let r = mxpow A (n/2)
+        let r = mxpow A (n / 2)
         if n % 2 = 1 
         then
             Task11.mxmult A (Task11.mxmult r r)

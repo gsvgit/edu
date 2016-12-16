@@ -37,8 +37,7 @@ let rec fibRec n =
     | _ -> if n > 1 
            then 
               Task30.main (fibRec (n - 1)) (fibRec (n - 2))
-           else
-               Task30.main (fibRec (n + 1)) (fibRec (n + 2))
+            else failwith "Invalid number"
 
 let fibIt n = 
     if n < 2 then
@@ -80,7 +79,7 @@ let fibMat n =
     let o = 0, Cons(0, Empty)
     let R = array2D[[e; e]; [e; o]]
     let res = mxpow R n
-    res.[1, 0]
+    res.[0, 0]
 
 let fibMat2 n = 
     let rec mxpow (A: Num[,]) n =
@@ -99,7 +98,7 @@ let fibMat2 n =
     let o = 0, Cons(0, Empty)
     let Fib1 = array2D[[e; e]; [e; o]]
     let FibN = mxpow Fib1 n
-    FibN.[1, 0]
+    FibN.[0, 0]
 
 
 let fibArr n =     

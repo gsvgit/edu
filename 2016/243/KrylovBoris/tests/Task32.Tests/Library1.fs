@@ -55,32 +55,32 @@ let ``Task32 fibIt2 10 return 55`` () =
 [<Test>]
 let ``Task32 fibMat 2 return 1`` () =
     let res = fibMat 2
-    Assert.AreEqual("1", NumToString res)
+    Assert.AreEqual("2", NumToString res)
 
 [<Test>]
 let ``Task32 fibMat 5 return 5`` () =
     let res = fibMat 5
-    Assert.AreEqual("5" ,NumToString res)
+    Assert.AreEqual("8" ,NumToString res)
 
 [<Test>]
 let ``Task32 fibMat 10 return 55`` () =
     let res = fibMat 10
-    Assert.AreEqual("55", NumToString res)
+    Assert.AreEqual("89", NumToString res)
 
 [<Test>]
 let ``Task32 fibMat2 2 return 1`` () =
     let res = fibMat2 2
-    Assert.AreEqual("1", NumToString res)
+    Assert.AreEqual("2", NumToString res)
 
 [<Test>]
 let ``Task32 fibMat2 5 return 5`` () =
     let res = fibMat2 5
-    Assert.AreEqual("5" ,NumToString res)
+    Assert.AreEqual("8" ,NumToString res)
 
 [<Test>]
 let ``Task32 fibMat2 10 return 55`` () =
     let res = fibMat2 10
-    Assert.AreEqual("55", NumToString res)
+    Assert.AreEqual("89", NumToString res)
 
 [<Test>]
 let ``Task 13 main 7 = [|0;1;1;2;3;5;8;13|]`` () = 

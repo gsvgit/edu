@@ -37,3 +37,8 @@ let ``Task30 test 81 - 196 = -115`` () =
 let ``Task30 test 81 - 81 = 0`` () =
     let res = main (1, Cons(1, Cons(8, Empty))) (-1, Cons(1, Cons(8, Empty)))
     Assert.AreEqual("0", NumToString(res))
+
+[<Test>]
+let ``Try to violate the format`` () =
+    let res = main (11, Cons(1, Cons(10, Empty))) (-105, Cons(1, Cons(601, Empty)))
+    Assert.AreEqual("0", NumToString(res))

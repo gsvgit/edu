@@ -14,6 +14,10 @@ let rec mxpow (A: int[,]) n =
     else mxmult A (mxpow A (n - 1))
        
 let main n =
-    let R = array2D[[1; 1]; [1; 0]]
-    let res = mxpow R n
-    res.[1, 0]
+    if n > 0
+    then
+        let R = array2D [[1; 1]; [1; 0]]
+        let res = mxpow R n
+        res.[0, 0]
+    else
+        failwith "Invalid number"

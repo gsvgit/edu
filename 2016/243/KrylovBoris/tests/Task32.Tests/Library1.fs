@@ -85,4 +85,4 @@ let ``Task32 fibMat2 10 return 55`` () =
 [<Test>]
 let ``Task 13 main 7 = [|0;1;1;2;3;5;8;13|]`` () = 
     let res = Array.init(8) (fun i -> NumToString (fibArr 7).[i])
-    Assert.AreEqual([|"0";"1";"1";"2";"3";"5";"8";"13"|], res)
+    Assert.AreEqual([|"0"; "1"; "1"; "2"; "3"; "5"; "8"; "13"|], res)

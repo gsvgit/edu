@@ -9,16 +9,16 @@ let main inList: MyList<int> =
           |Cons(hd, tl) -> 
               if tl <> Empty
               then
-                  if tl.head() <= hd 
+                  if head tl <= hd 
                   then
-                      Cons(tl.head(), (sort (Cons (hd, tl.tail()))))
+                      Cons(head tl, (sort (Cons (hd, tail tl))))
                   else
                       Cons(hd, sort(tl))
               else
                   lst
 
     let rec cycle (list: MyList<int>) count =
-        if count < list.length()
+        if count < length list
         then
             cycle (sort list) (count+1)
         else

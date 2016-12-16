@@ -25,7 +25,7 @@ type Tree =
                         elif vl > max then ((min, vl), i)
                         else ((min, max), i)
                     else
-                        ((vl,vl), true)
+                        ((vl, vl), true)
                 |Node(hd, lt) -> 
                     lis lt ((min, max), i)
             match search t ((hd, hd), false) with

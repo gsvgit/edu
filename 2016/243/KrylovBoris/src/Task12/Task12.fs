@@ -13,6 +13,10 @@ let rec mxpow (A: int[,]) n =
             Task11.mxmult r r
    
 let main n =
-    let Fib1 = array2D [[1; 1]; [1; 0]]
-    let FibN = mxpow Fib1 n
-    FibN.[1, 0]
+    if n > 0
+    then
+        let Fib1 = array2D [[1; 1]; [1; 0]]
+        let FibN = mxpow Fib1 n
+        FibN.[0, 0]
+    else
+        failwith "Invalid number"

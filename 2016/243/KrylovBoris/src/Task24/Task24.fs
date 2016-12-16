@@ -10,10 +10,10 @@ open Task23
 let random = new Random()
 
 let timer f =
-    let n = 10.0
+    let n = 10
     let start = DateTime.Now
-    for i in 0 .. int(n - 1.0) do f ()
-    (DateTime.Now - start).TotalMilliseconds / n
+    for i in 0 .. n - 1 do f ()
+    (DateTime.Now - start).TotalMilliseconds / float n
 
 let ArrayGenerator length =
      Array.init length (fun i -> int(random.NextDouble() * 50.0 - 25.0))
@@ -23,7 +23,7 @@ let rec ListGenerator (lst: MyList<int>) length =
     |0 -> lst
     |_ ->
         let x = int(random.NextDouble() * 50.0 - 25.0) 
-        ListGenerator (Cons(x, lst))  (length - 1)
+        ListGenerator (Cons(x, lst)) (length - 1)
 
 let gch =
     Chart.Combine

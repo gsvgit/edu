@@ -56,14 +56,16 @@ let fibIt n =
 
 let fibIt2 n = 
     let rec calc curr k m n = 
-        if not(curr = n) then 
+        if not(curr = n)
+        then 
             calc (curr + 1) (Task30.main m k) k n
         else
             k
     
     if n = 0 then
         0, Cons(0, Empty)
-    elif (n = 1) || (n = 2) then
+    elif (n = 1) || (n = 2)
+    then
         1, Cons(1, Empty)
     else
         calc 2 (1, Cons(1, Empty)) (1, Cons(1, Empty)) n
@@ -82,11 +84,13 @@ let fibMat n =
 
 let fibMat2 n = 
     let rec mxpow (A: Num[,]) n =
-        if n = 1 || n = 0 then
+        if n = 1 || n = 0
+        then
           A
         else
           let r = mxpow A (n/2)
-          if n % 2 = 1 then
+          if n % 2 = 1
+          then
                mxmult A (mxmult r r)
            else
               mxmult r r
@@ -101,7 +105,8 @@ let fibMat2 n =
 let fibArr n =     
     let mutable i = 0
     let outArray: Num array = Array.create (n + 1) (0, Cons(0, Empty))
-    if n > 1 then 
+    if n > 1
+    then 
         outArray.[1] <- (1, Cons(1, Empty))
         for i in 2 .. n do
             outArray.[i] <- Task30.main outArray.[i - 2] outArray.[i - 1]
@@ -109,10 +114,10 @@ let fibArr n =
 
 
 let timer f =
-    let n = 10.0
+    let n = 10
     let start = DateTime.Now
-    for i in 0 .. int(n - 1.0) do f ()
-    (DateTime.Now - start).TotalMilliseconds / n
+    for i in 0 .. n - 1 do f ()
+    (DateTime.Now - start).TotalMilliseconds / float n
 
 let gch =
     Chart.Combine

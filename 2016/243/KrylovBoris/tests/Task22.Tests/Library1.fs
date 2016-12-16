@@ -5,10 +5,10 @@ open Task22
 open NUnit.Framework
 
 [<Test>]
-let ``Task 22 main [2, 9, 4, 6, 5] = [2, 4, 5, 6, 9]`` () =
+let ``Task 22 main [2, 9, -4, 5, 6, 5, 10] = [-4, 2, 5, 5, 6, 9, 10]`` () =
     let lst = Cons(5, Empty)
-    let res = main ((((lst.add 6).add 4). add 9). add 2)
-    Assert.AreEqual(Cons(2, Cons(4, Cons(5, Cons(6, Cons(9, Empty))))), res)
+    let res = main (Cons(2, Cons(9, Cons(-4, Cons(5, Cons(6, Cons(5, Cons(10, Empty))))))))
+    Assert.AreEqual(Cons(-4, Cons(2, Cons(5, Cons(5, Cons(6, Cons(9, Cons(10, Empty))))))), res)
 
 [<Test>]
 let ``Task 22 main [] = []`` () =

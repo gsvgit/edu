@@ -10,10 +10,10 @@ open Task12
 open Task13
 
 let timer f =
-    let n = 10.0
+    let n = 10
     let start = DateTime.Now
-    for i in 0 .. int(n - 1.0) do f ()
-    (DateTime.Now - start).TotalMilliseconds / n
+    for i in 0 .. n - 1 do f ()
+    (DateTime.Now - start).TotalMilliseconds / float n
 
 let gch =
     Chart.Combine

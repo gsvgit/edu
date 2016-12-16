@@ -6,6 +6,16 @@ open Task15
 
 type Num = int * MyList<int>
 
+let isValid ((a, lst): Num) =
+    if a < -1 || a > 1 then
+        failwith "Invalid sign"
+    let rec numCheck (lst: MyList<int>) =
+        match lst with
+        |Cons(hd, tl) ->
+            if hd > 9 || hd < 0 then failwith "Invalid number"
+    0 |> ignore
+                
+
 let NumToString inNum =
     let rec printer (lst: MyList<int>) =
         match lst with
@@ -43,9 +53,9 @@ let rec addition (a: MyList<int>) (b: MyList<int>) (signA: int) (signB: int) (h:
             else Cons(abs(buff % 10), addition tla tlb signA signB h1)
 
 let rec compare (a: MyList<int>) (b: MyList<int>) (signA: int) (signB: int) (signRes: int) =
-    if a.length() > b.length()
+    if length a > length b
     then signA
-    elif a.length() = b.length()
+    elif length a = length b
     then 
         let rec comp (a: MyList<int>) (b: MyList<int>) (key) =
             match a, b with
@@ -61,6 +71,8 @@ let rec compare (a: MyList<int>) (b: MyList<int>) (signA: int) (signB: int) (sig
 
 
 let main (a: Num) (b: Num) =
+    isValid a
+    isValid b
     match a, b with
     | (0, Empty), (0, Empty) -> 
         failwith "NaN"

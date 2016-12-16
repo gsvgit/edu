@@ -12,19 +12,13 @@ let ``Task 23 main [2, 9, 4, 6, 5] = [2, 4, 5, 6, 9]`` () =
     Assert.AreEqual(control, res)
 
 [<Test>]
+let ``Task 23 main [-3, 5, -65, 6, 5, 5, -8, -7, -99, 5] = [-99, -65, -8, -7, -3, 5, 5, 5, 5, 6]`` () =
+    let arr = [|-3; 5; -65; 6; 5; 5; -8; -7; -99; 5|]
+    let control = [|-99; -65; -8; -7; -3; 5; 5; 5; 5; 6|]
+    let res = main arr
+    Assert.AreEqual(control, res)
+
+[<Test>]
 let ``Task 23 main [] = []`` () =
     let res = main [||]
     Assert.AreEqual([||], res)
-
-[<Test>]
-let ``Task 23 main [6, 6, 7] = [6, 6, 7]`` () =
-    let arr = [|6; 6; 7|]
-    let res = main arr
-    Assert.AreEqual(arr, res)
-
-[<Test>]
-let ``Task 23 main [1, 6, 7, 5] = [1, 5, 6, 7]`` () =
-    let arr = [|1; 6; 7; 5|]
-    let control = [|1; 5; 6; 7|]
-    let res = main arr
-    Assert.AreEqual(control, res)

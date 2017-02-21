@@ -10,14 +10,11 @@ type MyList<'t> =
         |Cons (hd, tl) -> Cons(x, Cons(hd, tl))
     
     member this.exists condition =
-        let rec exist lst flag =
-            if not flag
-            then
-                match lst with
-                |Empty -> false
-                |Cons(hd, tl) -> (condition hd) && (exist tl flag)
-            else flag
-        exist this false
+        let rec exist lst =
+            match lst with
+            |Empty -> false
+            |Cons(hd, tl) -> (condition hd) || (exist tl)
+        exist this
     
     member this.filter condition =
         let rec filt res =

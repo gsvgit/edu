@@ -15,5 +15,5 @@ let main inList: MyList<int> =
         |Empty -> Empty
         |Cons(hd, Empty) -> lst
         |Cons(hd, tl) ->
-            concatenate (qsort(tl.filter(fun x -> x <= hd))) (Cons(hd, qsort(tl.filter(fun x -> x > hd))))
+            concatenate (qsort(tl.filter((>) hd))) (Cons(hd, qsort(tl.filter((<=) hd))))
     qsort inList
